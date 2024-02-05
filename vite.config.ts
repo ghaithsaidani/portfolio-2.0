@@ -1,5 +1,6 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
+import path from "path"
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
@@ -18,7 +19,11 @@ export default defineConfig({
   },
 
   plugins: [react(), nxViteTsPaths()],
-
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src/app"),
+    },
+  },
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],

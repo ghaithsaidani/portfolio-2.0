@@ -52,7 +52,9 @@
         "bundler": "vite"
       },
       "component": {
-        "style": "scss"
+        "style": "scss",
+        "export": false,
+        "nameAndDirectoryFormat": "derived"
       },
       "library": {
         "style": "scss",

@@ -13,7 +13,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@/*": ["./src/app/*"],
+      "@/views/*": ["./src/app/views/*"],
+    },
     "jsx": "react-jsx",
     "allowJs": false,
     "esModuleInterop": false,
