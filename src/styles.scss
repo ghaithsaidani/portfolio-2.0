@@ -69,13 +69,27 @@
 }
 
 @layer base {
-  /**{
-    @apply bg-background text-foreground;
-  }*/
+  html {
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    @apply bg-primary;
+    &:hover{
+      @apply bg-primary-hover;
+    }
+  }
+
+
+
   * {
     @apply border-border;
   }
   body {
+
     @apply bg-background text-foreground;
   }
 }

@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-export interface Icon{
+export interface IconType {
   name:string;
   icon:ReactElement;
   color:string;

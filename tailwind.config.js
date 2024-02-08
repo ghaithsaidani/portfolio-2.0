@@ -18,6 +18,7 @@ module.exports = {
     },
     fontFamily:{
       sfPro: ["SF Pro Display", "sans-serif"],
+      inter: ["Inter", "sans-serif"],
     },
     extend: {
       colors: {

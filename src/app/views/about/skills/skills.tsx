@@ -7,14 +7,14 @@ import {
   SiReact,
   SiSass, SiSpring, SiSpringboot, SiTailwindcss, SiTypescript
 } from '@icons-pack/react-simple-icons';
-import { Icon } from '@/ts/icon';
+import { IconType } from '@/ts/icon.type';
 
 /* eslint-disable-next-line */
 export interface SkillsProps {
 }
 
 export function Skills(props: SkillsProps) {
-  const everyDayTechs: Icon[] = [
+  const everyDayTechs: IconType[] = [
     { name: 'Angular', icon: <SiAngular color={'white'}/>, color: '#DE002D', link: 'https://angular.io/' },
     { name: 'React', icon: <SiReact color={'white'} />, color: '#00DCFF', link: 'https://reactjs.org/' },
     {
@@ -50,7 +50,7 @@ export function Skills(props: SkillsProps) {
     { name: 'Mui', icon: <SiMui color={'white'} />, color: '#007FFF', link: 'https://mui.com/' },
     { name: 'MySql', icon: <SiMysql color={'white'} />, color: '#4479A1', link: 'https://www.mysql.com/' }
   ];
-  const usedTechs: Icon[] = [
+  const usedTechs: IconType[] = [
     { name: 'Android', icon: <SiAndroid color={'white'} />, color: '#34A853', link: 'https://www.android.com/' },
     { name: 'C', icon: <SiC color={'white'} />, color: '#A8B9CC', link: 'https://fr.wikipedia.org/wiki/C_(langage)' },
     {name:'MongoDb',icon:<SiMongodb color={"white"}/>,color:"#47A248",link:"https://www.mongodb.com"},
@@ -63,18 +63,17 @@ export function Skills(props: SkillsProps) {
   ]
   //technologies(tech.map() => tech.icon.props.color = '#fff')
   return (
-    <article className={'flex-1 flex flex-col justify-center align-middle px-24 gap-10'}>
+    <article className={'flex-1 flex flex-col align-middle px-24 py-5 gap-5'}>
       <div className={'text-center flex flex-col gap-5'}>
         <h2 className={'font-sfPro font-bold text-2xl'}>Skills</h2>
         <p className={'font-sfPro text-gray-400 text-md px-24'}>I have acquired a wide range of skills through
-          education, training, and experience. I am always eager to learn new skills and improve my existing ones. I can
-          adapt to different situations and work well with others.</p>
+          education, training, and experience. I am always eager to learn new skills and improve my existing ones.</p>
       </div>
-      <Card className={'text-center w-fit'}>
-        <CardContent className={"flex flex-col gap-24"}>
+      <Card className={'text-center h-full'}>
+        <CardContent className={"flex flex-col justify-between"}>
           <div>
             <h3 className={'font-sfPro font-bold text-xl'}>Technologies that I’m using every Day</h3>
-            <ul className={'flex flex-wrap gap-x-4 gap-y-7 w-fit px-14 justify-center mt-8'}>
+            <ul className={'flex flex-wrap gap-x-4 gap-y-10 w-fit px-16 justify-center mt-8'}>
               {everyDayTechs.map((tech) =>
 
                 <a href={tech.link} target={'_blank'} rel={'noreferrer'} key={tech.name}>
@@ -85,7 +84,7 @@ export function Skills(props: SkillsProps) {
           </div>
           <div>
             <h3 className={'font-sfPro font-bold text-xl'}>Other Technologies which I have used in projects</h3>
-            <ul className={'flex flex-wrap gap-x-8 gap-y-7 w-fit px-14 justify-center mt-8'}>
+            <ul className={'flex flex-wrap gap-x-8 gap-y-10 w-fit px-20 justify-center mt-8'}>
               {usedTechs.map((tech) =>
 
                 <a href={tech.link} target={'_blank'} rel={'noreferrer'} key={tech.name}>
