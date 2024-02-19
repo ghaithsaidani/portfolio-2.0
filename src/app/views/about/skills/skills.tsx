@@ -5,16 +5,16 @@ import {
   SiAngular, SiC, SiCsharp, SiCss3, SiDjango, SiExpress, SiFigma, SiGit,
   SiGithub, SiHtml5, SiJavascript, SiMongodb, SiMui, SiMysql, SiNodedotjs, SiOracle, SiPostgresql,
   SiReact,
-  SiSass, SiSpring, SiSpringboot, SiTailwindcss, SiTypescript
+  SiSass, SiSpring, SiTailwindcss, SiTypescript
 } from '@icons-pack/react-simple-icons';
-import { IconType } from '@/ts/icon.type';
+import { IconInterface } from '@/ts/icon.type';
 
 /* eslint-disable-next-line */
 export interface SkillsProps {
 }
 
 export function Skills(props: SkillsProps) {
-  const everyDayTechs: IconType[] = [
+  const everyDayTechs: IconInterface[] = [
     { name: 'Angular', icon: <SiAngular color={'white'}/>, color: '#DE002D', link: 'https://angular.io/' },
     { name: 'React', icon: <SiReact color={'white'} />, color: '#00DCFF', link: 'https://reactjs.org/' },
     {
@@ -50,7 +50,7 @@ export function Skills(props: SkillsProps) {
     { name: 'Mui', icon: <SiMui color={'white'} />, color: '#007FFF', link: 'https://mui.com/' },
     { name: 'MySql', icon: <SiMysql color={'white'} />, color: '#4479A1', link: 'https://www.mysql.com/' }
   ];
-  const usedTechs: IconType[] = [
+  const usedTechs: IconInterface[] = [
     { name: 'Android', icon: <SiAndroid color={'white'} />, color: '#34A853', link: 'https://www.android.com/' },
     { name: 'C', icon: <SiC color={'white'} />, color: '#A8B9CC', link: 'https://fr.wikipedia.org/wiki/C_(langage)' },
     {name:'MongoDb',icon:<SiMongodb color={"white"}/>,color:"#47A248",link:"https://www.mongodb.com"},

@@ -3,7 +3,7 @@ import styles from './app.module.scss';
 
 import NxWelcome from './nx-welcome';
 import { Button } from '@/components/ui/button';
-import { About } from '@/views';
+import { About, Work } from '@/views';
 
 
 export function App() {
@@ -12,6 +12,7 @@ export function App() {
       {/*<NxWelcome title="portfolio" />*/}
       {/*<Button>Hello</Button>*/}
       <About/>
+      <Work/>
     </div>
   );
 }

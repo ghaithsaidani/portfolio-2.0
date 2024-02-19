@@ -38,7 +38,7 @@ export function Studies(props: StudiesProps) {
                 <img src={Sesame} alt={'sesame logo'}/>
               </TimelineOppositeContent>
               <TimelineSeparator>
-                <TimelineDot color="primary" />
+                <TimelineDot color="primary" style={{width:20,height:20}}/>
                 <TimelineConnector sx={{background:'#0DB760',height:'200px'}}/>
               </TimelineSeparator>
               <TimelineContent className={"!text-left"}>
@@ -58,7 +58,7 @@ export function Studies(props: StudiesProps) {
                 <img src={FSB} alt={'FSB logo'} />
               </TimelineOppositeContent>
               <TimelineSeparator>
-                <TimelineDot color={"primary"} />
+                <TimelineDot color={"primary"} style={{width:20,height:20}}/>
                 <TimelineConnector sx={{background:'#0DB760',height:'200px'}}/>
               </TimelineSeparator>
               <TimelineContent>
@@ -79,7 +79,7 @@ export function Studies(props: StudiesProps) {
                 <img src={LJB} alt={'LJB logo'}/>
               </TimelineOppositeContent>
               <TimelineSeparator>
-                <TimelineDot color={'primary'} />
+                <TimelineDot color={'primary'} style={{width:20,height:20}}/>
               </TimelineSeparator>
               <TimelineContent className={"!text-left"}>
                 <h2 className={"text-2xl font-sfPro font-bold"}>
