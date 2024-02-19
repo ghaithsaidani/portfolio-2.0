@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    --background: rgb(239,239,245);
+    --background: rgb(240,240,246);
     --foreground: rgba(0,0,0,0.87);
 
     --card: rgb(255,255,255);
@@ -32,7 +32,7 @@
     --destructive: rgb(239, 67, 67);
     --destructive-foreground: rgb(248, 250, 252);
 
-    --border: rgba(0, 0, 0,0.1);
+    --border: rgba(0, 0, 0,0.05);
     --input: rgb(225, 231, 239);
     --ring: rgb(2, 7, 19);
 
@@ -75,7 +75,7 @@
     scroll-behavior: smooth;
   }
   ::-webkit-scrollbar {
-    width: 8px;
+    display: none;
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 5px;
@@ -98,7 +98,7 @@
 
 @font-face {
   font-family: 'SF Pro Display';
-  src:url('assets/fonts/SF Pro Display/SF-Pro-Display-Regular.otf');
+  src:url('assets/fonts/SF Pro Display/SF-Pro-Display-regular.otf');
 }
 
 @font-face {

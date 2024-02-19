@@ -140,7 +140,7 @@ export function ThirdProject(props: ThirdProjectProps) {
                 design! For example, can show some real data.</p>
               <div className={'used-techs flex items-center justify-center mt-5'}>
                 <h3 className={'capitalize font-sfPro font-bold text-lg mr-5'}>used techs&nbsp;&nbsp;&nbsp;:</h3>
-                <AnimatedTechTooltip items={usedTechs}/>
+                <AnimatedTechTooltip items={usedTechs} size={14}/>
               </div>
               <div className={'mt-5'}>
                 <MovingBorderButton
@@ -162,7 +162,7 @@ export function ThirdProject(props: ThirdProjectProps) {
         />
 
       </WavyBackground>
-      <div className="absolute bottom-0 w-screen h-[650px] bg-gradient-to-t from-white to-100% z-10" />
+      <div className="absolute bottom-0 w-screen h-[650px] bg-gradient-to-t from-background to-100% z-10" />
     </article>
   );
 }

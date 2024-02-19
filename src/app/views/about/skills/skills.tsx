@@ -8,6 +8,8 @@ import {
   SiSass, SiSpring, SiTailwindcss, SiTypescript
 } from '@icons-pack/react-simple-icons';
 import { IconInterface } from '@/ts/icon.type';
+import { FaJava } from 'react-icons/fa';
+import React from 'react';
 
 /* eslint-disable-next-line */
 export interface SkillsProps {
@@ -41,7 +43,8 @@ export function Skills(props: SkillsProps) {
       color: '#1976D2',
       link: 'https://www.typescriptlang.org/'
     },
-    { name: 'Git', icon: <SiGit color={'white'} />, color: '#F4511E', link: 'https://git-scm.com/' },
+    {name: 'Java', icon: <FaJava color={'white'} size={24} title={'Java'}/>, color: '#0878bf', link: 'https://www.java.com/en/' },
+    { name: 'Git', icon: <SiGit color={'white'}/>, color: '#F4511E', link: 'https://git-scm.com/' },
     { name: 'Github', icon: <SiGithub color={'white'} />, color: '#494A4A', link: 'https://github.com/' },
     { name: 'Sass', icon: <SiSass color={'white'} />, color: '#F06292', link: 'https://sass-lang.com/' },
     { name: 'NodeJs', icon: <SiNodedotjs color={'white'} />, color: '#4CAF50', link: 'https://nodejs.org/en' },

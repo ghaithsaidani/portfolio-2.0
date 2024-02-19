@@ -1,30 +1,32 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import {
   motion,
   useTransform,
   AnimatePresence,
   useMotionValue,
-  useSpring,
-} from "framer-motion";
+  useSpring
+} from 'framer-motion';
 
 export type IconType = {
-  id:number
-  name:string;
-  icon:ReactElement;
-  color:string;
-  link?:string;
+  id: number
+  name: string;
+  icon: ReactElement;
+  color: string;
+  link?: string;
 }
 
 export const AnimatedTechTooltip = ({
-                                  items,
-                                }: {
+                                      items,
+                                      size=16
+                                    }: {
   /*items: {
     id: number;
     name: string;
     designation: string;
     image: string;
   }[];*/
-  items:IconType[]
+  items: IconType[],
+  size?: number
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const springConfig = { stiffness: 100, damping: 5 };
@@ -62,16 +64,16 @@ export const AnimatedTechTooltip = ({
                   y: 0,
                   scale: 1,
                   transition: {
-                    type: "spring",
+                    type: 'spring',
                     stiffness: 260,
-                    damping: 10,
-                  },
+                    damping: 10
+                  }
                 }}
                 exit={{ opacity: 0, y: 20, scale: 0.6 }}
                 style={{
                   translateX: translateX,
                   rotate: rotate,
-                  whiteSpace: "nowrap",
+                  whiteSpace: 'nowrap'
                 }}
                 className="absolute -top-10 -left-1/2 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl w-20 py-2"
               >
@@ -89,14 +91,15 @@ export const AnimatedTechTooltip = ({
 
           <a onMouseMove={handleMouseMove} href={item.link} target={'_blank'} rel={'noreferrer'}>
             <div
-                 className="object-cover grid place-items-center !m-0 !p-0 object-top rounded-full h-12 w-12 border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500 pointer-events-none"
-                 style={{ background: item.color }}>
+              className={`object-cover grid place-items-center !m-0 !p-0 object-top rounded-full h-${size} w-${size} border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500 pointer-events-none`}
+              style={{ background: item.color }}>
 
               {item.icon}
-          </div></a>
+            </div>
+          </a>
 
         </div>
-        ))}
+      ))}
     </>
   );
 };
