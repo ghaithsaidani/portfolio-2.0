@@ -16,6 +16,7 @@ import { BackgroundGradientAnimation } from '@/components/ui/background-gradient
 import React from 'react';
 import { WavyBackground } from '@/components/ui/wavy-background';
 import { AnimatedTechTooltip, IconType } from '@/components/ui/animated-tech-tooltip';
+import ParticlesBg from 'particles-bg';
 
 /* eslint-disable-next-line */
 export interface ThirdProjectProps {
@@ -139,7 +140,7 @@ export function ThirdProject(props: ThirdProjectProps) {
                 your
                 design! For example, can show some real data.</p>
               <div className={'used-techs flex items-center justify-center mt-5'}>
-                <h3 className={'capitalize font-sfPro font-bold text-lg mr-5'}>used techs&nbsp;&nbsp;&nbsp;:</h3>
+                <h3 className={'capitalize font-sfPro font-bold text-lg mr-5'}>stack&nbsp;&nbsp;&nbsp;:</h3>
                 <AnimatedTechTooltip items={usedTechs} size={14}/>
               </div>
               <div className={'mt-5'}>
@@ -160,9 +161,10 @@ export function ThirdProject(props: ThirdProjectProps) {
             </div>
           }
         />
-
+        <ParticlesBg type="cobweb" bg={true} color={"#0DB760"}/>
       </WavyBackground>
       <div className="absolute bottom-0 w-screen h-[650px] bg-gradient-to-t from-background to-100% z-10" />
+
     </article>
   );
 }

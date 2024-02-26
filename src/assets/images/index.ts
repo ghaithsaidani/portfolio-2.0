@@ -1,3 +1,4 @@
+export {default as PersonalPhoto} from './my-photo.png'
 export {default as Sesame} from './studies/sesame.png'
 export {default as LJB} from './studies/ljb.png'
 export {default as FSB} from './studies/fsb.png'
@@ -14,3 +15,4 @@ export {default as HotelManagement} from './projects/Hotel Management.png'
 export {default as MunicipalityManagement} from './projects/Municipalité.png'
 export {default as TennisCLub} from './projects/Tennis Club App.png'
 export { default as Ecommerce} from './projects/E-commerce.jpg'
+export {default as NavbarAvatar} from "./navbar-avatar.png"

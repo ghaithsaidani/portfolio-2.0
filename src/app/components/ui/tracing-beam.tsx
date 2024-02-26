@@ -34,6 +34,7 @@ export const TracingBeam = ({
     if (contentRef.current) {
       setSvgHeight(contentRef.current.offsetHeight);
     }
+    //console.log(scrollYProgress.get())
   }, []);
   useEffect(() => {
     return scrollYProgressVelocity.onChange((latestVelocity) => {
@@ -43,7 +44,7 @@ export const TracingBeam = ({
   }, []);
 
   const y1 = useSpring(
-    useTransform(scrollYProgress, [0, 0.75], [50, svgHeight]),
+    useTransform(scrollYProgress, [0, 0.7], [50, svgHeight]),
     {
       stiffness: 500,
       damping: 90,
@@ -98,7 +99,7 @@ export const TracingBeam = ({
           aria-hidden="true"
         >
           <motion.path
-            d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.75} l -18 24V ${svgHeight}`}
+            d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.7} l -18 24V ${svgHeight}`}
             fill="none"
             stroke="#9091A0"
             strokeOpacity="0.16"
@@ -107,7 +108,7 @@ export const TracingBeam = ({
             }}
           ></motion.path>
           <motion.path
-            d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.75} l -18 24V ${svgHeight}`}
+            d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.7} l -18 24V ${svgHeight}`}
             fill="none"
             stroke="url(#gradient)"
             strokeWidth="1.25"
@@ -139,7 +140,7 @@ export const TracingBeam = ({
           }}
           animate={{
             boxShadow:
-              scrollYProgress.get() > 0.76
+              scrollYProgress.get() > 0.7
                 ? "rgba(13, 183, 96, 0.24) 0px 3px 8px"
                 : "none",
           }}
@@ -152,9 +153,9 @@ export const TracingBeam = ({
             }}
             animate={{
               backgroundColor:
-                scrollYProgress.get() > 0.76 ? "var(--emerald-500)" : "white" ,
+                scrollYProgress.get() > 0.7 ? "var(--emerald-500)" : "white" ,
               borderColor:
-                scrollYProgress.get() >0.76 ? "var(--emerald-600)" : "white" ,
+                scrollYProgress.get() >0.7 ? "var(--emerald-600)" : "white" ,
             }}
             className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
           />

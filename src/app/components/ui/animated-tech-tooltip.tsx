@@ -17,7 +17,7 @@ export type IconType = {
 
 export const AnimatedTechTooltip = ({
                                       items,
-                                      size=16
+                                      size
                                     }: {
   /*items: {
     id: number;

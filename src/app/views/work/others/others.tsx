@@ -84,7 +84,7 @@ const cards: ProjectCardProps[] = [
     ],
     types:['Mobile App']
   },
-  {
+  /*{
     title:'Municipality management',
     image:MunicipalityManagement,
     description:'Fill your project brief here. It can be the outcome of the project, or some success metrics, or a cheesy tagline.',
@@ -105,7 +105,7 @@ const cards: ProjectCardProps[] = [
       {id:2,name:'OracleDB',icon:<SiOracle color={"white"}/>,color:"#F80000",link:"https://www.oracle.com/database/"},
     ],
     types:['Mobile App']
-  },
+  },*/
 
 ]
 

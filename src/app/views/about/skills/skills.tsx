@@ -66,7 +66,7 @@ export function Skills(props: SkillsProps) {
   ]
   //technologies(tech.map() => tech.icon.props.color = '#fff')
   return (
-    <article className={'flex-1 flex flex-col align-middle px-24 py-5 gap-5'}>
+    <div className={'flex-1 flex flex-col align-middle px-24 py-5 gap-5'}>
       <div className={'text-center flex flex-col gap-5'}>
         <h2 className={'font-sfPro font-bold text-2xl'}>Skills</h2>
         <p className={'font-sfPro text-gray-400 text-md px-24'}>I have acquired a wide range of skills through
@@ -107,7 +107,7 @@ export function Skills(props: SkillsProps) {
           </div>*/}
 
       </Card>
-    </article>
+    </div>
   );
 }
 
