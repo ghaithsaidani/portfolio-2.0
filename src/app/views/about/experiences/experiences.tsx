@@ -35,7 +35,7 @@ export function Experiences(props: ExperiencesProps) {
     {
       enterpriseName: 'confledis SAS',
       emplacement: 'remotely, france',
-      period: 'Aug 2023 - Oct 2021',
+      period: 'Aug 2023 - Oct 2023',
       enterpriseImg:Confledis,
       alt:'confledis',
       position:'intern',

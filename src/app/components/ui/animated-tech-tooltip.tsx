@@ -93,7 +93,6 @@ export const AnimatedTechTooltip = ({
             <div
               className={`object-cover grid place-items-center !m-0 !p-0 object-top rounded-full h-${size} w-${size} border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500 pointer-events-none`}
               style={{ background: item.color }}>
-
               {item.icon}
             </div>
           </a>

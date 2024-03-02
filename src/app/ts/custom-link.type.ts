@@ -1,4 +1,4 @@
-export interface customLink{
+export interface customLinkType {
     id: string;
     text: string;
 }

@@ -1,16 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
-import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 import { MovingBorderButton } from '@/components/ui/moving-border-button';
+import { ArrowTopRightIcon } from '@radix-ui/react-icons';
+import { ProjectCard, ProjectCardProps } from '@/components/ui/project-card';
 
-type Tab = {
-  title: string;
-  value: string;
-  content?: string | React.ReactNode | any;
-};
 
 export const Tabs = ({
                        tabs: propTabs,
@@ -19,14 +15,14 @@ export const Tabs = ({
                        tabClassName,
                        contentClassName,
                      }: {
-  tabs: Tab[];
+  tabs: ProjectCardProps[];
   containerClassName?: string;
   activeTabClassName?: string;
   tabClassName?: string;
   contentClassName?: string;
 }) => {
-  const [active, setActive] = useState<Tab>(propTabs[0]);
-  const [tabs, setTabs] = useState<Tab[]>(propTabs);
+  const [active, setActive] = useState<ProjectCardProps>(propTabs[0]);
+  const [tabs, setTabs] = useState<ProjectCardProps[]>(propTabs);
 
   const moveSelectedTabToTop = (idx: number) => {
     const newTabs = [...propTabs];
@@ -42,49 +38,45 @@ export const Tabs = ({
     <>
       <div
         className={cn(
-          "flex flex-row items-center justify-center gap-5 [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full",
+          "flex flex-row items-center justify-center [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full",
           containerClassName
         )}
       >
         {propTabs.map((tab, idx) => (
-          <MovingBorderButton
-            borderRadius="1.75rem"
+          <button
             key={tab.title}
             onClick={() => {
               moveSelectedTabToTop(idx);
             }}
-            borderClassName={active.value === tab.value ? "hidden" : ""}
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
-            containerClassName={tab.value==='certifications-associative-life'?'w-fit':''}
-            className={cn("bg-transparent dark:bg-slate-90 dark:text-white hover:bg-gray-200 border-none dark:border-slate-800 relative px-4 py-2", tabClassName)}
-            /*style={{
+            className={cn("relative px-4 py-2 rounded-full", tabClassName)}
+            style={{
               transformStyle: "preserve-3d",
-            }}*/
+            }}
           >
-            {active.value === tab.value && (
+            {active.title === tab.title && (
               <motion.div
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "absolute inset-0 bg-white dark:bg-zinc-800 rounded-full ",
+                  "absolute inset-0 bg-gray-200 dark:bg-zinc-800 rounded-full ",
                   activeTabClassName
                 )}
               />
             )}
-
-            <span className="relative block text-black dark:text-white">
-              {tab.title}
+            <span className="relative block text-black dark:text-white font-sfPro">
+              {`Project ${idx+1}`}
             </span>
-          </MovingBorderButton>
+          </button>
         ))}
       </div>
       <FadeInDiv
         tabs={tabs}
         active={active}
-        key={active.value}
+        key={active.title}
         hovering={hovering}
-        className={cn("mt-1", contentClassName)}
+        className={cn("mt-12", contentClassName)}
       />
     </>
   );
@@ -96,20 +88,20 @@ export const FadeInDiv = ({
                             hovering,
                           }: {
   className?: string;
-  key?: any;
-  tabs: Tab[];
-  active: Tab;
+  key?: string;
+  tabs: ProjectCardProps[];
+  active: ProjectCardProps;
   hovering?: boolean;
 }) => {
-  const isActive = (tab: Tab) => {
-    return tab.value === tabs[0].value;
+  const isActive = (tab: ProjectCardProps) => {
+    return tab.title === tabs[0].title;
   };
   return (
     <div className="relative w-full h-full">
       {tabs.map((tab, idx) => (
         <motion.div
-          key={tab.value}
-          layoutId={tab.value}
+          key={tab.title}
+          layoutId={tab.title}
           style={{
             scale: 1 - idx * 0.1,
             top: hovering ? idx * -50 : 0,
@@ -121,9 +113,10 @@ export const FadeInDiv = ({
           }}
           className={cn("w-full h-full absolute top-0 left-0", className)}
         >
-          {tab.content}
+          <ProjectCard title={tab.title} image={tab.image} stack={tab.stack}/>
         </motion.div>
       ))}
     </div>
   );
 };
+

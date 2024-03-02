@@ -77,7 +77,7 @@ export function CertificationsAssociativeLife(
       img: TechClub,
       alt: 'tech-club',
       position: 'member',
-      period: 'Oct 2022 - Jun 2023'
+      period: 'Oct 2022 - Jan 2023'
     },
     {
       name: 'aiesec bizerte',

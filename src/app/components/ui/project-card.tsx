@@ -21,12 +21,11 @@ import { LiaJava } from 'react-icons/lia';
 export interface ProjectCardProps {
   title: string;
   image: string;
-  description: string;
-  types: string[];
   stack: IconType[];
 
 }
-export const ProjectCard = (props:ProjectCardProps) => {
+
+export const ProjectCard = (props: ProjectCardProps) => {
   const usedTechs: IconType[] = [
     {
       id: 1,
@@ -36,43 +35,49 @@ export const ProjectCard = (props:ProjectCardProps) => {
       link: 'https://angular.io/'
     },
     {
-      id:2,
+      id: 2,
       name: 'Spring Boot',
       icon: <SiSpring color={'white'} />,
       color: '#6DB33F',
       link: 'https://spring.io/'
     },
-    {id:3, name: 'MySql', icon: <SiMysql color={'white'} />, color: '#4479A1', link: 'https://www.mysql.com/' },
-    {id:4, name: 'Android', icon: <SiAndroid color={'white'} />, color: '#34A853', link: 'https://www.android.com/' },
-    {id:5, name: 'Java', icon: <FaJava color={'white'} size={20}/>, color: '#0878bf', link: 'https://www.java.com/en/' },
+    { id: 3, name: 'MySql', icon: <SiMysql color={'white'} />, color: '#4479A1', link: 'https://www.mysql.com/' },
+    { id: 4, name: 'Android', icon: <SiAndroid color={'white'} />, color: '#34A853', link: 'https://www.android.com/' },
+    {
+      id: 5,
+      name: 'Java',
+      icon: <FaJava color={'white'} size={20} />,
+      color: '#0878bf',
+      link: 'https://www.java.com/en/'
+    }
 
   ];
   return (
-    <Card className={'p-[20px] w-fit flex z- rounded-[50px] bg-white/50'}>
-      <CardContent className={'relative bg-transparent'}>
-        <img src={props.image} alt={'hotel management'} className={'rounded-[30px] h-64 w-full'} />
-          <div className={'absolute used-techs flex w-fit top-3 right-7'}>
-            <AnimatedTechTooltip items={props.stack} size={10} />
-          </div>
-        <h3 className={'text-lg font-sfPro font-bold mt-5'}>{props.title}</h3>
-        <p className={'font-sfPro text-gray-400 text-sm mt-2'}>{props.description}</p>
-        <div className={'mt-7 flex justify-between'}>
-          <div className={'flex gap-3'}>
-            {props.types.map((type, idx) => {
-              return <Badge key={idx} variant={'secondary'} className={'rounded-3xl py-0'}>{type}</Badge>
-            })}
-          </div>
-          <MovingBorderButton
-            containerClassName={'h-10 w-32'}
-            borderClassName={'h-14 w-14'}
-            borderRadius="1.75rem"
-            className="bg-white text-sm dark:bg-slate-90 dark:text-white border-none dark:border-slate-800"
-          >
-            Tell Me More <ArrowTopRightIcon />
-          </MovingBorderButton>
-        </div>
-      </CardContent>
-    </Card>
+    <div
+      className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl text-white bg-primary">
+      <div className={'flex w-full items-center justify-between'}>
+        <p className={'font-bold'}>{props.title}</p>
+        <MovingBorderButton
+          borderRadius="1.75rem"
+          className="bg-white text-black dark:bg-slate-90 border-none "
+
+          borderClassName={'group-hover:bg-[radial-gradient(rgb(0,0,0)_60%,rgba(0,0,0,0.3)_40%)]'}
+        >
+          Tell Me More <ArrowTopRightIcon />
+        </MovingBorderButton>
+      </div>
+      <div className={'used-techs flex items-center justify-center mt-5 absolute top-36 z-30 right-20'}>
+        <AnimatedTechTooltip items={props.stack} size={12} />
+      </div>
+      <img
+        src={props.image}
+        alt={props.title}
+        width="1000"
+        height="1000"
+        className="object-fill object-left-top h-[60%]  md:h-[85%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
+      />
+
+    </div>
   )
     ;
 };

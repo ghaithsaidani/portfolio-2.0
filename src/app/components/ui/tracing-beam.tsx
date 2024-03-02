@@ -32,7 +32,7 @@ export const TracingBeam = ({
 
   useEffect(() => {
     if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight);
+      setSvgHeight(contentRef.current.offsetHeight-90);
     }
     //console.log(scrollYProgress.get())
   }, []);
@@ -61,9 +61,9 @@ export const TracingBeam = ({
   return (
     <motion.div
       ref={ref}
-      className={cn("relative w-full mx-auto h-full", className)}
+      className={cn("relative w-full mx-auto h-full hello", className)}
     >
-      <div className="absolute right-3 py-3 z-20 h-fit">
+      <div className=" absolute py-3 right-3 z-40 h-full hey">
         <motion.div
           transition={{
             duration: 0.2,
@@ -94,8 +94,8 @@ export const TracingBeam = ({
         <svg
           viewBox={`0 0 20 ${svgHeight}`}
           width="20"
-          height={svgHeight} // Set the SVG height
-          className=" ml-4 hidden lg:block"
+          /*height={svgHeight}*/ // Set the SVG height
+          className=" ml-4 hidden lg:block h-fit"
           aria-hidden="true"
         >
           <motion.path

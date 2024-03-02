@@ -14,7 +14,7 @@ export function Work(props: WorkProps) {
   return (
     <section className={'work'}>
 
-      {/*<FirstProject />*/}
+      <FirstProject />
       {/*<SecondProject/>*/}
       <ThirdProject/>
       <Others/>

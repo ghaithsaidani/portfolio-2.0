@@ -5,23 +5,23 @@
 
 @layer base {
   :root {
-    --background: rgb(240,240,246);
-    --foreground: rgba(0,0,0,0.87);
+    --background: rgb(240, 240, 246);
+    --foreground: rgba(0, 0, 0, 0.87);
 
-    --card: rgb(255,255,255);
-    --card-foreground: 	rgba(0,0,0,0.87);
+    --card: rgb(255, 255, 255);
+    --card-foreground: rgba(0, 0, 0, 0.87);
 
-    --popover: rgb(255,255,255);
-    --popover-foreground: rgba(0,0,0,0.87);
+    --popover: rgb(255, 255, 255);
+    --popover-foreground: rgba(0, 0, 0, 0.87);
 
     --primary: rgba(13, 183, 96);
-    --primary-hover: rgb(12,167,87);
-    --primary-background: rgba(13, 183, 96,0.1);
+    --primary-hover: rgb(12, 167, 87);
+    --primary-background: rgba(13, 183, 96, 0.1);
     --primary-foreground: rgb(248, 250, 252);
 
     --secondary: rgb(241, 245, 249);
     --secondary-background: rgb(255, 255, 255);
-    --secondary-foreground: rgba(0,0,0,0.87);
+    --secondary-foreground: rgba(0, 0, 0, 0.87);
 
     --muted: rgb(241, 245, 249);
     --muted-foreground: rgb(99, 114, 136);
@@ -32,7 +32,7 @@
     --destructive: rgb(239, 67, 67);
     --destructive-foreground: rgb(248, 250, 252);
 
-    --border: rgba(0, 0, 0,0.05);
+    --border: rgba(0, 0, 0, 0.05);
     --input: rgb(225, 231, 239);
     --ring: rgb(2, 7, 19);
 
@@ -43,7 +43,7 @@
     --background: rgb(2, 7, 19);
     --foreground: rgb(248, 250, 252);
 
-    --card: rgb(2, 7, 19);
+    --card: rgb(255,255,255,0.1);
     --card-foreground: rgb(248, 250, 252);
 
     --popover: rgb(2, 7, 19);
@@ -74,30 +74,92 @@
   html {
     scroll-behavior: smooth;
   }
+
   ::-webkit-scrollbar {
     display: none;
   }
-  
+
   * {
     @apply border-border;
   }
+
   body {
 
     @apply bg-background text-foreground;
+  }
+
+  .active {
+    //@apply bg-primary text-primary-foreground;
+    @apply text-black;
+    transition: color 0.5s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 4px;
+      width: 12px;
+      bottom: -5px;
+      scale: 1;
+      animation: link 0.5s ease-in-out;
+      @apply bg-black rounded;
+    }
+  }
+
+  .social {
+    a {
+      &[data-social='LeetCode'] {
+        .filled{
+          @apply bg-socialMedias-leetCode;
+        }
+      }
+      &[data-social='LinkedIn'] {
+        .filled{
+          @apply bg-socialMedias-linkedin;
+        }
+      }
+      &[data-social='Github'] {
+        .filled{
+          @apply bg-socialMedias-github;
+        }
+      }
+    }
+
   }
 }
 
 @font-face {
   font-family: 'SF Pro Display';
-  src:url('assets/fonts/SF Pro Display/SF-Pro-Display-regular.otf');
+  src: url('assets/fonts/SF Pro Display/SF-Pro-Display-regular.otf');
 }
 
 @font-face {
   font-family: 'SF Pro Display Bold';
-  src:url('assets/fonts/SF Pro Display/SF-Pro-Display-Bold.otf');
+  src: url('assets/fonts/SF Pro Display/SF-Pro-Display-Bold.otf');
 }
 
 @font-face {
-    font-family: 'SF Pro Text';
-    src:url('assets/fonts/SF Pro Text/SF-Pro-Text-Regular.otf');
+  font-family: 'SF Pro Text';
+  src: url('assets/fonts/SF Pro Text/SF-Pro-Text-Regular.otf');
+}
+
+@keyframes link {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes socialAnimation {
+  from {
+    height: 0;
+    top: 100%;
+  }
+
+  to {
+    height: 100%;
+    top: 0
+  }
 }
