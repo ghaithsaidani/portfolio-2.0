@@ -25,7 +25,8 @@ module.exports = {
     fontFamily: {
       sfPro: ['SF Pro Display', 'sans-serif'],
       sfProBold: ['SF Pro Display Bold', 'sans-serif'],
-      inter: ['Inter', 'sans-serif']
+      inter: ['Inter', 'sans-serif'],
+      poetsenOne: ['Poetsen One', 'sans-serif'],
     },
     extend: {
       colors: {
@@ -112,6 +113,14 @@ module.exports = {
             transform: 'rotate(360deg)'
           }
         },
+        moveElementHorizontal:{
+          from: {
+            transform: 'translateX(50%)'
+          },
+          to: {
+            transform: 'translateX(0)'
+          }
+        },
         moveVertical: {
           '0%': {
             transform: 'translateY(-50%)'
@@ -143,6 +152,7 @@ module.exports = {
         third: 'moveInCircle 40s linear infinite',
         fourth: 'moveHorizontal 40s ease infinite',
         fifth: 'moveInCircle 20s ease infinite',
+        moveElementHorizontal: "moveElementHorizontal 1s ease",
         spotlight: "spotlight 2s ease .75s 1 forwards",
       },
       boxShadow: {

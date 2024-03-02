@@ -96,7 +96,7 @@ export function CertificationsAssociativeLife(
     }
   ];
   return (
-    <article className={'flex-1 flex flex-col justify-between align-middle px-24 py-5 gap-5'}>
+    <article className={'flex h-full flex-col align-middle px-24 py-5 gap-5'}>
       <div className={'text-center flex flex-col gap-5'}>
         <h2 className={'font-sfPro font-bold text-2xl'}>Certifications & Associative life</h2>
         <p className={'font-sfPro text-gray-400 text-md px-24'}>Studying is not only a way to learn new information, but

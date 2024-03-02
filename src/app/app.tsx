@@ -13,7 +13,6 @@ import Contact from './views/contact/contact';
 
 
 export function App() {
-
   return (
 
 

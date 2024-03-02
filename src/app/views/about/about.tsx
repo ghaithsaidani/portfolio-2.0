@@ -6,66 +6,95 @@ import Experiences from '@/views/about/experiences/experiences';
 import { AmanaInsurance } from '../../../assets/images';
 import { Tabs } from '@/components/ui/tabs';
 import ParticlesBg from 'particles-bg';
-import React from 'react';
+import React, { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 
 /* eslint-disable-next-line */
-export interface AboutProps {}
+export interface AboutProps {
+}
 
 export function About(props: AboutProps) {
   const tabs = [
     {
-      title: "Studies",
-      value: "studies",
+      title: 'Studies',
+      value: 'studies',
       content: (
 
-        <article className={"flex h-[840px]"}>
-          <Studies/>
+        <article className={'flex h-[840px]'}>
+          <Studies />
         </article>
 
-      ),
+      )
     },
     {
-      title: "Skills",
-      value: "skills",
+      title: 'Skills',
+      value: 'skills',
       content: (
         <article className={'flex h-[840px]'}>
           <Skills />
         </article>
 
-      ),
+      )
     },
     {
-      title: "certifications & associative life",
-      value: "certifications-associative-life",
+      title: 'certifications & associative life',
+      value: 'certifications-associative-life',
       content: (
         <article className={'flex h-[840px]'}>
           <CertificationsAssociativeLife />
         </article>
 
-      ),
+      )
     },
     {
-      title: "Experiences",
-      value: "experiences",
+      title: 'Experiences',
+      value: 'experiences',
       content: (
         <article className={'flex h-[840px]'}>
           <Experiences />
         </article>
 
-      ),
-    },
+      )
+    }
   ];
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+  const ref1 = useRef(null);
+  const isInView1 = useInView(ref1, { once: false });
 
   return (
     <section className={'about flex flex-col'}>
-      <article className={"flex h-screen"}>
-        <Studies/>
-        <Skills/>
+      <article className={'flex h-screen'} ref={ref}>
+        <article className={'flex-1'} style={{
+          transform: isInView ? 'none' : 'translateX(-200px)',
+          opacity: isInView ? 1 : 0,
+          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+        }}>
+          <Studies />
+        </article>
+        <article className={'flex-1'} style={{
+          transform: isInView ? 'none' : 'translateX(200px)',
+          opacity: isInView ? 1 : 0,
+          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+        }}>
+          <Skills />
+        </article>
       </article>
-      <article className={"flex h-screen"}>
-        <CertificationsAssociativeLife/>
-        <Experiences/>
+      <article className={'flex h-screen'} ref={ref1}>
+        <article className={'flex-1'} style={{
+          transform: isInView1 ? 'none' : 'translateX(-200px)',
+          opacity: isInView1 ? 1 : 0,
+          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+        }}>
+          <CertificationsAssociativeLife />
+        </article>
+        <article className={'flex-1'} style={{
+          transform: isInView1 ? 'none' : 'translateX(200px)',
+          opacity: isInView1 ? 1 : 0,
+          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+        }}>
+          <Experiences /></article>
       </article>
       {/*<div
         className="h-screen relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-5">

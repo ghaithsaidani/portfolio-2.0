@@ -9,7 +9,8 @@ import {
 } from '@icons-pack/react-simple-icons';
 import { IconInterface } from '@/ts/icon.type';
 import { FaJava } from 'react-icons/fa';
-import React from 'react';
+import React, { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 /* eslint-disable-next-line */
 export interface SkillsProps {
@@ -17,7 +18,7 @@ export interface SkillsProps {
 
 export function Skills(props: SkillsProps) {
   const everyDayTechs: IconInterface[] = [
-    { name: 'Angular', icon: <SiAngular color={'white'}/>, color: '#DE002D', link: 'https://angular.io/' },
+    { name: 'Angular', icon: <SiAngular color={'white'} />, color: '#DE002D', link: 'https://angular.io/' },
     { name: 'React', icon: <SiReact color={'white'} />, color: '#00DCFF', link: 'https://reactjs.org/' },
     {
       name: 'HTML',
@@ -43,8 +44,13 @@ export function Skills(props: SkillsProps) {
       color: '#1976D2',
       link: 'https://www.typescriptlang.org/'
     },
-    {name: 'Java', icon: <FaJava color={'white'} size={24} title={'Java'}/>, color: '#0878bf', link: 'https://www.java.com/en/' },
-    { name: 'Git', icon: <SiGit color={'white'}/>, color: '#F4511E', link: 'https://git-scm.com/' },
+    {
+      name: 'Java',
+      icon: <FaJava color={'white'} size={24} title={'Java'} />,
+      color: '#0878bf',
+      link: 'https://www.java.com/en/'
+    },
+    { name: 'Git', icon: <SiGit color={'white'} />, color: '#F4511E', link: 'https://git-scm.com/' },
     { name: 'Github', icon: <SiGithub color={'white'} />, color: '#494A4A', link: 'https://github.com/' },
     { name: 'Sass', icon: <SiSass color={'white'} />, color: '#F06292', link: 'https://sass-lang.com/' },
     { name: 'NodeJs', icon: <SiNodedotjs color={'white'} />, color: '#4CAF50', link: 'https://nodejs.org/en' },
@@ -56,48 +62,65 @@ export function Skills(props: SkillsProps) {
   const usedTechs: IconInterface[] = [
     { name: 'Android', icon: <SiAndroid color={'white'} />, color: '#34A853', link: 'https://www.android.com/' },
     { name: 'C', icon: <SiC color={'white'} />, color: '#A8B9CC', link: 'https://fr.wikipedia.org/wiki/C_(langage)' },
-    {name:'MongoDb',icon:<SiMongodb color={"white"}/>,color:"#47A248",link:"https://www.mongodb.com"},
-    {name:'PostgreSql',icon:<SiPostgresql color={"white"}/>,color:"#4169E1",link:"https://www.postgresql.org/"},
-    {name:'Oracle Database',icon:<SiOracle color={"white"}/>,color:"#F80000",link:"https://www.oracle.com/database/"},
-    {name:'Spring Boot',icon:<SiSpring color={"white"}/>,color:"#6DB33F",link:"https://spring.io/"},
-    {name:'Tailwind',icon:<SiTailwindcss color={"white"}/>,color:"#06B6D4",link:"https://tailwindcss.com/"},
-    {name:'C#',icon:<SiCsharp color={"white"}/>,color:"#512BD4",link:"https://learn.microsoft.com/en-us/dotnet/csharp/"},
-    {name:'Django',icon:<SiDjango color={"white"}/>,color:"#092E20",link:"https://www.djangoproject.com/"},
-  ]
+    { name: 'MongoDb', icon: <SiMongodb color={'white'} />, color: '#47A248', link: 'https://www.mongodb.com' },
+    {
+      name: 'PostgreSql',
+      icon: <SiPostgresql color={'white'} />,
+      color: '#4169E1',
+      link: 'https://www.postgresql.org/'
+    },
+    {
+      name: 'Oracle Database',
+      icon: <SiOracle color={'white'} />,
+      color: '#F80000',
+      link: 'https://www.oracle.com/database/'
+    },
+    { name: 'Spring Boot', icon: <SiSpring color={'white'} />, color: '#6DB33F', link: 'https://spring.io/' },
+    { name: 'Tailwind', icon: <SiTailwindcss color={'white'} />, color: '#06B6D4', link: 'https://tailwindcss.com/' },
+    {
+      name: 'C#',
+      icon: <SiCsharp color={'white'} />,
+      color: '#512BD4',
+      link: 'https://learn.microsoft.com/en-us/dotnet/csharp/'
+    },
+    { name: 'Django', icon: <SiDjango color={'white'} />, color: '#092E20', link: 'https://www.djangoproject.com/' }
+  ];
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
   //technologies(tech.map() => tech.icon.props.color = '#fff')
   return (
-    <div className={'flex-1 flex flex-col align-middle px-24 py-5 gap-5'}>
-      <div className={'text-center flex flex-col gap-5'}>
-        <h2 className={'font-sfPro font-bold text-2xl'}>Skills</h2>
-        <p className={'font-sfPro text-gray-400 text-md px-24'}>I have acquired a wide range of skills through
-          education, training, and experience. I am always eager to learn new skills and improve my existing ones.</p>
-      </div>
-      <Card className={'text-center h-full'}>
-        <CardContent className={"flex flex-col justify-between"}>
-          <div>
-            <h3 className={'font-sfPro font-bold text-xl'}>Technologies that I’m using every Day</h3>
-            <ul className={'flex flex-wrap gap-x-4 gap-y-10 w-fit px-16 justify-center mt-8'}>
-              {everyDayTechs.map((tech) =>
+      <div className={'flex h-full flex-col align-middle px-24 py-5 gap-5'}>
+        <div className={'text-center flex flex-col gap-5'}>
+          <h2 className={'font-sfPro font-bold text-2xl'}>Skills</h2>
+          <p className={'font-sfPro text-gray-400 text-md px-24'}>I have acquired a wide range of skills through
+            education, training, and experience. I am always eager to learn new skills and improve my existing ones.</p>
+        </div>
+        <Card className={'text-center h-full'}>
+          <CardContent className={'flex flex-col justify-between'}>
+            <div>
+              <h3 className={'font-sfPro font-bold text-xl'}>Technologies that I’m using every Day</h3>
+              <ul className={'flex flex-wrap gap-x-4 gap-y-10 w-fit px-16 justify-center mt-8'}>
+                {everyDayTechs.map((tech) =>
 
-                <a href={tech.link} target={'_blank'} rel={'noreferrer'} key={tech.name}>
-                  <li className={'p-3 rounded'} style={{ background: tech.color }}>{tech.icon}</li>
-                </a>
-              )}
-            </ul>
-          </div>
-          <div>
-            <h3 className={'font-sfPro font-bold text-xl'}>Other Technologies which I have used in projects</h3>
-            <ul className={'flex flex-wrap gap-x-8 gap-y-10 w-fit px-20 justify-center mt-8'}>
-              {usedTechs.map((tech) =>
+                  <a href={tech.link} target={'_blank'} rel={'noreferrer'} key={tech.name}>
+                    <li className={'p-3 rounded'} style={{ background: tech.color }}>{tech.icon}</li>
+                  </a>
+                )}
+              </ul>
+            </div>
+            <div>
+              <h3 className={'font-sfPro font-bold text-xl'}>Other Technologies which I have used in projects</h3>
+              <ul className={'flex flex-wrap gap-x-8 gap-y-10 w-fit px-20 justify-center mt-8'}>
+                {usedTechs.map((tech) =>
 
-                <a href={tech.link} target={'_blank'} rel={'noreferrer'} key={tech.name}>
-                  <li className={'p-3 rounded'} style={{ background: tech.color }}>{tech.icon}</li>
-                </a>
-              )}
-            </ul>
-          </div>
-        </CardContent>
-        {/*<div className={"flex flex-col gap-5"}>
+                  <a href={tech.link} target={'_blank'} rel={'noreferrer'} key={tech.name}>
+                    <li className={'p-3 rounded'} style={{ background: tech.color }}>{tech.icon}</li>
+                  </a>
+                )}
+              </ul>
+            </div>
+          </CardContent>
+          {/*<div className={"flex flex-col gap-5"}>
             <h2 className={"font-sfPro font-bold text-2xl"}>Technical Skills</h2>
             <p className={"font-sfPro text-gray-400 text-md"}>
               I have experience in a variety of programming languages and tools. I am comfortable working with both
@@ -105,9 +128,8 @@ export function Skills(props: SkillsProps) {
               always looking to expand my technical skillset and learn new technologies.
             </p>
           </div>*/}
-
-      </Card>
-    </div>
+        </Card>
+      </div>
   );
 }
 

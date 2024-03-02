@@ -4,7 +4,10 @@
     "defaultBase": "master"
   },
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -62,5 +65,13 @@
       }
     }
   },
-  "nxCloudAccessToken": "OWRlNDg5MmMtZWU5MC00NjAzLWFlODctNDU4NzkzYTkyYzBhfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "OWRlNDg5MmMtZWU5MC00NjAzLWFlODctNDU4NzkzYTkyYzBhfHJlYWQtd3JpdGU=",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx-cloud",
+      "options": {
+        "accessToken": "Yzc0OGFjZDctNzY4Ni00MTllLTg1MzAtZDc4MTgyYTRiMzUzfHJlYWQtd3JpdGU="
+      }
+    }
+  }
 }

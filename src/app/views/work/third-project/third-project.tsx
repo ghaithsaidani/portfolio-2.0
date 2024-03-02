@@ -13,10 +13,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowBottomLeftIcon, ArrowTopRightIcon } from '@radix-ui/react-icons';
 import { MovingBorderButton } from '@/components/ui/moving-border-button';
 import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
-import React from 'react';
+import React, { useRef } from 'react';
 import { WavyBackground } from '@/components/ui/wavy-background';
 import { AnimatedTechTooltip, IconType } from '@/components/ui/animated-tech-tooltip';
 import ParticlesBg from 'particles-bg';
+import { useInView } from 'framer-motion';
 
 /* eslint-disable-next-line */
 export interface ThirdProjectProps {
@@ -82,6 +83,7 @@ export function ThirdProject(props: ThirdProjectProps) {
       link: 'https://github.com/'
     }
   ];
+
   return (
     <article className={'first-project flex flex-col items-center overflow-hidden relative z-0'}>
       {/*<BackgroundGradientAnimation></BackgroundGradientAnimation>*/}
@@ -90,21 +92,23 @@ export function ThirdProject(props: ThirdProjectProps) {
           image={AmanaInsurance}
           titleComponent={
             <div>
-              <Badge variant={'secondary'} className={'mx-auto'}>web application</Badge>
-              <p className={'font-sfPro text-gray-400 mt-5'}>You can add what outcomes has this project brought after
-                your
-                design! For example, can show some real data.</p>
-              <div className={'used-techs flex items-center justify-center mt-5'}>
-                <h3 className={'capitalize font-sfPro font-bold text-lg mr-5'}>stack&nbsp;&nbsp;&nbsp;:</h3>
-                <AnimatedTechTooltip items={usedTechs} size={14}/>
-              </div>
-              <div className={'mt-5'}>
-                <MovingBorderButton
-                  borderRadius="1.75rem"
-                  className="bg-white dark:bg-slate-90 dark:text-white border-none dark:border-slate-800"
-                >
-                  Tell Me More <ArrowTopRightIcon />
-                </MovingBorderButton>
+              <div>
+                <Badge variant={'secondary'} className={'mx-auto'}>web application</Badge>
+                <p className={'font-sfPro text-gray-400 mt-5'}>You can add what outcomes has this project brought after
+                  your
+                  design! For example, can show some real data.</p>
+                <div className={'used-techs flex items-center justify-center mt-5'}>
+                  <h3 className={'capitalize font-sfPro font-bold text-lg mr-5'}>stack&nbsp;&nbsp;&nbsp;:</h3>
+                  <AnimatedTechTooltip items={usedTechs} size={12}/>
+                </div>
+                <div className={'mt-5'}>
+                  <MovingBorderButton
+                    borderRadius="1.75rem"
+                    className="bg-white dark:bg-slate-90 dark:text-white border-none dark:border-slate-800"
+                  >
+                    Tell Me More <ArrowTopRightIcon />
+                  </MovingBorderButton>
+                </div>
               </div>
               {/*<Button variant={'secondary'} className={'mt-5 gap-x-1'}>Tell Me More <ArrowTopRightIcon/></Button>*/}
               <h1 className="text-4xl font-sfProBold text-black dark:text-white">

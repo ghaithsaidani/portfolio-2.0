@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { AnimatedTechTooltip, IconType } from '@/components/ui/animated-tech-tooltip';
 import { MovingBorderButton } from '@/components/ui/moving-border-button';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   SiAngular,
   SiExpress,
@@ -16,6 +16,7 @@ import {
   SiTypescript
 } from '@icons-pack/react-simple-icons';
 import { OldPortfolio } from '../../../../assets/images';
+import { useInView } from 'framer-motion';
 
 /* eslint-disable-next-line */
 export interface FirstProjectProps {
@@ -87,9 +88,15 @@ export function FirstProject(props: FirstProjectProps) {
       link: 'https://github.com/'
     }
   ];
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
   return (
-    <article className={'first-project relative flex justify-center overflow-hidden h-screen gap-96'}>
-      <div className={'w-[28%] mt-44 z-20'}>
+    <article className={'first-project relative flex justify-center overflow-hidden h-screen gap-96'} ref={ref}>
+      <div style={{
+        transform: isInView ? "none" : "translateY(-300px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+      }} className={'w-[28%] mt-44 z-20'}>
         <Badge variant={'secondary'} className={'mx-auto'}>web application</Badge>
         <h1 className="md:text-[4rem] mt-4 leading-none font-sfProBold text-black dark:text-white">
           Personal Portfolio
@@ -111,6 +118,11 @@ export function FirstProject(props: FirstProjectProps) {
         </div>
       </div>
       <div
+        style={{
+          transform: isInView ? "none" : "translateY(300px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+        }}
         className={'border-2 border-gray-200 place-self-end h-[850px] p-[15px] bg-white rounded-[50px] relative flex justify-center'}>
         <div className={'rounded-[35px] h-full overflow-hidden'}>
           <img src={OldPortfolio} alt={'old portfolio'} className={'h-full'} />

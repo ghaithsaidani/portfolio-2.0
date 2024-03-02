@@ -15,9 +15,11 @@ import { SiGithub } from '@icons-pack/react-simple-icons';
 import { IconInterface } from '@/ts/icon.type';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { Separator } from '@/components/ui/separator';
+import { Reveal } from '@/components/ui/reveal';
 
 /* eslint-disable-next-line */
-export interface HomeProps {}
+export interface HomeProps {
+}
 
 export function Home(props: HomeProps) {
   const socialMedias: IconInterface[] = [
@@ -25,58 +27,61 @@ export function Home(props: HomeProps) {
       name: 'LinkedIn',
       icon: <FaLinkedinIn width={14} height={14} />,
       color: 'linkedin',
-      link: 'https://www.linkedin.com/in/ghaith-saidani-9230571b2/',
+      link: 'https://www.linkedin.com/in/ghaith-saidani-9230571b2/'
     },
     {
       name: 'Github',
       icon: <SiGithub className="z-40" width={14} height={14} />,
       color: 'github',
-      link: 'https://github.com/ghaithsaidani',
+      link: 'https://github.com/ghaithsaidani'
     },
     {
       name: 'LeetCode',
       icon: <SiLeetcode width={14} height={14} />,
       color: 'leetCode',
-      link: 'https://leetcode.com/ghaith_saidani/',
-    },
+      link: 'https://leetcode.com/ghaith_saidani/'
+    }
   ];
   return (
     <section className={'home h-screen'}>
       <article
         className={'flex py-20 h-screen justify-center items-center gap-20'}
       >
+
         <div className={'description w-2/5'}>
-          <h1 className={'font-sfProBold text-6xl'}>
-            I'm Ghaith Saidani
-            <br />
-            <span className={'text-primary'}>Front-end</span>
-            &nbsp;Developer
-          </h1>
-          <p className={'font-sfPro text-gray-400 text-md pr-52 mt-3'}>
-            I am a student and a multi-talented individual who specializes in
-            web development and UI/UX design. With a strong passion for creating
-            user-centered and visually appealing digital experiences, I strive
-            to combine technical skills and design aesthetics to bring ideas to
-            life. I hope you enjoy exploring my portfolio as much as I enjoyed
-            creating it. &#x1F600;
-          </p>
-          <div className={'flex gap-5 mt-12'}>
-            <MovingBorderButton
-              borderRadius="1.75rem"
-              className="bg-primary hover:bg-white  hover:text-primary transition-colors duration-500 text-white border-none"
-            >
-              Say Hi &#x1F44B;
-            </MovingBorderButton>
-            <MovingBorderButton
-              borderRadius="1.75rem"
-              containerClassName={'w-52'}
-              className=" bg-transparent hover:bg-white  hover:text-primary border-none"
-              borderClassName={'transition-colors duration-1000'}
-            >
-              Discover my works 🧑‍💻{/*<IoMdArrowDropdownCircle/>*/}
-            </MovingBorderButton>
-          </div>
+
+            <h1 className={'font-sfPro text-4xl'}>
+              <Reveal><span className={'text-8xl font-poetsenOne'}>Hey, I'm Ghaith<span className={'text-primary'}>.</span></span></Reveal>
+              <Reveal>I'm&nbsp;
+                <span className={'text-primary'}>Front-end Developer</span></Reveal>
+            </h1>
+
+            <Reveal><p className={'font-sfPro text-gray-400 text-md pr-52 mt-3'}>
+              I am a student and a multi-talented individual who specializes in
+              web development and UI/UX design. With a strong passion for creating
+              user-centered and visually appealing digital experiences, I strive
+              to combine technical skills and design aesthetics to bring ideas to
+              life. I hope you enjoy exploring my portfolio as much as I enjoyed
+              creating it. &#x1F600;
+            </p></Reveal>
+            <Reveal><div className={'flex gap-5 mt-12'}>
+              <MovingBorderButton
+                borderRadius="1.75rem"
+                className="bg-primary hover:bg-white  hover:text-primary transition-colors duration-500 text-white border-none"
+              >
+                Say Hi &#x1F44B;
+              </MovingBorderButton>
+              <MovingBorderButton
+                borderRadius="1.75rem"
+                containerClassName={'w-52'}
+                className=" bg-transparent hover:bg-white  hover:text-primary border-none"
+                borderClassName={'transition-colors duration-1000'}
+              >
+                Discover my works 🧑‍💻{/*<IoMdArrowDropdownCircle/>*/}
+              </MovingBorderButton>
+            </div></Reveal>
         </div>
+
         <aside className={'h-[70%] flex gap-20'}>
           <div className={'h-full relative'}>
             <img
@@ -114,7 +119,8 @@ export function Home(props: HomeProps) {
                     rel={'noreferrer'}
                     data-social={socialMedia.name}
                   >
-                    <div className={`filled absolute h-0 w-full bottom-0 left-0 transition-all duration-500 -z-10 group-hover:h-full`}></div>
+                    <div
+                      className={`filled absolute h-0 w-full bottom-0 left-0 transition-all duration-500 -z-10 group-hover:h-full`}></div>
                     {socialMedia.icon}
                   </a>
                 </li>
