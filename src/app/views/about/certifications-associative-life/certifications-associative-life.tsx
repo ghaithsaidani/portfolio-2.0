@@ -96,15 +96,15 @@ export function CertificationsAssociativeLife(
     }
   ];
   return (
-    <article className={'flex h-full flex-col align-middle px-24 py-5 gap-5'}>
+    <article className={'flex h-full flex-col justify-between align-middle xl:px-6 2xl:px-24 xl:pt-5 2xl:py-5 gap-5'}>
       <div className={'text-center flex flex-col gap-5'}>
         <h2 className={'font-sfPro font-bold text-2xl'}>Certifications & Associative life</h2>
-        <p className={'font-sfPro text-gray-400 text-md px-24'}>Studying is not only a way to learn new information, but
+        <p className={'font-sfPro text-gray-400 xl:text-sm 2xl:text-md xl:px-11 2xl:px-24'}>Studying is not only a way to learn new information, but
           also a way to develop valuable skills and habits
           that
           can benefit us in life.</p>
       </div>
-      <Card className={'text-center h-full py-16'}>
+      <Card className={'text-center h-full xl:py-10 2xl:py-16'}>
         <CardContent className={'flex flex-col justify-around'}>
           <div className={'certifications text-left'}>
             <h3 className={' w-fit capitalize font-sfPro font-bold text-gray-400 underline decoration-2'}>

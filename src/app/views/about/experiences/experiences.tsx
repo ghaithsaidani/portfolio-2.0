@@ -16,8 +16,8 @@ const Experience = (props: ExperienceType) => {
         <div className={"col-start-1 col-end-4"}>
           <h5 className={"font-inter font-medium capitalize"}>{props.enterpriseName}</h5>
           <div className={"flex gap-3 mt-3"}>
-            <h6 className={'text-sm capitalize text-gray-400'}>{props.emplacement}</h6>
-            <Badge className={"w-fit"}>{props.period}</Badge>
+            <h6 className={'xl:text-[11px] 2xl:text-sm capitalize text-gray-400'}>{props.emplacement}</h6>
+            <Badge className={"w-fit xl:px-3 2xl:px-5 text-[10px]"}>{props.period}</Badge>
           </div>
           <img src={props.enterpriseImg} alt={props.alt} className={'mt-6'}/>
         </div>
@@ -54,15 +54,15 @@ export function Experiences(props: ExperiencesProps) {
   ]
 
   return (
-    <div className={'flex h-full flex-col align-middle px-24 py-5 gap-5'}>
+    <div className={'flex h-full flex-col justify-between align-middle xl:px-6 2xl:px-24 xl:pt-5 2xl:py-5 gap-5'}>
       <div className={'text-center flex flex-col gap-5'}>
         <h2 className={'font-sfPro font-bold text-2xl'}>Experiences</h2>
-        <p className={'font-sfPro text-gray-400 text-md px-24'}>Studying is not only a way to learn new information, but
+        <p className={'font-sfPro text-gray-400 xl:text-sm 2xl:text-md xl:px-11 2xl:px-24'}>Studying is not only a way to learn new information, but
           also a way to develop valuable skills and habits
           that
           can benefit us in life.</p>
       </div>
-      <Card className={'text-center h-full py-16'}>
+      <Card className={'text-center h-full xl:py-10 2xl:py-16'}>
         <CardContent className={"flex flex-col justify-center"}>
 
             {experiences.map((experience,index) => (

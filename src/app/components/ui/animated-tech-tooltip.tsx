@@ -75,7 +75,7 @@ export const AnimatedTechTooltip = ({
                   rotate: rotate,
                   whiteSpace: 'nowrap'
                 }}
-                className="absolute -top-10 -left-1/2 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl w-20 py-2"
+                className="absolute -top-10 -left-1/2 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl w-24 py-2"
               >
                 <div
                   className="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
@@ -91,7 +91,7 @@ export const AnimatedTechTooltip = ({
 
           <a onMouseMove={handleMouseMove} href={item.link} target={'_blank'} rel={'noreferrer'}>
             <div
-              className={`object-cover grid place-items-center !m-0 !p-0 object-top rounded-full h-${size} w-${size} border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500 pointer-events-none`}
+              className={`object-cover grid place-items-center !m-0 !p-0 object-top rounded-full h-${size} w-${size} border-2 group-hover:scale-105 group-hover:z-30 border-white relative transition duration-500 pointer-events-none`}
               style={{ background: item.color }}>
               {item.icon}
             </div>

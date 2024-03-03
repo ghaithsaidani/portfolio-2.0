@@ -18,6 +18,7 @@ import { cn } from '@/utils/cn';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import ParticlesBg from 'particles-bg';
+import { useBreakpoints } from '@/hooks/useBreakpoints';
 
 /* eslint-disable-next-line */
 export interface ContactProps {
@@ -103,12 +104,13 @@ export function Contact() {
     e.preventDefault();
     console.log('Form submitted');
   };
+  const breakpoints=useBreakpoints()
   return (
     <section className={'contacts flex justify-center items-center'}>
       <LampContainer>
         <motion.article
-          initial={{ opacity: 0.5, y: 500 }}
-          whileInView={{ opacity: 1, y: 125 }}
+          initial={{ opacity: 0.5, y: breakpoints.active==='2xl' ? 500 : 400 }}
+          whileInView={{ opacity: 1, y: breakpoints.active==='2xl' ? 125 : 100}}
           transition={{
             delay: 0.3,
             duration: 1,
@@ -120,7 +122,7 @@ export function Contact() {
           <article>
             <div
               className=" w-full flex mx-auto rounded-none md:rounded-2xl overflow-hidden shadow-input bg-white dark:bg-black">
-              <div className={'px-20 py-10 flex flex-col gap-5'}>
+              <div className={'xl:px-10 2xl:px-20 py-10 flex flex-col gap-5'}>
                 <h3 className={'font-sfProBold capitalize text-3xl'}>get in touch with me</h3>
                 <div className={'flex justify-center items-center gap-5'}>
                   <div className={'overflow-hidden relative w-10 h-10 bg-primary rounded-full'}>
@@ -137,16 +139,16 @@ export function Contact() {
                   <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
                     <LabelInputContainer>
                       <Label htmlFor="firstname">First name</Label>
-                      <Input id="firstname" placeholder="Tyler" type="text" />
+                      <Input id="firstname" placeholder="Ghaith" type="text" />
                     </LabelInputContainer>
                     <LabelInputContainer>
                       <Label htmlFor="lastname">Last name</Label>
-                      <Input id="lastname" placeholder="Durden" type="text" />
+                      <Input id="lastname" placeholder="Saidani" type="text" />
                     </LabelInputContainer>
                   </div>
                   <LabelInputContainer className="mb-4">
                     <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+                    <Input id="email" placeholder="ghaith@domain.com" type="email" />
                   </LabelInputContainer>
                   <LabelInputContainer className="mb-4">
                     <Label htmlFor="subject">Subject</Label>
@@ -157,7 +159,7 @@ export function Contact() {
                     <Input
                       id="message"
                       rows={5}
-                      placeholder={`hello ghaith`}
+                      placeholder={`Type your query here.....`}
                       type="text"
                     />
                   </LabelInputContainer>
@@ -173,7 +175,7 @@ export function Contact() {
                 </form>
               </div>
               <MapContainer center={[37.255, 9.824]} zoom={13} scrollWheelZoom={false}
-                            style={{ width: '700px', height: '741px', zIndex: 0 }}>
+                            style={{ width: breakpoints.active==='2xl'? '700px' :'500px', height:'741px', zIndex: 0 }}>
                 <TileLayer
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

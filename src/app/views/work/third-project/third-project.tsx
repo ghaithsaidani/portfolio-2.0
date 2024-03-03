@@ -18,6 +18,7 @@ import { WavyBackground } from '@/components/ui/wavy-background';
 import { AnimatedTechTooltip, IconType } from '@/components/ui/animated-tech-tooltip';
 import ParticlesBg from 'particles-bg';
 import { useInView } from 'framer-motion';
+import { useBreakpoints } from '@/hooks/useBreakpoints';
 
 /* eslint-disable-next-line */
 export interface ThirdProjectProps {
@@ -83,6 +84,7 @@ export function ThirdProject(props: ThirdProjectProps) {
       link: 'https://github.com/'
     }
   ];
+  const breakpoints=useBreakpoints()
 
   return (
     <article className={'first-project flex flex-col items-center overflow-hidden relative z-0'}>
@@ -99,23 +101,21 @@ export function ThirdProject(props: ThirdProjectProps) {
                   design! For example, can show some real data.</p>
                 <div className={'used-techs flex items-center justify-center mt-5'}>
                   <h3 className={'capitalize font-sfPro font-bold text-lg mr-5'}>stack&nbsp;&nbsp;&nbsp;:</h3>
-                  <AnimatedTechTooltip items={usedTechs} size={12}/>
+                  <AnimatedTechTooltip items={usedTechs} size={breakpoints.active==='2xl' ? 12 : 10}/>
                 </div>
                 <div className={'mt-5'}>
                   <MovingBorderButton
                     borderRadius="1.75rem"
-                    className="bg-white dark:bg-slate-90 dark:text-white border-none dark:border-slate-800"
+                    containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14'}
+                    className="bg-white dark:bg-slate-90 dark:text-white border-none dark:border-slate-800 xl:text-sm 2xl:text-base"
                   >
                     Tell Me More <ArrowTopRightIcon />
                   </MovingBorderButton>
                 </div>
               </div>
               {/*<Button variant={'secondary'} className={'mt-5 gap-x-1'}>Tell Me More <ArrowTopRightIcon/></Button>*/}
-              <h1 className="text-4xl font-sfProBold text-black dark:text-white">
-                {/*Unleash the power of <br />*/}
-                <span className="md:text-[6rem] font-bold mt-1 leading-none">
+              <h1 className="xl:text-[5rem] 2xl:text-[6rem] mt-1 leading-none font-sfProBold text-black dark:text-white">
                 Amana Insurance
-              </span>
               </h1>
             </div>
           }

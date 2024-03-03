@@ -15,7 +15,7 @@ export function Work(props: WorkProps) {
     <section className={'work'}>
 
       <FirstProject />
-      {/*<SecondProject/>*/}
+      <SecondProject/>
       <ThirdProject/>
       <Others/>
     </section>

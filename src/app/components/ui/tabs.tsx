@@ -113,7 +113,7 @@ export const FadeInDiv = ({
           }}
           className={cn("w-full h-full absolute top-0 left-0", className)}
         >
-          <ProjectCard title={tab.title} image={tab.image} stack={tab.stack}/>
+          <ProjectCard title={tab.title} image={tab.image} stack={tab.stack} link={tab.link}/>
         </motion.div>
       ))}
     </div>

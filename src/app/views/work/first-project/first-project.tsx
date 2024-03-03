@@ -12,11 +12,12 @@ import {
   SiFigma, SiGit, SiGithub,
   SiMui,
   SiMysql,
-  SiNodedotjs,
-  SiTypescript
+  SiNodedotjs, SiReact,
+  SiTypescript, SiVercel
 } from '@icons-pack/react-simple-icons';
 import { OldPortfolio } from '../../../../assets/images';
 import { useInView } from 'framer-motion';
+import { useBreakpoints } from '@/hooks/useBreakpoints';
 
 /* eslint-disable-next-line */
 export interface FirstProjectProps {
@@ -33,10 +34,10 @@ export function FirstProject(props: FirstProjectProps) {
     },
     {
       id: 2,
-      name: 'Angular',
-      icon: <SiAngular color={'white'} width={20} height={20} />,
-      color: '#DE002D',
-      link: 'https://angular.io/'
+      name: 'React',
+      icon: <SiReact color={'white'} width={20} height={20} />,
+      color: '#00DCFF',
+      link: 'https://reactjs.org/'
     },
     {
       id: 3,
@@ -54,34 +55,20 @@ export function FirstProject(props: FirstProjectProps) {
     },
     {
       id: 5,
-      name: 'NodeJs',
-      icon: <SiNodedotjs color={'white'} width={20} height={20} />,
-      color: '#4CAF50',
-      link: 'https://nodejs.org/en'
+      name: 'Vercel',
+      icon: <SiVercel color={'white'} width={20} height={20} />,
+      color: '#000000',
+      link: 'https://vercel.com/'
     },
     {
       id: 6,
-      name: 'ExpressJs',
-      icon: <SiExpress color={'white'} width={20} height={20} />,
-      color: '#212121',
-      link: 'https://expressjs.com/'
-    },
-    {
-      id: 7,
-      name: 'MySql',
-      icon: <SiMysql color={'white'} width={20} height={20} />,
-      color: '#4479A1',
-      link: 'https://www.mysql.com/'
-    },
-    {
-      id: 8,
       name: 'Git',
       icon: <SiGit color={'white'} width={20} height={20} />,
       color: '#F4511E',
       link: 'https://git-scm.com/'
     },
     {
-      id: 9,
+      id: 7,
       name: 'Github',
       icon: <SiGithub color={'white'} width={20} height={20} />,
       color: '#494A4A',
@@ -90,42 +77,42 @@ export function FirstProject(props: FirstProjectProps) {
   ];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
+  const breakpoints=useBreakpoints()
   return (
-    <article className={'first-project relative flex justify-center overflow-hidden h-screen gap-96'} ref={ref}>
+    <article className={'first-project relative flex justify-center overflow-hidden h-screen xl:gap-80 2xl:gap-96'} ref={ref}>
       <div style={{
-        transform: isInView ? "none" : "translateY(-300px)",
+        transform: isInView ? 'none' : 'translateY(-300px)',
         opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-      }} className={'w-[28%] mt-44 z-20'}>
+        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+      }} className={'xl:w-[32%] 2xl:w-[28%] mt-44 z-20'}>
         <Badge variant={'secondary'} className={'mx-auto'}>web application</Badge>
-        <h1 className="md:text-[4rem] mt-4 leading-none font-sfProBold text-black dark:text-white">
+        <h1 className="xl:text-[3rem] 2xl:text-[4rem] mt-4 leading-none font-sfProBold text-black dark:text-white">
           Personal Portfolio
         </h1>
-        <p className={'font-sfPro text-gray-400 mt-4'}>You can add what outcomes has this project brought after
-          your
-          design! For example, can show some real data.</p>
+        <p className={'font-sfPro text-gray-400 mt-4'}>My personal portfolio project is a website that showcases my
+          journey, my skills and experience as a web developer.</p>
         <div className={'used-techs flex items-center mt-8'}>
           <h3 className={'capitalize font-sfPro font-bold text-lg mr-5'}>stack&nbsp;&nbsp;&nbsp;:</h3>
-          <AnimatedTechTooltip items={usedTechs} size={12} />
+          <AnimatedTechTooltip items={usedTechs} size={breakpoints.active==='2xl' ? 12 : 10} />
         </div>
         <div className={'mt-5'}>
           <MovingBorderButton
             borderRadius="1.75rem"
-            className="bg-white dark:bg-slate-90 dark:text-white border-none dark:border-slate-800"
-          >
-            Tell Me More <ArrowTopRightIcon />
+            containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14'}
+            className="bg-white dark:bg-slate-90 dark:text-white border-none dark:border-slate-800 xl:text-sm 2xl:text-base">
+            <a className={'flex items-center gap-2'} href={'https://ghaithsaidani.me/'} target={'_blank'} rel={'noreferrer'}>Tell Me More <ArrowTopRightIcon /></a>
           </MovingBorderButton>
         </div>
       </div>
       <div
         style={{
-          transform: isInView ? "none" : "translateY(300px)",
+          transform: isInView ? 'none' : 'translateY(300px)',
           opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
         }}
-        className={'border-2 border-gray-200 place-self-end h-[850px] p-[15px] bg-white rounded-[50px] relative flex justify-center'}>
+        className={'border-2 border-gray-200 place-self-end xl:h-[750px] 2xl:h-[850px] w-[400px] p-[15px] bg-white rounded-[50px] relative flex justify-center'}>
         <div className={'rounded-[35px] h-full overflow-hidden'}>
-          <img src={OldPortfolio} alt={'old portfolio'} className={'h-full'} />
+          <img src={OldPortfolio} alt={'old portfolio'} className={'w-full'} />
         </div>
         <div className={'absolute h-6 w-28 bg-white top-3.5 rounded-b-3xl border-b-2 border-x-2 border-gray-200'}></div>
       </div>
