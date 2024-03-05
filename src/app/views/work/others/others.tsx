@@ -1,12 +1,8 @@
-import styles from './others.module.scss';
-import { ProjectCard, ProjectCardProps } from '@/components/ui/project-card';
-import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
-import { cn } from '@/lib/utils';
-import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
+import {  ProjectCardProps } from '@/components/ui/project-card';
 import {
   Ecommerce,
   HotelManagement,
-  MondeEnBouche,
+
   MunicipalityManagement, RestaurantManagement,
   TennisCLub
 } from '../../../../assets/images';
@@ -22,8 +18,6 @@ import {
 import { FaJava } from 'react-icons/fa';
 import React from 'react';
 import { Tabs } from '@/components/ui/tabs';
-import { MovingBorderButton } from '@/components/ui/moving-border-button';
-import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 
 /* eslint-disable-next-line */
 export interface OthersProps {

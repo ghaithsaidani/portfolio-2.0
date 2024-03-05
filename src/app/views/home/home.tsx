@@ -49,8 +49,8 @@ export function Home(props: HomeProps) {
       <article
         className={'flex py-20 xl:px-14 2xl:px-0 h-screen justify-center items-center 2xl:gap-20'}>
         <div className={'description xl:w-3/5 2xl:w-2/5'}>
-          <h1 className={'font-sfPro xl:text-3xl 2xl:text-4xl'}>
-            <Reveal><span className={'md:text-2xl lg:text-4xl xl:text-6xl 2xl:text-8xl font-poetsenOne'}>Hey, I'm Ghaith<span
+          <h1 className={'font-sfPro xl:text-[1.5rem] 2xl:text-[2rem]'}>
+            <Reveal><span className={'md:text-2xl lg:text-4xl xl:text-6xl 2xl:text-[4rem] font-poetsenOne'}>Hey, I'm Ghaith<span
               className={'text-primary'}>.</span></span></Reveal>
             <Reveal>
               I'm&nbsp;
@@ -70,7 +70,7 @@ export function Home(props: HomeProps) {
               {/*<span className={'text-primary'}>Front-end Developer</span>*/}</Reveal>
           </h1>
 
-          <Reveal><p className={'font-sfPro text-gray-400 xl:text-sm 2xl:text-md pr-52 mt-3'}>
+          <Reveal><p className={'font-sfPro text-gray-400 text-[0.85rem] pr-52 mt-3'}>
             I am a student and a multi-talented individual who specializes in
             web development and UI/UX design. With a strong passion for creating
             user-centered and visually appealing digital experiences, I strive
@@ -120,7 +120,7 @@ export function Home(props: HomeProps) {
             }
           >
             <div
-              className={'font-sfPro xl:text-md 2xl:text-xl flex text-primary'}
+              className={'font-sfPro xl:text-[0.85rem] 2xl:text-[1rem] flex text-primary text-nowrap'}
               style={{ writingMode: 'vertical-rl' }}
             >
               Follow me on:
@@ -130,7 +130,7 @@ export function Home(props: HomeProps) {
               {socialMedias.map((socialMedia) => (
                 <li
                   key={socialMedia.name}
-                  className={`grid group relative social cursor-pointer place-items-center xl:h-10 xl:w-10 2xl:h-12 2xl:w-12 rounded-full p-2 bg-primary transition-colors duration-500 bg-white text-primary hover:bg-transparent hover:text-white overflow-hidden`}
+                  className={`grid group relative social cursor-pointer place-items-center xl:h-10 xl:w-10 2xl:h-[120%] 2xl:w-[120%] rounded-full p-2 bg-primary transition-colors duration-500 bg-white text-primary hover:bg-transparent hover:text-white overflow-hidden`}
                 >
                   <a
                     href={socialMedia.link}

@@ -90,13 +90,13 @@ export function Skills(props: SkillsProps) {
   ];
 
   return (
-      <div className={'flex h-full flex-col justify-between align-middle xl:px-6 2xl:px-24 xl:pt-5 2xl:py-5 gap-5'}>
+      <div className={'flex h-full flex-col justify-between align-middle px-[5%] xl:pt-5 2xl:py-5 gap-5'}>
         <div className={'text-center flex flex-col gap-5'}>
           <h2 className={'font-sfPro font-bold text-2xl'}>Skills</h2>
           <p className={'font-sfPro text-gray-400 xl:text-sm 2xl:text-md xl:px-11 2xl:px-24'}>I have acquired a wide range of skills through
             education, training, and experience. I am always eager to learn new skills and improve my existing ones.</p>
         </div>
-        <Card className={'text-center h-full  xl:py-20 2xl:py-28'}>
+        <Card className={'text-center h-full py-[10%]'}>
           <CardContent className={'flex flex-col xl:justify-around'}>
             <div>
               <h3 className={'font-sfPro font-bold xl:text-lg 2xl:text-xl'}>Technologies that I’m using every Day</h3>

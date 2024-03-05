@@ -86,7 +86,7 @@ export function FirstProject(props: FirstProjectProps) {
         transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
       }} className={'xl:w-[32%] 2xl:w-[28%] mt-44 z-20'}>
         <Badge variant={'secondary'} className={'mx-auto'}>web application</Badge>
-        <h1 className="xl:text-[3rem] 2xl:text-[4rem] mt-4 leading-none font-sfProBold text-black dark:text-white">
+        <h1 className="text-[3rem] mt-4 leading-none font-sfProBold text-black dark:text-white text-nowrap">
           Personal Portfolio
         </h1>
         <p className={'font-sfPro text-gray-400 mt-4'}>My personal portfolio project is a website that showcases my
@@ -110,13 +110,13 @@ export function FirstProject(props: FirstProjectProps) {
           opacity: isInView ? 1 : 0,
           transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
         }}
-        className={'border-2 border-gray-200 place-self-end xl:h-[750px] 2xl:h-[850px] w-[400px] p-[15px] bg-white rounded-[50px] relative flex justify-center'}>
-        <div className={'rounded-[35px] h-full overflow-hidden'}>
+        className={'border-2 border-gray-200 place-self-end h-[95%] w-[22%] p-[15px] bg-white rounded-[50px] relative flex justify-center'}>
+        <div className={'rounded-[35px] w-full overflow-hidden'}>
           <img src={OldPortfolio} alt={'old portfolio'} className={'w-full'} />
         </div>
         <div className={'absolute h-6 w-28 bg-white top-3.5 rounded-b-3xl border-b-2 border-x-2 border-gray-200'}></div>
       </div>
-      <div className="absolute bottom-0 w-screen h-[600px] bg-gradient-to-t from-background to-100% z-10" />
+      <div className="absolute bottom-0 w-screen h-[100%] bg-gradient-to-t from-background to-100% z-10" />
     </article>
   );
 }

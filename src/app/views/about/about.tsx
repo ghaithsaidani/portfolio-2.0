@@ -15,49 +15,6 @@ export interface AboutProps {
 }
 
 export function About(props: AboutProps) {
-  const tabs = [
-    {
-      title: 'Studies',
-      value: 'studies',
-      content: (
-
-        <article className={'flex h-[840px]'}>
-          <Studies />
-        </article>
-
-      )
-    },
-    {
-      title: 'Skills',
-      value: 'skills',
-      content: (
-        <article className={'flex h-[840px]'}>
-          <Skills />
-        </article>
-
-      )
-    },
-    {
-      title: 'certifications & associative life',
-      value: 'certifications-associative-life',
-      content: (
-        <article className={'flex h-[840px]'}>
-          <CertificationsAssociativeLife />
-        </article>
-
-      )
-    },
-    {
-      title: 'Experiences',
-      value: 'experiences',
-      content: (
-        <article className={'flex h-[840px]'}>
-          <Experiences />
-        </article>
-
-      )
-    }
-  ];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const ref1 = useRef(null);
@@ -65,7 +22,7 @@ export function About(props: AboutProps) {
 
   return (
     <section className={'about flex flex-col'}>
-      <article className={'flex h-screen'} ref={ref}>
+      <article className={'flex h-full'} ref={ref}>
         <article className={'flex-1'} style={{
           transform: isInView ? 'none' : 'translateX(-200px)',
           opacity: isInView ? 1 : 0,
@@ -81,7 +38,7 @@ export function About(props: AboutProps) {
           <Skills />
         </article>
       </article>
-      <article className={'flex h-screen'} ref={ref1}>
+      <article className={'flex h-full'} ref={ref1}>
         <article className={'flex-1'} style={{
           transform: isInView1 ? 'none' : 'translateX(-200px)',
           opacity: isInView1 ? 1 : 0,

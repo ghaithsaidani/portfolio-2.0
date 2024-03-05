@@ -10,6 +10,7 @@ import ParticlesBg from 'particles-bg';
 import React from 'react';
 import Navbar from '@/views/navbar/navbar';
 import Contact from './views/contact/contact';
+import { Toaster } from '@/components/ui/toaster';
 
 
 export function App() {
@@ -29,6 +30,7 @@ export function App() {
           <Contact/>
           <ParticlesBg type="cobweb" bg={true} color={"#0DB760"}/>
         </main>
+        <Toaster/>
       </TracingBeam>
   );
 }

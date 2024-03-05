@@ -24,7 +24,7 @@ export interface StudiesProps {
 
 export function Studies(props: StudiesProps) {
   return (
-      <div className={'flex h-full flex-col justify-between align-middle xl:px-6 2xl:px-24 xl:pt-5 2xl:py-5 gap-5'} >
+      <div className={'flex h-full flex-col justify-between align-middle px-[5%] xl:pt-5 2xl:py-5 gap-5'} >
         <div className={'text-center flex flex-col gap-5'}>
           <h2 className={'font-sfPro font-bold text-2xl'}>Studies</h2>
           <p className={'font-sfPro text-gray-400 xl:text-sm 2xl:text-md xl:px-11 2xl:px-24'}>Studying is not only a way to learn new information,
@@ -33,7 +33,7 @@ export function Studies(props: StudiesProps) {
             can benefit us in life.</p>
         </div>
         <ThemeProvider theme={Theme}>
-          <Card className={'text-center h-full xl:py-6 2xl:py-16'}>
+          <Card className={'text-center h-full py-[10%]'}>
             <CardContent>
               <Timeline position="alternate-reverse" className={'h-full justify-center'}>
                 <TimelineItem>

@@ -41,7 +41,7 @@ const Association = (props: AssocationType) => {
         </div>
         <div className={'flex gap-7 items-center'}>
           <h5 className={'font-inter text-primary capitalize'}>{props.position}</h5>
-          <Badge>{props.period}</Badge>
+          <Badge className={'w-full'}>{props.period}</Badge>
         </div>
       </div>
       {!props.last && < Separator className='my-4' />}
@@ -96,7 +96,7 @@ export function CertificationsAssociativeLife(
     }
   ];
   return (
-    <article className={'flex h-full flex-col justify-between align-middle xl:px-6 2xl:px-24 xl:pt-5 2xl:py-5 gap-5'}>
+    <article className={'flex h-full flex-col justify-between align-middle px-[5%] xl:pt-5 2xl:py-5 gap-5'}>
       <div className={'text-center flex flex-col gap-5'}>
         <h2 className={'font-sfPro font-bold text-2xl'}>Certifications & Associative life</h2>
         <p className={'font-sfPro text-gray-400 xl:text-sm 2xl:text-md xl:px-11 2xl:px-24'}>Studying is not only a way to learn new information, but
@@ -104,13 +104,13 @@ export function CertificationsAssociativeLife(
           that
           can benefit us in life.</p>
       </div>
-      <Card className={'text-center h-full xl:py-10 2xl:py-16'}>
-        <CardContent className={'flex flex-col justify-around'}>
+      <Card className={'text-center h-full py-[10%]'}>
+        <CardContent className={'flex flex-col gap-20'}>
           <div className={'certifications text-left'}>
-            <h3 className={' w-fit capitalize font-sfPro font-bold text-gray-400 underline decoration-2'}>
+            <h3 className={'w-fit capitalize font-sfPro font-bold text-gray-400 underline decoration-2'}>
               certifications
             </h3>
-            <div className={'my-certifications mt-10'}>
+            <div className={'my-certifications mt-[3%]'}>
               {certs.map((cert) => {
                 return <Certification {...cert} key={cert.name} />;
               })}
@@ -120,7 +120,7 @@ export function CertificationsAssociativeLife(
             <h3 className={' w-fit capitalize font-sfPro font-bold text-gray-400 underline decoration-2'}>
               associative life
             </h3>
-            <div className={'my-associations  mt-10'}>
+            <div className={'my-associations  mt-[3%]'}>
               {associations.map((assoc) => {
                 return <Association {...assoc} key={assoc.name} />;
               })}

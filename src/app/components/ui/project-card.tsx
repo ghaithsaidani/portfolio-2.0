@@ -28,7 +28,7 @@ export interface ProjectCardProps {
 export const ProjectCard = (props: ProjectCardProps) => {
   return (
     <div
-      className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl text-white bg-primary">
+      className="w-full overflow-hidden relative h-[90%] rounded-2xl p-10 text-xl md:text-4xl text-white bg-primary">
       <div className={'flex w-full items-center justify-between'}>
         <p className={'font-bold'}>{props.title}</p>
         <MovingBorderButton

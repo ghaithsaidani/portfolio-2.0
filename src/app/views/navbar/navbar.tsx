@@ -2,6 +2,7 @@ import styles from './navbar.module.scss';
 import { NavbarAvatar } from '../../../assets/images';
 import { customLinkType } from '@/ts/custom-link.type';
 import { Link } from "react-scroll";
+import { Resume } from '../../../assets/pdfs';
 /* eslint-disable-next-line */
 export interface NavbarProps {}
 
@@ -38,7 +39,12 @@ export function Navbar(props: NavbarProps) {
           </li>
         ))}
       </ul>
-      <button className={'font-sfPro bg-primary text-white border-transparent hover:border-primary hover:bg-transparent hover:text-black border-2 rounded-md px-5 py-2 transition-colors duration-500'}>Download CV</button>
+      <a download={"Saidani Ghaith Resume"} href={Resume}>
+        <button
+          className={'font-sfPro bg-primary text-white border-transparent hover:border-primary hover:bg-transparent hover:text-black border-2 rounded-md px-5 py-2 transition-colors duration-500'}>
+          Download CV
+        </button>
+      </a>
     </nav>
   );
 }
