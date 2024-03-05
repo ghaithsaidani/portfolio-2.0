@@ -1,34 +1,24 @@
 import { LampContainer } from '@/components/ui/lamp';
 import { motion } from 'framer-motion';
-import { object, string } from 'yup';
-import { useFormik } from 'formik';
 import React, { useEffect, useRef, useState } from 'react';
-import { FormType } from '@/ts/form.type';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 import { NavbarAvatar } from '../../../assets/images';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { useBreakpoints } from '@/hooks/useBreakpoints';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import emailjs from '@emailjs/browser';
 import { Loader2 } from "lucide-react"
-import { ToastAction } from "@/components/ui/toast"
 import { useToast } from '@/hooks/use-toast';
 
 /* eslint-disable-next-line */
-export interface ContactProps {
-  name: string,
-  email: string,
-  subject: string,
-  message: string
-}
 
 const formSchema = z.object({
   firstname: z.string().min(1,'Required').max(50),
@@ -39,77 +29,7 @@ const formSchema = z.object({
 });
 
 export function Contact() {
-  /*const initialvalues: ContactProps = {
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  };
-  const validationschema = object({
-    name: string().required('you need to enter your name'),
-    email: string()
-      .email('invalid email')
-      .required('You need to enter you email'),
-    subject: string().required('you need to enter a subject'),
-    message: string()
-      .required('You need to enter a message')
-      .min(20, 'Message is too Short')
-  });
-  const [loading, setLoading] = useState(false);
-  const sendEmail = () => {
-    console.log('hello');
-  };
-  const { values, handleChange, errors, resetForm, touched } =
-    useFormik({
-      initialValues: initialvalues,
-      validateOnChange: true,
-      validateOnBlur: false,
-      validationSchema: validationschema,
-
-      onSubmit: (values) => {
-        setLoading(true);
-        sendEmail();
-      }
-    });
-  const form = useRef<HTMLFormElement>(null);
-  const forms: FormType[] = [
-    {
-      id: 'name',
-      name: 'name',
-      label: 'Name',
-      type: 'name',
-      value: values.name,
-      error: touched.name && Boolean(errors.name),
-      errorText: errors.name
-    },
-    {
-      id: 'email',
-      name: 'email',
-      label: 'Email',
-      type: 'email',
-      value: values.email,
-      error: touched.email && Boolean(errors.email),
-      errorText: errors.email
-    },
-    {
-      id: 'subject',
-      name: 'subject',
-      label: 'Subject',
-      type: 'text',
-      value: values.subject,
-      error: touched.subject && Boolean(errors.subject),
-      errorText: errors.subject
-    },
-    {
-      id: 'message',
-      name: 'message',
-      label: 'Message',
-      type: 'text',
-      value: values.message,
-      error: touched.message && Boolean(errors.message),
-      errorText: errors.message
-    }
-  ];*/
+  const icon = L.icon({iconUrl:'/images/marker-icon.png'})
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -149,10 +69,6 @@ export function Contact() {
     sendEmail()
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log('Form submitted');
-  };
   const breakpoints = useBreakpoints();
   return (
     <section className={'contacts flex justify-center items-center h-full'}>
@@ -265,46 +181,8 @@ export function Contact() {
                     </Button>
                   </form>
                 </Form>
-
-                {/*<form className="my-8" onSubmit={handleSubmit}>
-                  <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
-                    <LabelInputContainer>
-                      <Label htmlFor="firstname">First name</Label>
-                      <Input id="firstname" placeholder="Ghaith" type="text" />
-                    </LabelInputContainer>
-                    <LabelInputContainer>
-                      <Label htmlFor="lastname">Last name</Label>
-                      <Input id="lastname" placeholder="Saidani" type="text" />
-                    </LabelInputContainer>
-                  </div>
-                  <LabelInputContainer className="mb-4">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" placeholder="ghaith@domain.com" type="email" />
-                  </LabelInputContainer>
-                  <LabelInputContainer className="mb-4">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="help for doing a website" type="subject" />
-                  </LabelInputContainer>
-                  <LabelInputContainer className="mb-8">
-                    <Label htmlFor="message">Message</Label>
-                    <Input
-                      id="message"
-                      rows={5}
-                      type="text"
-                    />
-                  </LabelInputContainer>
-
-                  <Button
-                    className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-                    type="submit"
-                  >
-                    Sign up &rarr;
-                    <BottomGradient />
-                  </Button>
-
-                </form>*/}
               </div>
-              <MapContainer center={[37.255, 9.824]} zoom={13} scrollWheelZoom={false}
+              <MapContainer center={[37.262, 9.823]} zoom={13} scrollWheelZoom={false}
                             style={{
                               width: breakpoints.active === '2xl' ? '700px' : '600px',
                               height: '780px',
@@ -314,7 +192,7 @@ export function Contact() {
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[37.255, 9.824]}>
+                <Marker position={[37.262, 9.823]} icon={icon}>
                   <Popup>
                     A pretty CSS3 popup. <br /> Easily customizable.
                   </Popup>

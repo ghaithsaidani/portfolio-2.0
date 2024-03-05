@@ -9,15 +9,12 @@ import {
   SiMui, SiMysql, SiNodedotjs,
   SiTypescript
 } from '@icons-pack/react-simple-icons';
-import { Button } from '@/components/ui/button';
-import { ArrowBottomLeftIcon, ArrowTopRightIcon } from '@radix-ui/react-icons';
+import {  ArrowTopRightIcon } from '@radix-ui/react-icons';
 import { MovingBorderButton } from '@/components/ui/moving-border-button';
-import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
 import React, { useRef } from 'react';
 import { WavyBackground } from '@/components/ui/wavy-background';
 import { AnimatedTechTooltip, IconType } from '@/components/ui/animated-tech-tooltip';
 import ParticlesBg from 'particles-bg';
-import { useInView } from 'framer-motion';
 import { useBreakpoints } from '@/hooks/useBreakpoints';
 
 /* eslint-disable-next-line */

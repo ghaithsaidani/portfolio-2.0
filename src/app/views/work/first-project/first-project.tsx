@@ -1,18 +1,14 @@
-import styles from './first-project.module.scss';
-import { ContainerScroll } from '@/components/ui/container-scroll-animation';
-import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
+
 import { Badge } from '@/components/ui/badge';
 import { AnimatedTechTooltip, IconType } from '@/components/ui/animated-tech-tooltip';
 import { MovingBorderButton } from '@/components/ui/moving-border-button';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 import React, { useRef } from 'react';
 import {
-  SiAngular,
-  SiExpress,
+
   SiFigma, SiGit, SiGithub,
   SiMui,
-  SiMysql,
-  SiNodedotjs, SiReact,
+  SiReact,
   SiTypescript, SiVercel
 } from '@icons-pack/react-simple-icons';
 import { OldPortfolio } from '../../../../assets/images';

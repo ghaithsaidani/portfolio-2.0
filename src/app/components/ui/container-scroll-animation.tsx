@@ -1,7 +1,6 @@
 'use client';
 import React, { useRef } from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
-import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
 
 export const ContainerScroll = ({
                                   image,
