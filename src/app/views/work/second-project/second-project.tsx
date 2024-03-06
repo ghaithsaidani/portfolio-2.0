@@ -112,15 +112,17 @@ export function SecondProject(props: SecondProjectProps) {
             <h3 className={'capitalize font-sfPro font-bold text-lg mr-5'}>stack&nbsp;&nbsp;&nbsp;:</h3>
             <AnimatedTechTooltip items={usedTechs} size={breakpoints.active==='2xl' ? 12: 10} />
           </div>
-          <div className={'mt-5'}>
+        <div className={'mt-5'}>
+          <a className={'flex items-center gap-2'} href={'https://github.com/ghaithsaidani/le-monde-en-bouche'}
+             target={'_blank'} rel={'noreferrer'}>
             <MovingBorderButton
               borderRadius="1.75rem"
               containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14'}
               className="bg-background border-[1px] border-border hover:text-primary dark:bg-slate-90 text-foreground xl:text-sm 2xl:text-base"
             >
-              <a className={'flex items-center gap-2'} href={'https://github.com/ghaithsaidani/le-monde-en-bouche'} target={'_blank'} rel={'noreferrer'}>Tell Me More <ArrowTopRightIcon /></a>
-            </MovingBorderButton>
-          </div>
+              Tell Me More <ArrowTopRightIcon />
+            </MovingBorderButton></a>
+        </div>
 
         <div
           className="w-5xl mt-5 mx-auto h-full w-[90%] border-2 border-border p-[15px] bg-card rounded-[35px] shadow-xl"

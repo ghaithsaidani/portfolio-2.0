@@ -92,18 +92,20 @@ export function FirstProject(props: FirstProjectProps) {
           <AnimatedTechTooltip items={usedTechs} size={breakpoints.active==='2xl' ? 12 : 10} />
         </div>
         <div className={'mt-5'}>
-          <MovingBorderButton
-            borderRadius="1.75rem"
-            containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14 '}
-            className="bg-background border-[1px] border-border hover:text-primary xl:text-sm 2xl:text-base">
-            <a className={'flex items-center gap-2'} href={'https://ghaith-saidani.netlify.app/'} target={'_blank'} rel={'noreferrer'}>Tell Me More <ArrowTopRightIcon /></a>
-          </MovingBorderButton>
-        </div>
+          <a className={'flex items-center gap-2'} href={'https://ghaith-saidani.netlify.app/'} target={'_blank'}
+             rel={'noreferrer'}>
+            <MovingBorderButton
+              borderRadius="1.75rem"
+              containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14 '}
+              className="bg-background border-[1px] border-border hover:text-primary xl:text-sm 2xl:text-base">
+              Tell Me More <ArrowTopRightIcon />
+        </MovingBorderButton></a>
       </div>
-      <div
-        style={{
-          transform: isInView ? 'none' : 'translateY(300px)',
-          opacity: isInView ? 1 : 0,
+    </div>
+  <div
+    style={{
+      transform: isInView ? 'none' : 'translateY(300px)',
+      opacity: isInView ? 1 : 0,
           transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
         }}
         className={'border-2 border-border place-self-end h-[95%] w-[22%] p-[15px] bg-card rounded-[50px] relative flex justify-center'}>
