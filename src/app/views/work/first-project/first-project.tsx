@@ -96,7 +96,7 @@ export function FirstProject(props: FirstProjectProps) {
             borderRadius="1.75rem"
             containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14 '}
             className="bg-background border-[1px] border-border hover:text-primary xl:text-sm 2xl:text-base">
-            <a className={'flex items-center gap-2'} href={'https://ghaithsaidani.me/'} target={'_blank'} rel={'noreferrer'}>Tell Me More <ArrowTopRightIcon /></a>
+            <a className={'flex items-center gap-2'} href={'https://ghaith-saidani.netlify.app/'} target={'_blank'} rel={'noreferrer'}>Tell Me More <ArrowTopRightIcon /></a>
           </MovingBorderButton>
         </div>
       </div>

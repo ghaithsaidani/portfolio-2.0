@@ -18,7 +18,7 @@ const Experience = (props: ExperienceType) => {
           <h5 className={'font-inter font-medium capitalize'}>{props.enterpriseName}</h5>
           <div className={'flex gap-3 mt-3 items-center'}>
             <h6 className={'text-[0.8rem] capitalize text-gray-400'}>{props.emplacement}</h6>
-            <Badge className={'w-fit xl:px-3 2xl:px-5 text-[0.6rem]'}>{props.period}</Badge>
+            <Badge className={'w-fit xl:px-3 2xl:px-5'}>{props.period}</Badge>
           </div>
           <img src={props.enterpriseImg} alt={props.alt} className={'mt-6'} />
         </div>
