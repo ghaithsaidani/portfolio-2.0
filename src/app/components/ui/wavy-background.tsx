@@ -85,7 +85,8 @@ export const WavyBackground = ({
 
   let animationId: number;
   const render = () => {
-    ctx.fillStyle = backgroundFill || "black";
+    const theme=localStorage.getItem('vite-ui-theme')
+    ctx.fillStyle = theme ? theme==='light' ? 'hsl(0 0% 100%)' : 'hsl(20 14.3% 4.1%)' : 'hsl(0 0% 100%)';
     ctx.globalAlpha = waveOpacity || 0.5;
     ctx.fillRect(0, 0, w, h);
     drawWave(5);

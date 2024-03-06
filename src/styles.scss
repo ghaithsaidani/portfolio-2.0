@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/*@layer base {
   :root {
     --background: rgb(240, 240, 246);
     --foreground: rgba(0, 0, 0, 0.87);
@@ -68,9 +68,9 @@
     --input: rgb(29, 40, 57);
     --ring: rgb(200, 211, 223);
   }
-}
+}*/
 
-/*@layer base {
+@layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -115,7 +115,7 @@
     --input: 240 3.7% 15.9%;
     --ring: 142.4 71.8% 29.2%;
   }
-}*/
+}
 
 @layer base {
   html {
@@ -137,7 +137,7 @@
 
   .active {
     //@apply bg-primary text-primary-foreground;
-    @apply text-black;
+    @apply text-foreground;
     transition: color 0.5s;
 
     &:before {
@@ -148,7 +148,7 @@
       bottom: -5px;
       scale: 1;
       animation: link 0.5s ease-in-out;
-      @apply bg-black rounded-full;
+      @apply bg-foreground rounded-full;
     }
   }
 
@@ -170,8 +170,9 @@
         }
       }
     }
-
   }
+
+
 }
 
 @font-face {
@@ -192,6 +193,17 @@
 @font-face {
   font-family: 'Poetsen One';
   src: url('assets/fonts/poetsen_one/PoetsenOne-Regular.ttf');
+}
+
+
+@font-face {
+  font-family: 'Nesia Sans';
+  src: url('assets/fonts/Nesia-Sans-Font/nesia-sans.otf');
+}
+
+@font-face {
+  font-family: 'Dreaming Out Loud';
+  src: url('assets/fonts/Dreaming-Out-Loud-Font/FontsFree-Net-Dreaming.ttf');
 }
 
 @keyframes link {

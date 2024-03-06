@@ -94,10 +94,10 @@ export const Card = ({
         /*boxShadow:
           '0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003'*/
       }}
-      className="max-w-5xl -mt-12 mx-auto xl:h-[35rem] 2xl:h-[40rem] w-full border-2 border-border p-[15px] bg-background rounded-[35px] shadow-xl"
+      className="max-w-5xl -mt-12 mx-auto xl:h-[35rem] 2xl:h-[40rem] w-full border-2 border-border p-[15px] bg-card rounded-[35px] shadow-xl"
     >
       <div
-        className="bg-gray-100 w-full rounded-[20px] flex h-full overflow-hidden">
+        className="w-full rounded-[20px] flex h-full overflow-hidden">
         <img src={image} alt={'project'}/>
 
         {/*{users.map((user, idx: number) => (

@@ -47,7 +47,7 @@ export const Reveal = ({ children, width = 'fit-content' }: RevealProps) => {
           left:0,
           right:0,
           zIndex:20,
-          background: 'var(--primary)',
+          background: 'hsl(var(--primary))',
         }}
       />
     </div>

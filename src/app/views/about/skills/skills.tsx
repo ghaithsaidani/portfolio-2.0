@@ -1,5 +1,5 @@
 import styles from './skills.module.scss';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   SiAmazonaws,
   SiAndroid,
@@ -10,8 +10,9 @@ import {
 } from '@icons-pack/react-simple-icons';
 import { IconInterface } from '@/ts/icon.type';
 import { FaJava } from 'react-icons/fa';
-import React, { useRef } from 'react';
-import { useInView } from 'framer-motion';
+import React from 'react';
+import { Quote } from '@/components/ui/quote';
+import { MalcomX, Pele } from '../../../../assets/images';
 
 /* eslint-disable-next-line */
 export interface SkillsProps {
@@ -90,37 +91,42 @@ export function Skills(props: SkillsProps) {
   ];
 
   return (
-      <div className={'flex h-full flex-col justify-between align-middle px-[5%] xl:pt-5 2xl:py-5 gap-5'}>
-        <div className={'text-center flex flex-col gap-5'}>
-          <h2 className={'font-sfPro font-bold text-2xl'}>Skills</h2>
-          <p className={'font-sfPro text-gray-400 xl:text-sm 2xl:text-md xl:px-11 2xl:px-24'}>I have acquired a wide range of skills through
-            education, training, and experience. I am always eager to learn new skills and improve my existing ones.</p>
-        </div>
-        <Card className={'text-center h-full py-[10%]'}>
-          <CardContent className={'flex flex-col xl:justify-around'}>
-            <div>
-              <h3 className={'font-sfPro font-bold xl:text-lg 2xl:text-xl'}>Technologies that I’m using every Day</h3>
-              <ul className={'flex flex-wrap xl:gap-x-3 2xl:gap-x-4 gap-y-10 w-fit px-16 justify-center mt-8'}>
-                {everyDayTechs.map((tech) =>
-                  <a href={tech.link} target={'_blank'} rel={'noreferrer'} key={tech.name}>
-                    <li className={'xl:p-2 2xl:p-3 rounded'} style={{ background: tech.color }}>{tech.icon}</li>
-                  </a>
-                )}
-              </ul>
-            </div>
-            <div>
-              <h3 className={'font-sfPro font-bold text-xl'}>Other Technologies which I have used in projects</h3>
-              <ul className={'flex flex-wrap xl:gap-x-3 2xl:gap-x-8 gap-y-10 w-fit px-20 justify-center mt-8'}>
-                {usedTechs.map((tech) =>
+    <div className={'flex h-full flex-col justify-between align-middle px-[5%] xl:pt-5 2xl:py-5 gap-5'}>
+      {/*<div className={'text-center flex flex-col gap-5'}>
+        <h2 className={'font-sfPro font-bold text-2xl'}>Skills</h2>
+        <p className={'font-sfPro text-gray-400 xl:text-sm 2xl:text-md xl:px-11 2xl:px-24'}>Skills are the bedrock of
+          capability, empowering us to conquer challenges and seize opportunities on our journey through life.</p>
+      </div>*/}
+      <Card className={'text-center h-full py-[5%]'}>
+        <CardHeader className={'mb-10'}>
+          <CardTitle className={'font-sfProBold text-[2.5rem] mb-5'}>Skills</CardTitle>
+          <Quote authorName={'pelé'} authorPhoto={Pele} header={'Olá,'} description={"hoje é o seu dia,"}
+                 quote={'Success is no accident. It is hard work, perseverance, learning, studying, sacrifice, and most of all, love of what you are doing or learning to do.'} />
+        </CardHeader>
+        <CardContent className={'flex flex-col h-fit gap-32'}>
+          <div>
+            <h3 className={'font-sfPro font-bold xl:text-lg 2xl:text-xl'}>Technologies that I’m using every Day</h3>
+            <ul className={'flex flex-wrap xl:gap-x-3 2xl:gap-x-4 gap-y-10 w-fit px-16 justify-center mt-8'}>
+              {everyDayTechs.map((tech) =>
+                <a href={tech.link} target={'_blank'} rel={'noreferrer'} key={tech.name}>
+                  <li className={'xl:p-2 2xl:p-3 rounded'} style={{ background: tech.color }}>{tech.icon}</li>
+                </a>
+              )}
+            </ul>
+          </div>
+          <div>
+            <h3 className={'font-sfPro font-bold text-xl'}>Other Technologies which I have used in projects</h3>
+            <ul className={'flex flex-wrap xl:gap-x-3 2xl:gap-x-8 gap-y-10 w-fit px-20 justify-center mt-8'}>
+              {usedTechs.map((tech) =>
 
-                  <a href={tech.link} target={'_blank'} rel={'noreferrer'} key={tech.name}>
-                    <li className={'xl:p-2 2xl:p-3 rounded'} style={{ background: tech.color }}>{tech.icon}</li>
-                  </a>
-                )}
-              </ul>
-            </div>
-          </CardContent>
-          {/*<div className={"flex flex-col gap-5"}>
+                <a href={tech.link} target={'_blank'} rel={'noreferrer'} key={tech.name}>
+                  <li className={'xl:p-2 2xl:p-3 rounded'} style={{ background: tech.color }}>{tech.icon}</li>
+                </a>
+              )}
+            </ul>
+          </div>
+        </CardContent>
+        {/*<div className={"flex flex-col gap-5"}>
             <h2 className={"font-sfPro font-bold text-2xl"}>Technical Skills</h2>
             <p className={"font-sfPro text-gray-400 text-md"}>
               I have experience in a variety of programming languages and tools. I am comfortable working with both
@@ -128,8 +134,8 @@ export function Skills(props: SkillsProps) {
               always looking to expand my technical skillset and learn new technologies.
             </p>
           </div>*/}
-        </Card>
-      </div>
+      </Card>
+    </div>
   );
 }
 

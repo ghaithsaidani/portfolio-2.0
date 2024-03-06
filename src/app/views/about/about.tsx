@@ -21,7 +21,7 @@ export function About(props: AboutProps) {
   const isInView1 = useInView(ref1, { once: false });
 
   return (
-    <section className={'about flex flex-col'}>
+    <section className={'about flex flex-col gap-20'}>
       <article className={'flex h-full'} ref={ref}>
         <article className={'flex-1'} style={{
           transform: isInView ? 'none' : 'translateX(-200px)',

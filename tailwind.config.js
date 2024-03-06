@@ -32,9 +32,11 @@ module.exports = {
       sfProBold: ['SF Pro Display Bold', 'sans-serif'],
       inter: ['Inter', 'sans-serif'],
       poetsenOne: ['Poetsen One', 'sans-serif'],
+      nesiaSans: ['Nesia Sans', 'sans-serif'],
+      dreamingOutLoud: ['Dreaming Out Loud', 'sans-serif'],
     },
     extend: {
-      colors: {
+      /*colors: {
         border: 'var(--border)',
         input: 'var(--input)',
         ring: 'var(--ring)',
@@ -76,8 +78,8 @@ module.exports = {
           github: '#181717',
           leetCode: '#FFA116'
         },
-      },
-      /*colors: {
+      },*/
+      colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -116,7 +118,7 @@ module.exports = {
           github: '#181717',
           leetCode: '#FFA116'
         },
-      },*/
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',

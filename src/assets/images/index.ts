@@ -19,3 +19,7 @@ export {default as MunicipalityManagement} from './projects/Municipalité.png'
 export {default as TennisCLub} from './projects/Tennis Club App.png'
 export { default as Ecommerce} from './projects/E-commerce.jpg'
 export {default as NavbarAvatar} from "./navbar-avatar.png"
+export {default as VictorHugo} from './famous-persons/Victor_Hugo.jpg'
+export {default as Einstein} from './famous-persons/einstein.webp'
+export {default as Pele} from './famous-persons/pele.jpg'
+export {default as OperahWinfrey} from './famous-persons/operah-winfrey.png'

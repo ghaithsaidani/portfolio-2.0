@@ -1,5 +1,3 @@
-import styles from './second-project.module.scss';
-import { MacbookScroll } from '@/components/ui/macbook-scroll';
 import { MondeEnBouche, MondeEnBoucheMobile, OldPortfolio } from '../../../../assets/images';
 import { AnimatedTechTooltip, IconType } from '@/components/ui/animated-tech-tooltip';
 import {
@@ -12,8 +10,7 @@ import { useInView } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { MovingBorderButton } from '@/components/ui/moving-border-button';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
-import { motion } from 'framer-motion';
-import { useBreakpoints } from '@/hooks/useBreakpoints';
+import { useBreakpoints } from '@/hooks/use-breakpoints';
 
 /* eslint-disable-next-line */
 export interface SecondProjectProps {
@@ -83,19 +80,19 @@ export function SecondProject(props: SecondProjectProps) {
   const isInView = useInView(ref, { once: false });
   const breakpoints=useBreakpoints()
   return (
-    <article className={'first-project relative flex justify-center overflow-hidden h-screen gap-[10%]'} ref={ref}>
+    <article className={'second-project relative flex justify-center overflow-hidden h-screen gap-[10%]'} ref={ref}>
       <div
         style={{
           transform: isInView ? 'none' : 'translateY(200px)',
           opacity: isInView ? 1 : 0,
           transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
         }}
-        className={'border-2 border-gray-200 place-self-end h-[80%] w-[21%] p-[15px] bg-white rounded-[50px] relative flex justify-center'}>
+        className={'border-2 border-border place-self-end h-[80%] w-[21%] p-[15px] bg-card rounded-[50px] relative flex justify-center'}>
         <div className={'rounded-[35px] h-full w-full overflow-hidden border-border border-[1px]'}>
           <img src={MondeEnBoucheMobile} alt={'monde en bouche mobile'} className={'w-full'} />
         </div>
         <div
-          className={'absolute h-6 w-28 bg-white top-[1.95%] rounded-b-3xl border-b-[1px] border-x-[1px] border-gray-200'}></div>
+          className={'absolute h-6 w-28 bg-card top-[1.95%] rounded-b-3xl border-b-[1px] border-x-[1px] border-gray-200'}></div>
       </div>
 
       <div style={{
@@ -119,17 +116,17 @@ export function SecondProject(props: SecondProjectProps) {
             <MovingBorderButton
               borderRadius="1.75rem"
               containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14'}
-              className="bg-white dark:bg-slate-90 dark:text-white border-none dark:border-slate-800 xl:text-sm 2xl:text-base"
+              className="bg-background border-[1px] border-border hover:text-primary dark:bg-slate-90 text-foreground xl:text-sm 2xl:text-base"
             >
               <a className={'flex items-center gap-2'} href={'https://github.com/ghaithsaidani/le-monde-en-bouche'} target={'_blank'} rel={'noreferrer'}>Tell Me More <ArrowTopRightIcon /></a>
             </MovingBorderButton>
           </div>
 
         <div
-          className="w-5xl mt-5 mx-auto h-full w-[90%] border-2 border-border p-[15px] bg-white rounded-[35px] shadow-xl"
+          className="w-5xl mt-5 mx-auto h-full w-[90%] border-2 border-border p-[15px] bg-card rounded-[35px] shadow-xl"
         >
           <div
-            className="bg-gray-100 w-full rounded-[20px] flex  overflow-hidden">
+            className="border-border border-[1px] w-full rounded-[20px] flex  overflow-hidden">
             <img src={MondeEnBouche} alt={'project'} /></div>
         </div>
       </div>

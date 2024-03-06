@@ -8,7 +8,7 @@ import { NavbarAvatar } from '../../../assets/images';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
 import { Input } from '@/components/ui/input';
-import { useBreakpoints } from '@/hooks/useBreakpoints';
+import { useBreakpoints } from '@/hooks/use-breakpoints';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -111,7 +111,7 @@ export function Contact() {
                           <FormItem>
                             <FormLabel>First name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Tyler" {...field} className={'w-52'}/>
+                              <Input placeholder="Tyler" {...field} className={'w-52'} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -124,7 +124,7 @@ export function Contact() {
                           <FormItem>
                             <FormLabel>Last name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Durden" {...field} className={'w-52'}/>
+                              <Input placeholder="Durden" {...field} className={'w-52'} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -170,9 +170,18 @@ export function Contact() {
                         </FormItem>
                       )}
                     />
+                    {/*<Button
+                      disabled={loading}
+                      className="w-full h-10 text-white"
+                      type="submit"
+                    >
+                      {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                      Send Message&nbsp; &rarr;
+                      <BottomGradient />
+                    </Button>*/}
                     <Button
                       disabled={loading}
-                      className="w-full h-10"
+                      className="flex justify-center items-center h-10 bg-gradient-to-br relative group/btn from-primary dark:from-zinc-900 dark:to-zinc-900 to-primary dark:bg-zinc-800 w-full text-white rounded-md text-sm font-medium font-sfPro shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                       type="submit"
                     >
                       {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}

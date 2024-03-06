@@ -11,7 +11,7 @@ const badgeVariants = cva(
         default:
           "border-transparent bg-primary text-primary-foreground shadow",
         secondary:
-          "border-transparent py-2 bg-primary-background text-primary capitalize rounded-2xl font-sfPro tracking-widest",
+          "border-transparent py-2 bg-primary/5 text-primary capitalize rounded-2xl font-sfPro tracking-widest",
         destructive:
           "border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
         outline: "text-foreground",

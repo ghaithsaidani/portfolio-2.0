@@ -1,10 +1,11 @@
 import styles from './certifications-associative-life.module.scss';
-import { Card, CardContent } from '@/components/ui/card';
-import { AIESEC, AOC, ITS, Meta, TechClub } from '../../../../assets/images';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { AIESEC, AOC, ITS, Meta, OperahWinfrey, TechClub } from '../../../../assets/images';
 import { Badge } from '@/components/ui/badge';
 import { CertificationType } from '@/ts/certification.type';
 import { Separator } from '@/components/ui/separator';
 import { AssocationType } from '@/ts/association.type';
+import { Quote } from '@/components/ui/quote';
 
 /* eslint-disable-next-line */
 export interface CertificationsAssociativeLifeProps {
@@ -37,16 +38,16 @@ const Association = (props: AssocationType) => {
       <div className={'flex justify-between items-center'}>
         <div className={'flex gap-4 items-center'}>
           <h5 className={'font-inter font-medium capitalize '}>{props.name}</h5>
-          <img src={props.img} alt={props.alt}  className={'h-8'}/>
+          <img src={props.img} alt={props.alt} className={'h-8'} />
         </div>
         <div className={'flex gap-7 items-center'}>
           <h5 className={'font-inter text-primary capitalize'}>{props.position}</h5>
           <Badge className={'w-full'}>{props.period}</Badge>
         </div>
       </div>
-      {!props.last && < Separator className='my-4' />}
+      {!props.last && < Separator className="my-4" />}
     </div>
-  )
+  );
 };
 
 export function CertificationsAssociativeLife(
@@ -84,28 +85,26 @@ export function CertificationsAssociativeLife(
       img: AIESEC,
       alt: 'aiesec',
       position: 'member',
-      period:'Feb 2022 - Feb 2023'
+      period: 'Feb 2022 - Feb 2023'
     },
     {
       name: 'art of code FSB',
       img: AOC,
       alt: 'aoc',
       position: 'member',
-      period:'Sep 2021 - Jun 2022',
+      period: 'Sep 2021 - Jun 2022',
       last: true
     }
   ];
   return (
     <article className={'flex h-full flex-col justify-between align-middle px-[5%] xl:pt-5 2xl:py-5 gap-5'}>
-      <div className={'text-center flex flex-col gap-5'}>
-        <h2 className={'font-sfPro font-bold text-2xl'}>Certifications & Associative life</h2>
-        <p className={'font-sfPro text-gray-400 xl:text-sm 2xl:text-md xl:px-11 2xl:px-24'}>Studying is not only a way to learn new information, but
-          also a way to develop valuable skills and habits
-          that
-          can benefit us in life.</p>
-      </div>
-      <Card className={'text-center h-full py-[10%]'}>
-        <CardContent className={'flex flex-col gap-20'}>
+      <Card className={'text-center h-full py-[5%]'}>
+        <CardHeader className={"mb-10"}>
+          <CardTitle className={'font-sfProBold text-[2.5rem] mb-5'}>Certifications & Associative Life</CardTitle>
+          <Quote authorName={'oprah winfrey'} authorPhoto={OperahWinfrey} header={'Hello,'} description={'Today is your day,'}
+                 quote={'Certifications pave the path, associative life builds the bridges. Together, they lead to success.'}/>
+        </CardHeader>
+        <CardContent className={'flex flex-col gap-20 h-fit'}>
           <div className={'certifications text-left'}>
             <h3 className={'w-fit capitalize font-sfPro font-bold text-gray-400 underline decoration-2'}>
               certifications

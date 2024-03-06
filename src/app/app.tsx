@@ -9,13 +9,13 @@ import React from 'react';
 import Navbar from '@/views/navbar/navbar';
 import Contact from './views/contact/contact';
 import { Toaster } from '@/components/ui/toaster';
+import { ThemeProvider } from '@/providers/theme-provider';
 
 
 export function App() {
   return (
 
-
-
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <TracingBeam>
         <header>
           <Navbar/>
@@ -30,6 +30,7 @@ export function App() {
         </main>
         <Toaster/>
       </TracingBeam>
+    </ThemeProvider>
   );
 }
 

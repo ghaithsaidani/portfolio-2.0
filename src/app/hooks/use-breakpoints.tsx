@@ -1,4 +1,4 @@
-import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { useMediaQuery } from '@/hooks/use-mediaQuery';
 
 
 export const useBreakpoints = () => {

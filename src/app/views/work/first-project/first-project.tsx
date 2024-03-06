@@ -13,7 +13,7 @@ import {
 } from '@icons-pack/react-simple-icons';
 import { OldPortfolio } from '../../../../assets/images';
 import { useInView } from 'framer-motion';
-import { useBreakpoints } from '@/hooks/useBreakpoints';
+import { useBreakpoints } from '@/hooks/use-breakpoints';
 
 /* eslint-disable-next-line */
 export interface FirstProjectProps {
@@ -94,8 +94,8 @@ export function FirstProject(props: FirstProjectProps) {
         <div className={'mt-5'}>
           <MovingBorderButton
             borderRadius="1.75rem"
-            containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14'}
-            className="bg-white dark:bg-slate-90 dark:text-white border-none dark:border-slate-800 xl:text-sm 2xl:text-base">
+            containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14 '}
+            className="bg-background border-[1px] border-border hover:text-primary xl:text-sm 2xl:text-base">
             <a className={'flex items-center gap-2'} href={'https://ghaithsaidani.me/'} target={'_blank'} rel={'noreferrer'}>Tell Me More <ArrowTopRightIcon /></a>
           </MovingBorderButton>
         </div>
@@ -106,11 +106,11 @@ export function FirstProject(props: FirstProjectProps) {
           opacity: isInView ? 1 : 0,
           transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
         }}
-        className={'border-2 border-gray-200 place-self-end h-[95%] w-[22%] p-[15px] bg-white rounded-[50px] relative flex justify-center'}>
+        className={'border-2 border-border place-self-end h-[95%] w-[22%] p-[15px] bg-card rounded-[50px] relative flex justify-center'}>
         <div className={'rounded-[35px] w-full overflow-hidden'}>
-          <img src={OldPortfolio} alt={'old portfolio'} className={'w-full'} />
+          <img src={OldPortfolio} alt={'old portfolio'} className={'object-fill h-full w-full'} />
         </div>
-        <div className={'absolute h-6 w-28 bg-white top-3.5 rounded-b-3xl border-b-2 border-x-2 border-gray-200'}></div>
+        <div className={'absolute h-6 w-28 bg-card top-3.5 rounded-b-3xl'}></div>
       </div>
       <div className="absolute bottom-0 w-screen h-[100%] bg-gradient-to-t from-background to-100% z-10" />
     </article>
