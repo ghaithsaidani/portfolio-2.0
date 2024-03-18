@@ -15,16 +15,16 @@ const Experience = (props: ExperienceType) => {
     <div className={'experience flex flex-col justify-between'}>
       <div className={'grid text-left grid-cols-7'}>
         <div className={'col-start-1 col-end-4'}>
-          <h5 className={'font-inter font-medium capitalize'}>{props.enterpriseName}</h5>
-          <div className={'flex gap-3 mt-3 items-center'}>
-            <h6 className={'text-[0.8rem] capitalize text-gray-400'}>{props.emplacement}</h6>
-            <Badge className={'w-fit xl:px-3 2xl:px-5'}>{props.period}</Badge>
+          <h5 className={'font-inter font-bold text-sm lg:text-base capitalize'}>{props.enterpriseName}</h5>
+          <div className={'flex flex-col lg:flex-row gap-3 mt-3 '}>
+            <h6 className={'text-[0.8rem] capitalize text-gray-400 text-nowrap'}>{props.emplacement}</h6>
+            <Badge className={'w-fit'}>{props.period}</Badge>
           </div>
           <img src={props.enterpriseImg} alt={props.alt} className={'mt-6'} />
         </div>
         <div className={'text-left col-start-4 col-end-8 px-5'}>
-          <h5 className={'font-inter font-medium capitalize'}>{props.position}</h5>
-          <p className={'font-inter text-sm mt-3 text-gray-400'}>{props.description}</p>
+          <h5 className={'font-inter font-medium text-sm lg:text-base capitalize'}>{props.position}</h5>
+          <p className={'font-inter text-[0.7rem] lg:text-sm mt-3 text-gray-400'}>{props.description}</p>
         </div>
       </div>
 
@@ -63,7 +63,7 @@ export function Experiences(props: ExperiencesProps) {
       </div>*/}
       <Card className={'text-center h-full py-[5%]'}>
         <CardHeader className={'mb-10'}>
-          <CardTitle className={'font-sfProBold text-[2.5rem] mb-5'}>Experiences</CardTitle>
+          <CardTitle className={'font-sfProBold text-[2rem] lg:text-[2.5rem] mb-5'}>Experiences</CardTitle>
           <Quote authorName={'albert einstein'} authorPhoto={Einstein} header={'Hallo,'}
                  description={'Heute ist dein Tag,'}
                  quote={'The only source of knowledge is experience.'} />

@@ -22,7 +22,7 @@ export function About(props: AboutProps) {
 
   return (
     <section className={'about flex flex-col gap-20'}>
-      <article className={'flex h-full'} ref={ref}>
+      <article className={'flex flex-col gap-10 lg:gap-0 lg:flex-row h-full'} ref={ref}>
         <article className={'flex-1'} style={{
           transform: isInView ? 'none' : 'translateX(-200px)',
           opacity: isInView ? 1 : 0,
@@ -38,7 +38,7 @@ export function About(props: AboutProps) {
           <Skills />
         </article>
       </article>
-      <article className={'flex h-full'} ref={ref1}>
+      <article className={'flex flex-col gap-10 lg:gap-0 lg:flex-row h-full\''} ref={ref1}>
         <article className={'flex-1'} style={{
           transform: isInView1 ? 'none' : 'translateX(-200px)',
           opacity: isInView1 ? 1 : 0,

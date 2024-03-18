@@ -88,7 +88,7 @@ export function ThirdProject(props: ThirdProjectProps) {
   const breakpoints = useBreakpoints();
 
   return (
-    <article className={'third-project flex flex-col items-center overflow-hidden relative z-0'}>
+    <article className={'third-project flex flex-col items-center justify-center h-screen overflow-hidden relative z-0'}>
       {/*<BackgroundGradientAnimation></BackgroundGradientAnimation>*/}
       <WavyBackground>
         <ContainerScroll
@@ -97,14 +97,14 @@ export function ThirdProject(props: ThirdProjectProps) {
             <div>
               <div>
                 <Badge variant={'secondary'} className={'mx-auto'}>web application</Badge>
-                <p className={'font-sfPro text-gray-400 mt-5'}>The project involves the development and deployment of an
-                  application for the management of a Lybiéne insurance agency with report generation and
+                <p className={'font-sfPro text-sm lg:text-base text-gray-400 mt-5 px-10 lg:px-0'}>The project involves the development and deployment of an
+                  application for the management of a Lybian insurance agency with report generation and
                   payment validation.</p>
                 <div className={'used-techs flex items-center justify-center mt-5'}>
-                  <h3 className={'capitalize font-sfPro font-bold text-lg mr-5'}>stack&nbsp;&nbsp;&nbsp;:</h3>
+                  <h3 className={'capitalize font-sfPro font-bold lg:text-lg mr-5'}>stack&nbsp;&nbsp;&nbsp;:</h3>
                   <AnimatedTechTooltip items={usedTechs} size={breakpoints.active === '2xl' ? 12 : 10} />
                 </div>
-                <div className={'mt-5'}>
+                {/*<div className={'mt-5'}>
                   <MovingBorderButton
                     borderRadius="1.75rem"
                     containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14'}
@@ -112,7 +112,7 @@ export function ThirdProject(props: ThirdProjectProps) {
                   >
                     Tell Me More <ArrowTopRightIcon />
                   </MovingBorderButton>
-                </div>
+                </div>*/}
               </div>
               {/*<Button variant={'secondary'} className={'mt-5 gap-x-1'}>Tell Me More <ArrowTopRightIcon/></Button>*/}
               <h1
@@ -122,9 +122,9 @@ export function ThirdProject(props: ThirdProjectProps) {
             </div>
           }
         />
-        <ParticlesBg type="cobweb" bg={true} color={'#0DB760'} />
+        {/*<ParticlesBg type="cobweb" bg={true} color={'#0DB760'} />*/}
       </WavyBackground>
-      <div className="absolute bottom-0 w-screen h-[650px] bg-gradient-to-t from-background to-100% z-10" />
+      {/*<div className="absolute bottom-0 w-screen h-[650px] bg-gradient-to-t from-background to-100% z-10" />*/}
 
     </article>
   );

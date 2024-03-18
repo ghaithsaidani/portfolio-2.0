@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { MovingBorderButton } from '@/components/ui/moving-border-button';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 import { useBreakpoints } from '@/hooks/use-breakpoints';
+import { useMediaQuery } from '@/hooks/use-mediaQuery';
 
 /* eslint-disable-next-line */
 export interface SecondProjectProps {
@@ -79,57 +80,64 @@ export function SecondProject(props: SecondProjectProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const breakpoints=useBreakpoints()
+  const isLg = useMediaQuery('(min-width: 1024px)');
   return (
     <article className={'second-project relative flex justify-center overflow-hidden h-screen gap-[10%]'} ref={ref}>
-      <div
-        style={{
-          transform: isInView ? 'none' : 'translateY(200px)',
-          opacity: isInView ? 1 : 0,
-          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
-        }}
-        className={'border-2 border-border place-self-end h-[80%] w-[21%] p-[15px] bg-card rounded-[50px] relative flex justify-center'}>
-        <div className={'rounded-[35px] h-full w-full overflow-hidden border-border border-[1px]'}>
-          <img src={MondeEnBoucheMobile} alt={'monde en bouche mobile'} className={'w-full'} />
-        </div>
+      {
+        isLg &&
         <div
-          className={'absolute h-6 w-28 bg-card top-[1.95%] rounded-b-3xl border-b-[1px] border-x-[1px] border-gray-200'}></div>
-      </div>
+          style={{
+            transform: isInView ? 'none' : 'translateY(200px)',
+            opacity: isInView ? 1 : 0,
+            transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
+          }}
+          className={'border-2 border-border place-self-end h-[80%] w-[21%] p-[15px] bg-card rounded-[50px] relative flex justify-center'}>
+          <div className={'rounded-[35px] h-full w-full overflow-hidden border-border border-[1px]'}>
+            <img src={MondeEnBoucheMobile} alt={'monde en bouche mobile'} className={'w-full'} />
+          </div>
+          <div
+            className={'absolute h-6 w-28 bg-card top-[1.95%] rounded-b-3xl border-b-[1px] border-x-[1px] border-gray-200'}></div>
+        </div>
+      }
 
       <div style={{
         transform: isInView ? 'none' : 'translateY(-200px)',
         opacity: isInView ? 1 : 0,
         transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s'
-      }} className={'mt-20 flex flex-col items-center xl:w-[700px] 2xl:w-[1024px] text-center'}>
+      }} className={'mt-20 flex flex-col items-center justify-evenly xl:w-[700px] 2xl:w-[1024px] text-center'}>
 
+        <div className={"grid place-items-center"}>
           <Badge variant={'secondary'} className={'mx-auto'}>web application</Badge>
-          <h1 className="text-[3rem] mt-4 leading-none font-sfProBold text-black dark:text-white capitalize">
+          <h1 className="text-[2.5rem] lg:text-[3rem] mt-4 leading-none font-sfProBold text-black dark:text-white capitalize">
             le monde en bouche
           </h1>
-          <p className={'font-sfPro text-gray-400 mt-4 px-[12%]'}>My project is a web app that helps users discover new cuisines
+          <p className={'font-sfPro text-gray-400 text-sm lg:text-base mt-4 px-[12%]'}>My project is a web app that helps users discover new
+            cuisines
             and cultures. It allows users to select a country and a traditional dish from that country, and then it
             suggests nearby restaurants that offer that dish.</p>
-          <div className={'used-techs flex items-center xl:mt-5 2xl:mt-8'}>
-            <h3 className={'capitalize font-sfPro font-bold text-lg mr-5'}>stack&nbsp;&nbsp;&nbsp;:</h3>
+          <div className={'used-techs flex items-center mt-5 2xl:mt-8'}>
+            <h3 className={'capitalize font-sfPro font-bold lg:text-lg mr-5'}>stack&nbsp;&nbsp;&nbsp;:</h3>
             <AnimatedTechTooltip items={usedTechs} size={breakpoints.active==='2xl' ? 12: 10} />
           </div>
-        <div className={'mt-5'}>
-          <a className={'flex items-center gap-2'} href={'https://github.com/ghaithsaidani/le-monde-en-bouche'}
-             target={'_blank'} rel={'noreferrer'}>
-            <MovingBorderButton
-              borderRadius="1.75rem"
-              containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14'}
-              className="bg-background border-[1px] border-border hover:text-primary dark:bg-slate-90 text-foreground xl:text-sm 2xl:text-base"
-            >
-              Tell Me More <ArrowTopRightIcon />
-            </MovingBorderButton></a>
+          <div className={'mt-5'}>
+            <a className={'flex items-center gap-2'} href={'https://github.com/ghaithsaidani/le-monde-en-bouche'}
+               target={'_blank'} rel={'noreferrer'}>
+              <MovingBorderButton
+                borderRadius="1.75rem"
+                containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14'}
+                className="bg-background border-[1px] border-border hover:text-primary dark:bg-slate-90 text-foreground xl:text-sm 2xl:text-base"
+              >
+                Tell Me More <ArrowTopRightIcon />
+              </MovingBorderButton></a>
+          </div>
         </div>
 
         <div
-          className="w-5xl mt-5 mx-auto h-full w-[90%] border-2 border-border p-[15px] bg-card rounded-[35px] shadow-xl"
+          className="lg:mt-5 mx-auto h-[20rem] lg:h-fit w-[90%] border-2 border-border p-[10px] lg:p-[15px] bg-card rounded-[30px] lg:rounded-[35px] shadow-xl"
         >
           <div
-            className="border-border border-[1px] w-full rounded-[20px] flex  overflow-hidden">
-            <img src={MondeEnBouche} alt={'project'} /></div>
+            className="border-border border-[1px] w-full h-full rounded-[20px] flex  overflow-hidden">
+            <img src={MondeEnBouche} alt={'project'}/></div>
         </div>
       </div>
 

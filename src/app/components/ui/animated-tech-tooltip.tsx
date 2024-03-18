@@ -91,7 +91,7 @@ export const AnimatedTechTooltip = ({
 
           <a onMouseMove={handleMouseMove} href={item.link} target={'_blank'} rel={'noreferrer'}>
             <div
-              className={`object-cover grid place-items-center !m-0 !p-0 object-top rounded-full h-${size} w-${size} border-2 group-hover:scale-105 group-hover:z-30 border-background relative transition duration-500 pointer-events-none`}
+              className={`object-cover grid place-items-center !m-0 !p-0 object-top rounded-full h-${size} w-${size} [&>*]:h-4 [&>*]:w-4 lg:[&>*]:h-6 lg:[&>*]:w-6 border-2 group-hover:scale-105 group-hover:z-30 border-background relative transition duration-500 pointer-events-none`}
               style={{ background: item.color }}>
               {item.icon}
             </div>

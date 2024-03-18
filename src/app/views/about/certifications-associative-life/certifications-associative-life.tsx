@@ -16,14 +16,14 @@ const Certification = (props: CertificationType) => {
     <div className={'certification'}>
       <div className={'grid grid-cols-5 gap-y-4 gap-x-1'}>
         <div className={'flex items-center gap-3 col-start-1 col-end-3'}>
-          <h4 className={'font-inter font-medium text-sm capitalize'}>{props.provider}</h4>
-          <img src={props.img} alt={props.alt} className={'w-8'} />
+          <h4 className={'font-inter font-medium text-xs lg:text-base capitalize'}>{props.provider}</h4>
+          <img src={props.img} alt={props.alt} className={'w-7 lg:w-8'} />
         </div>
         <div className={'col-start-4 col-end-6'}>
-          <h5 className={'font-inter text-primary capitalize text-md'}>{props.name}</h5>
+          <h5 className={'font-inter text-primary capitalize text-[0.7rem] lg:text-base'}>{props.name}</h5>
         </div>
-        <div className={'flex gap-12 col-start-1 col-end-3 items-center'}>
-          <h5 className={'font-inter capitalize'}>{props.placement}</h5>
+        <div className={'flex gap-4 lg:gap-12 col-start-1 col-end-3 items-center'}>
+          <h5 className={'font-inter text-xs lg:text-base capitalize'}>{props.placement}</h5>
           <Badge>{props.date}</Badge>
         </div>
       </div>
@@ -36,12 +36,12 @@ const Association = (props: AssocationType) => {
   return (
     <div className={'association'}>
       <div className={'flex justify-between items-center'}>
-        <div className={'flex gap-4 items-center'}>
-          <h5 className={'font-inter font-medium capitalize '}>{props.name}</h5>
-          <img src={props.img} alt={props.alt} className={'h-8'} />
+        <div className={'flex gap-1 lg:gap-4 items-center'}>
+          <h5 className={'font-inter font-medium text-xs lg:text-base capitalize '}>{props.name}</h5>
+          <img src={props.img} alt={props.alt} className={'h-5 lg:h-8'} />
         </div>
-        <div className={'flex gap-7 items-center'}>
-          <h5 className={'font-inter text-primary capitalize'}>{props.position}</h5>
+        <div className={'flex gap-3 lg:gap-7 items-center'}>
+          <h5 className={'font-inter text-primary text-xs lg:text-base capitalize'}>{props.position}</h5>
           <Badge className={'w-full'}>{props.period}</Badge>
         </div>
       </div>
@@ -100,7 +100,7 @@ export function CertificationsAssociativeLife(
     <article className={'flex h-full flex-col justify-between align-middle px-[5%] xl:pt-5 2xl:py-5 gap-5'}>
       <Card className={'text-center h-full py-[5%]'}>
         <CardHeader className={"mb-10"}>
-          <CardTitle className={'font-sfProBold text-[2.5rem] mb-5'}>Certifications & Associative Life</CardTitle>
+          <CardTitle className={'font-sfProBold text-[2rem] lg:text-[2.5rem] mb-5'}>Certifications & Associative Life</CardTitle>
           <Quote authorName={'oprah winfrey'} authorPhoto={OperahWinfrey} header={'Hello,'} description={'Today is your day,'}
                  quote={'Certifications pave the path, associative life builds the bridges. Together, they lead to success.'}/>
         </CardHeader>
