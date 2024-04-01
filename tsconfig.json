@@ -15,8 +15,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/app/*"],
-      "@/views/*": ["./src/app/views/*"],
-      /*"@/assets*//*": ["./src/assets*//*"]*/
+      "@/views/*": ["./src/app/views/*"]
     },
     "jsx": "react-jsx",
     "allowJs": false,

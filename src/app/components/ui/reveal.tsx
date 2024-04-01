@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
+import { cn } from '@/utils/cn';
 
 interface RevealProps {
   children: React.ReactNode,
-  width?: 'fit-content' | '100%'
+  width?: 'fit-content' | '100%',
+  className?: string
 }
 
-export const Reveal = ({ children, width = 'fit-content' }: RevealProps) => {
+export const Reveal = ({ children, width = 'fit-content',className }: RevealProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const mainControls=useAnimation()
@@ -28,7 +30,7 @@ export const Reveal = ({ children, width = 'fit-content' }: RevealProps) => {
         initial={'hidden'}
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.25 }}
-        className={'py-3'}
+        className={cn('py-3 ',className)}
       >
         {children}
       </motion.div>

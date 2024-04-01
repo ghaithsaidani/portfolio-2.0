@@ -18,14 +18,14 @@ module.exports = {
     container: {
       center: true,
       padding: '2rem',
-      screens: {
-        xs: '0',
-        sm:'640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1280px',
-        '2xl': '1536px'
-      }
+    },
+    screens: {
+      xs: '0',
+      sm:'500px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px'
     },
     fontFamily: {
       sfPro: ['SF Pro Display', 'sans-serif'],

@@ -14,6 +14,7 @@ import { WavyBackground } from '@/components/ui/wavy-background';
 import { AnimatedTechTooltip, IconType } from '@/components/ui/animated-tech-tooltip';
 import ParticlesBg from 'particles-bg';
 import { useBreakpoints } from '@/hooks/use-breakpoints';
+import { useMediaQuery } from '@/hooks/use-mediaQuery';
 
 /* eslint-disable-next-line */
 export interface ThirdProjectProps {
@@ -85,38 +86,31 @@ export function ThirdProject(props: ThirdProjectProps) {
       link: 'https://github.com/'
     }
   ];
-  const breakpoints = useBreakpoints();
+  const isSm=useMediaQuery('(min-width: 500px)');
+  const is2XL=useMediaQuery('(min-width: 1536px)');
+  const isLg=useMediaQuery('(min-width: 1024px)')
 
   return (
     <article className={'third-project flex flex-col items-center justify-center h-screen overflow-hidden relative z-0'}>
       {/*<BackgroundGradientAnimation></BackgroundGradientAnimation>*/}
-      <WavyBackground>
+      <WavyBackground waveWidth={50}>
         <ContainerScroll
           image={AmanaInsurance}
           titleComponent={
             <div>
               <div>
                 <Badge variant={'secondary'} className={'mx-auto'}>web application</Badge>
-                <p className={'font-sfPro text-sm lg:text-base text-gray-400 mt-5 px-10 lg:px-0'}>The project involves the development and deployment of an
+                <p className={'font-sfPro text-xs sm:text-sm lg:text-base text-gray-400 mt-5 px-10 lg:px-0'}>The project involves the development and deployment of an
                   application for the management of a Lybian insurance agency with report generation and
                   payment validation.</p>
                 <div className={'used-techs flex items-center justify-center mt-5'}>
                   <h3 className={'capitalize font-sfPro font-bold lg:text-lg mr-5'}>stack&nbsp;&nbsp;&nbsp;:</h3>
-                  <AnimatedTechTooltip items={usedTechs} size={breakpoints.active === '2xl' ? 12 : 10} />
+                  <AnimatedTechTooltip items={usedTechs} size={is2XL ? 12 : isSm ? 10 : 9} />
                 </div>
-                {/*<div className={'mt-5'}>
-                  <MovingBorderButton
-                    borderRadius="1.75rem"
-                    containerClassName={'xl:w-36 xl:h-12 2xl:w-40 2xl:h-14'}
-                    className="bg-background text-foreground border-[1px] border-border hover:text-primary xl:text-sm 2xl:text-base"
-                  >
-                    Tell Me More <ArrowTopRightIcon />
-                  </MovingBorderButton>
-                </div>*/}
               </div>
               {/*<Button variant={'secondary'} className={'mt-5 gap-x-1'}>Tell Me More <ArrowTopRightIcon/></Button>*/}
               <h1
-                className="xl:text-[5rem] 2xl:text-[6rem] mt-1 leading-none font-sfProBold text-black dark:text-white">
+                className="text-[2rem] sm:text-[3rem] xl:text-[5rem] 2xl:text-[6rem] mt-10 lg:mt-1 leading-none font-sfProBold text-black dark:text-white">
                 Amana Insurance
               </h1>
             </div>

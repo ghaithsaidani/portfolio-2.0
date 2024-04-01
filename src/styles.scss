@@ -82,7 +82,7 @@
     --primary-foreground: 355.7 100% 97.3%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
+    --muted: 0, 0%, 94%;
     --muted-foreground: 240 3.8% 46.1%;
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
@@ -131,41 +131,48 @@
   }
 
   body {
-
     @apply bg-background text-foreground;
   }
 
   .active {
-    //@apply bg-primary text-primary-foreground;
-    @apply text-foreground;
-    transition: color 0.5s;
+    @apply text-foreground rounded-2xl bg-muted;
+  }
 
-    &:before {
-      content: '';
-      position: absolute;
-      height: 4px;
-      width: 25px;
-      bottom: -5px;
-      scale: 1;
-      animation: link 0.5s ease-in-out;
-      @apply bg-foreground rounded-full;
+  @media screen and (min-width: 768px) {
+    .active {
+      //@apply bg-primary text-primary-foreground;
+      @apply bg-transparent rounded-none;
+      transition: color 0.5s;
+      &:before {
+        content: '';
+        position: absolute;
+        height: 4px;
+        width: 25px;
+        bottom: -5px;
+        scale: 1;
+        animation: link 0.5s ease-in-out;
+        @apply bg-foreground rounded-full;
+      }
     }
+
   }
 
   .social {
     a {
       &[data-social='LeetCode'] {
-        .filled{
+        .filled {
           @apply bg-socialMedias-leetCode;
         }
       }
+
       &[data-social='LinkedIn'] {
-        .filled{
+        .filled {
           @apply bg-socialMedias-linkedin;
         }
       }
+
       &[data-social='Github'] {
-        .filled{
+        .filled {
           @apply bg-socialMedias-github;
         }
       }

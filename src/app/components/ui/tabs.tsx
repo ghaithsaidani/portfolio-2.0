@@ -6,6 +6,7 @@ import { cn } from "@/utils/cn";
 import { MovingBorderButton } from '@/components/ui/moving-border-button';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 import { ProjectCard, ProjectCardProps } from '@/components/ui/project-card';
+import { useMediaQuery } from '@/hooks/use-mediaQuery';
 
 
 export const Tabs = ({
@@ -38,7 +39,7 @@ export const Tabs = ({
     <>
       <div
         className={cn(
-          "flex flex-row items-center justify-center [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full",
+          "flex flex-row items-center justify-center [perspective:1000px] h-14 lg:h-fit relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full",
           containerClassName
         )}
       >
@@ -50,7 +51,7 @@ export const Tabs = ({
             }}
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
-            className={cn("relative px-4 py-2 rounded-full", tabClassName)}
+            className={cn("relative px-4 py-2 text-xs sm:text-sm lg:text-lg rounded-full", tabClassName)}
             style={{
               transformStyle: "preserve-3d",
             }}
@@ -96,6 +97,7 @@ export const FadeInDiv = ({
   const isActive = (tab: ProjectCardProps) => {
     return tab.title === tabs[0].title;
   };
+  const isLg=useMediaQuery('(min-width: 1024px)')
   return (
     <div className="relative w-full h-full">
       {tabs.map((tab, idx) => (
@@ -104,7 +106,7 @@ export const FadeInDiv = ({
           layoutId={tab.title}
           style={{
             scale: 1 - idx * 0.1,
-            top: hovering ? idx * -50 : 0,
+            top: hovering ? isLg ? (idx * -50) : idx * -30 : 0,
             zIndex: -idx,
             opacity: idx < 3 ? 1 - idx * 0.1 : 0,
           }}

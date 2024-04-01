@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
+import { useMediaQuery } from "@/hooks/use-mediaQuery";
 
 
 
@@ -12,17 +13,18 @@ export const LampContainer = ({
   children: React.ReactNode;
   className?: string;
 }) => {
+  const isXs=useMediaQuery('(max-width:499px)');
   return (
     <div
       className={cn(
-        "relative flex min-h-screen h-[1064px] flex-col items-center justify-center overflow-hidden bg-background w-full rounded-md z-0",
+        "relative flex min-h-screen h-[942px] sm:h-[958px] lg:h-[1064px] flex-col items-center justify-center overflow-hidden bg-background w-full rounded-md z-0",
         className
       )}
     >
       <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 ">
         <motion.div
-          initial={{ opacity: 0.5, width: "15rem" }}
-          whileInView={{ opacity: 1, width: "30rem" }}
+          initial={{ opacity: 0.5, width: isXs ? "10rem" : "15rem" }}
+          whileInView={{ opacity: 1, width: isXs ? "20rem" : "30rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -37,8 +39,8 @@ export const LampContainer = ({
           <div className="absolute  w-40 h-[100%] left-0 bg-background  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0.5, width: "15rem" }}
-          whileInView={{ opacity: 1, width: "30rem" }}
+          initial={{ opacity: 0.5, width: isXs ? "10rem" : "15rem" }}
+          whileInView={{ opacity: 1, width: isXs ? "20rem" : "30rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -66,8 +68,8 @@ export const LampContainer = ({
           className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-primary blur-2xl"
         ></motion.div>
         <motion.div
-          initial={{ width: "15rem" }}
-          whileInView={{ width: "30rem" }}
+          initial={{ width: isXs ? "10rem" : "15rem" }}
+          whileInView={{ width: isXs ? "20rem" : "30rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,

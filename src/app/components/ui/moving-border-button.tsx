@@ -32,7 +32,7 @@ export function MovingBorderButton({
   return (
     <Component
       className={cn(
-        "relative text-xl w-36 h-12 2xl:w-40 2xl:h-14 p-[1px] overflow-hidden group ",
+        "relative text-xl w-24 h-11 sm:w-36 sm:h-12 2xl:w-40 2xl:h-14 p-[1px] overflow-hidden group ",
         containerClassName
       )}
       style={{
@@ -56,7 +56,7 @@ export function MovingBorderButton({
 
       <div
         className={cn(
-          "relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-foreground font-sfPro text-sm 2xl:text-base  flex items-center justify-center w-full h-full antialiased gap-x-2",
+          "relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-foreground font-sfPro sm:text-sm 2xl:text-base  flex items-center justify-center w-full h-full antialiased gap-x-2",
           className
         )}
         style={{

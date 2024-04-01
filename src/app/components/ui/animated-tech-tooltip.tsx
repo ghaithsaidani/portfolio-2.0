@@ -75,13 +75,13 @@ export const AnimatedTechTooltip = ({
                   rotate: rotate,
                   whiteSpace: 'nowrap'
                 }}
-                className="absolute -top-10 -left-1/2 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl w-24 py-2"
+                className="absolute -top-10 -left-1/2 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl w-20 lg:w-24 py-2"
               >
                 <div
                   className="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
                 <div
                   className="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />
-                <div className="font-sfPro text-white relative z-30 text-sm">
+                <div className="font-sfPro text-white relative z-30 text-xs lg:text-sm">
                   {item.name}
                 </div>
                 {/*<div className="text-white text-xs">{item.name}</div>*/}
@@ -91,7 +91,7 @@ export const AnimatedTechTooltip = ({
 
           <a onMouseMove={handleMouseMove} href={item.link} target={'_blank'} rel={'noreferrer'}>
             <div
-              className={`object-cover grid place-items-center !m-0 !p-0 object-top rounded-full h-${size} w-${size} [&>*]:h-4 [&>*]:w-4 lg:[&>*]:h-6 lg:[&>*]:w-6 border-2 group-hover:scale-105 group-hover:z-30 border-background relative transition duration-500 pointer-events-none`}
+              className={`object-cover grid place-items-center !m-0 !p-0 object-top rounded-full h-${size} w-${size} [&>*]:h-3 [&>*]:w-3 sm:[&>*]:h-4 sm:[&>*]:w-4 xl:[&>*]:h-6 xl:[&>*]:w-6 border-2 group-hover:scale-105 group-hover:z-30 border-background relative transition duration-500 pointer-events-none`}
               style={{ background: item.color }}>
               {item.icon}
             </div>

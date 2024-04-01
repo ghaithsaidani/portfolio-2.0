@@ -10,28 +10,51 @@ import Navbar from '@/views/navbar/navbar';
 import Contact from './views/contact/contact';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/providers/theme-provider';
+import { useMediaQuery } from './hooks/use-mediaQuery';
+import Footer from '@/views/footer/footer';
 
 
 export function App() {
+  const isMd = useMediaQuery('(min-width: 768px)');
+  if (isMd) {
+    return (
+      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+        <TracingBeam>
+          <header>
+            <Navbar />
+          </header>
+
+          <main>
+            <Home />
+            <About />
+            <Work />
+            <Contact />
+            <ParticlesBg type="cobweb" bg={true} color={'#0DB760'} />
+          </main>
+          <Toaster />
+        </TracingBeam>
+      </ThemeProvider>
+    );
+  }
   return (
-
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-      <TracingBeam>
-        <header>
-          <Navbar/>
-        </header>
+      <header>
+        <Navbar />
+      </header>
+      <main>
 
-        <main>
-          <Home/>
-          <About/>
-          <Work/>
-          <Contact/>
-          <ParticlesBg type="cobweb" bg={true} color={"#0DB760"}/>
-        </main>
-        <Toaster/>
-      </TracingBeam>
+        <Home />
+        <About />
+        <Work />
+        <Contact />
+
+      </main>
+      {/*<Footer />*/}
+      <Toaster />
+      {/*<ParticlesBg type="cobweb" bg={true} color={"#0DB760"}/>*/}
     </ThemeProvider>
   );
+
 }
 
 export default App;

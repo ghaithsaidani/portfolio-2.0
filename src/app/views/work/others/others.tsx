@@ -1,4 +1,4 @@
-import {  ProjectCardProps } from '@/components/ui/project-card';
+import { ProjectCardProps } from '@/components/ui/project-card';
 import {
   Ecommerce,
   HotelManagement,
@@ -18,6 +18,8 @@ import {
 import { FaJava } from 'react-icons/fa';
 import React from 'react';
 import { Tabs } from '@/components/ui/tabs';
+import { useMediaQuery } from '@/hooks/use-mediaQuery';
+import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
 
 /* eslint-disable-next-line */
 export interface OthersProps {
@@ -44,26 +46,26 @@ const cards: ProjectCardProps[] = [
         link: 'https://mui.com/'
       },
       {
-        id:4,
+        id: 4,
         name: 'C#',
         icon: <SiDotnet color={'white'} />,
         color: '#512BD4',
         link: 'https://learn.microsoft.com/en-us/dotnet/'
       },
       {
-        id:5,
+        id: 5,
         name: 'SQL Server',
-        icon: <SiMicrosoftsqlserver color={'white'}/>,
+        icon: <SiMicrosoftsqlserver color={'white'} />,
         color: '#CC2927',
         link: 'https://www.microsoft.com/en-us/sql-server/'
       },
       {
-        id:6,
+        id: 6,
         name: 'Azure DevOps',
-        icon: <SiAzuredevops color={'white'}/>,
+        icon: <SiAzuredevops color={'white'} />,
         color: '#0078D7',
         link: 'https://azure.microsoft.com/en-us/products/devops'
-      },
+      }
     ],
     link: 'https://github.com/ghaithsaidani/gestion-restaurant-server'
   },
@@ -158,14 +160,14 @@ const cards: ProjectCardProps[] = [
       {
         id: 2,
         name: 'Java',
-        icon: <FaJava color={'white'} size={20}/>,
+        icon: <FaJava color={'white'} size={20} />,
         color: '#0878bf',
         link: 'https://www.java.com/en/'
       },
       {
         id: 3,
         name: 'Firebase',
-        icon: <SiFirebase color={'white'}/>,
+        icon: <SiFirebase color={'white'} />,
         color: '#FFCA28',
         link: 'https://firebase.google.com/'
       }
@@ -175,21 +177,20 @@ const cards: ProjectCardProps[] = [
 
 ];
 
-export const Others=(props: OthersProps)=> {
-
+const Others = (props: OthersProps) => {
   return (
-    <article className={'relative'}>
-      <div className={'content p-28 flex flex-col gap-0'}>
-        <h1 className={'font-sfPro font-bold capitalize text-5xl z-0'}>more works.</h1>
-        {/*<InfiniteMovingCards items={cards} speed={"fast"} className={"place-self-center"}/>*/}
+    <article className={'relative h-screen grid place-items-center'}>
+      <div className={'content p-2 w-full lg:p-28 flex flex-col gap-10 lg:gap-0'}>
+        <h1 className={'font-sfPro font-bold ml-5 lg:ml-0 capitalize text-3xl lg:text-5xl'}>more works.</h1>
         <div
           className="h-[20rem] md:h-[43rem] [perspective:1000px] relative b flex flex-col mx-auto max-w-5xl w-full  items-start justify-start mt-5 mb-10">
           <Tabs tabs={cards} />
         </div>
       </div>
+
     </article>
   );
-}
+};
 
 
 export default Others;

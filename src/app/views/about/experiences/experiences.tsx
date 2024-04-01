@@ -12,21 +12,19 @@ export interface ExperiencesProps {
 
 const Experience = (props: ExperienceType) => {
   return (
-    <div className={'experience flex flex-col justify-between'}>
-      <div className={'grid text-left grid-cols-7'}>
-        <div className={'col-start-1 col-end-4'}>
-          <h5 className={'font-inter font-bold text-sm lg:text-base capitalize'}>{props.enterpriseName}</h5>
+    <div className={'experience flex justify-between'}>
+        <div className={'flex flex-col items-start'}>
+          <h5 className={'font-inter font-bold text-xs sm:text-sm lg:text-base capitalize'}>{props.enterpriseName}</h5>
           <div className={'flex flex-col lg:flex-row gap-3 mt-3 '}>
             <h6 className={'text-[0.8rem] capitalize text-gray-400 text-nowrap'}>{props.emplacement}</h6>
             <Badge className={'w-fit'}>{props.period}</Badge>
           </div>
           <img src={props.enterpriseImg} alt={props.alt} className={'mt-6'} />
         </div>
-        <div className={'text-left col-start-4 col-end-8 px-5'}>
-          <h5 className={'font-inter font-medium text-sm lg:text-base capitalize'}>{props.position}</h5>
-          <p className={'font-inter text-[0.7rem] lg:text-sm mt-3 text-gray-400'}>{props.description}</p>
+        <div className={'text-left pl-3 pr-0 sm:pl-6 sm:pr-8 lg:px-20'}>
+          <h5 className={'font-inter font-medium text-xs sm:text-sm lg:text-base capitalize'}>{props.position}</h5>
+          <p className={'font-inter text-[0.6rem] sm:text-[0.7rem] lg:text-sm mt-3 text-gray-400'}>{props.description}</p>
         </div>
-      </div>
 
     </div>);
 };
@@ -61,14 +59,14 @@ export function Experiences(props: ExperiencesProps) {
         <q className={'font-sfPro text-gray-400 xl:text-sm 2xl:text-md xl:px-11 2xl:px-24'}>experiences are the building
           blocks of our professional journey, shaping our skills, character, and perspective on the world.</q>
       </div>*/}
-      <Card className={'text-center h-full py-[5%]'}>
-        <CardHeader className={'mb-10'}>
+      <Card className={'text-center h-full py-[5%] px-7 sm:px-11'}>
+        <CardHeader className={'mb-10 px-2'}>
           <CardTitle className={'font-sfProBold text-[2rem] lg:text-[2.5rem] mb-5'}>Experiences</CardTitle>
           <Quote authorName={'albert einstein'} authorPhoto={Einstein} header={'Hallo,'}
                  description={'Heute ist dein Tag,'}
                  quote={'The only source of knowledge is experience.'} />
         </CardHeader>
-        <CardContent className={'flex flex-col justify-between h-fit gap-32'}>
+        <CardContent className={'flex flex-col justify-between h-fit gap-16 sm:gap-24 lg:gap-32'}>
           <Experience {...experiences[0]} />
           <Separator />
           <Experience {...experiences[1]} />
