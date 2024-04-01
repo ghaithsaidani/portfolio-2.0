@@ -88,7 +88,7 @@ export function Contact() {
         >
           <article>
             <div
-              className="w-[85%] sm:w-full flex flex-col lg:flex-row mx-auto rounded-2xl overflow-hidden shadow-input bg-white dark:bg-black">
+              className="w-[80%] sm:w-full flex flex-col lg:flex-row mx-auto rounded-2xl overflow-hidden shadow-input bg-white dark:bg-black">
               <div className={'px-[5%] py-10 flex flex-col gap-5 justify-center'}>
                 <h3 className={'font-sfProBold capitalize text-[1.6rem] sm:text-3xl'}>get in touch with me</h3>
                 <div className={'flex justify-center items-center gap-5'}>
@@ -112,7 +112,7 @@ export function Contact() {
                           <FormItem>
                             <FormLabel>First name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Ghaith" {...field} className={'w-40 sm:w-46 lg:w-52'} />
+                              <Input placeholder="Ghaith" {...field} className={'w-36 sm:w-46 lg:w-52'} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -125,7 +125,7 @@ export function Contact() {
                           <FormItem>
                             <FormLabel>Last name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Saidani" {...field} className={'w-40 sm:w-46 lg:w-52'} />
+                              <Input placeholder="Saidani" {...field} className={'w-36 sm:w-46 lg:w-52'} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
