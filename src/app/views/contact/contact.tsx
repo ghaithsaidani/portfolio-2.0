@@ -112,7 +112,7 @@ export function Contact() {
                           <FormItem>
                             <FormLabel>First name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Ghaith" {...field} className={'w-36 sm:w-46 lg:w-52'} />
+                              <Input placeholder="Ghaith" {...field} className={'w-36 sm:w-44 lg:w-52'} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -125,7 +125,7 @@ export function Contact() {
                           <FormItem>
                             <FormLabel>Last name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Saidani" {...field} className={'w-36 sm:w-46 lg:w-52'} />
+                              <Input placeholder="Saidani" {...field} className={'w-36 sm:w-44 lg:w-52'} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>

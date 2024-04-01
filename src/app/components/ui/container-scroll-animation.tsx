@@ -1,6 +1,7 @@
 'use client';
 import React, { useRef } from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
+import { useMediaQuery } from '@/hooks/use-mediaQuery';
 
 export const ContainerScroll = ({
                                   image,
@@ -13,6 +14,10 @@ export const ContainerScroll = ({
   const { scrollYProgress } = useScroll({
     target: containerRef
   });
+  const isXs=useMediaQuery('(max-width:499px)');
+  const isSm=useMediaQuery('(max-width:767px)');
+  const isMd=useMediaQuery('(max-width:1023px)');
+  const is2xl=useMediaQuery('(min-width:1535px)');
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -27,12 +32,12 @@ export const ContainerScroll = ({
   }, []);
 
   const scaleDimensions = () => {
-    return /*isMobile ? [1.1,1]: */[1.05,1];
+    return [1.05,1];
   };
 
-  const rotate = useTransform(scrollYProgress, isMobile ? [1.5, 0] : [0,1], [20, 0]);
+  const rotate = useTransform(scrollYProgress,  is2xl ? [0,1] : [1.5, 0], [20, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
-  const translate = useTransform(scrollYProgress, isMobile ? [1.5, 0] : [0,1], [0, -100]);
+  const translate = useTransform(scrollYProgress, is2xl ? [0,1] : [1.5, 0], [0, -100]);
 
   return (
     <div
