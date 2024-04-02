@@ -10,6 +10,8 @@ import { Reveal } from '@/components/ui/reveal';
 import { Link } from 'react-scroll';
 import { TypeAnimation } from 'react-type-animation';
 import { TbBrandLeetcode } from 'react-icons/tb';
+import { HoverBorderGradient } from '@/components/ui/hover.border-gradient';
+import { Button } from '@/components/ui/button';
 
 /* eslint-disable-next-line */
 export interface HomeProps {
@@ -73,21 +75,38 @@ export function Home(props: HomeProps) {
           <Reveal>
             <div className={'flex gap-5 sm:mt-12'}>
               <Link offset={-80} to={'contacts'} smooth={true} duration={500}>
-                <MovingBorderButton
-                  borderRadius="1.75rem"
-                  className="bg-primary text-xs sm:text-sm hover:text-primary hover:bg-background border-[1px] border-transparent hover:border-border transition-all duration-500 text-white"
+                {/*<HoverBorderGradient
+                  containerClassName="rounded-full w-36 h-14"
+                  as="button"
+                  className="bg-primary h-full w-full text-white flex items-center space-x-2"
+                >
+                  <AceternityLogo />
+                  <span>Say Hi &#x1F44B;</span>
+                </HoverBorderGradient>*/}
+                <Button
+                  /*borderRadius="1.75rem"
+                  borderClassName={'w-24 light:group-hover:bg-[radial-gradient(rgb(0,0,0)_60%,rgba(0,0,0,0.3)_40%)]'}*/
+                  className="font-sfPro w-24 h-11 sm:w-36 sm:h-12 2xl:w-40 2xl:h-14 rounded-[1.75rem] bg-primary sm:text-sm 2xl:text-base hover:text-background hover:bg-foreground border-[1px] border-transparent hover:border-border transition-colors duration-1000 text-white"
                 >
                   Say Hi &#x1F44B;
-                </MovingBorderButton></Link>
+                </Button></Link>
               <Link offset={-80} to={'work'} smooth={true} duration={500}>
-                <MovingBorderButton
+                <HoverBorderGradient
+                  containerClassName="rounded-full w-36 sm:w-44 2xl:w-52 h-11 sm:h-12 2xl:h-14"
+                  as="button"
+
+                  className="bg-background sm:text-sm 2xl:text-base w-full h-full text-foreground flex items-center hover:text-primary space-x-2 transition-colors duration-1000"
+                >
+                  <span>Discover my works 🧑‍💻</span>
+                </HoverBorderGradient>
+                {/*<MovingBorderButton
                   borderRadius="1.75rem"
                   containerClassName={'w-36 sm:w-44 2xl:w-52'}
                   className=" bg-background text-xs hover:text-primary border-[1px] border-border"
                   borderClassName={'transition-colors duration-1000'}
                 >
                   Discover my works 🧑‍💻
-                </MovingBorderButton></Link>
+                </MovingBorderButton>*/}</Link>
             </div>
           </Reveal>
         </div>

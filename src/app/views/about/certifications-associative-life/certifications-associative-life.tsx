@@ -39,7 +39,7 @@ const Association = (props: AssocationType) => {
       <div className={'flex justify-between items-center'}>
         <div className={'flex gap-1 sm:gap-1.5 lg:gap-4 items-center'}>
           <h5 className={'font-inter font-medium text-[0.55rem] sm:text-xs lg:text-base capitalize '}>{props.name}</h5>
-          <img src={props.img} alt={props.alt} className={'w-4 sm:w-5 lg:h-8'} />
+          <img src={props.img} alt={props.alt} className={'w-4 sm:w-5 lg:w-7'} />
         </div>
         <div className={'flex gap-2 sm:gap-3 lg:gap-7 items-center'}>
           <h5 className={'font-inter text-primary text-[0.55rem] sm:text-xs lg:text-base capitalize'}>{props.position}</h5>
