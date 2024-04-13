@@ -1,10 +1,6 @@
-"use client";
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
-import { MovingBorderButton } from '@/components/ui/moving-border-button';
-import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 import { ProjectCard, ProjectCardProps } from '@/components/ui/project-card';
 import { useMediaQuery } from '@/hooks/use-mediaQuery';
 
@@ -51,7 +47,7 @@ export const Tabs = ({
             }}
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
-            className={cn("relative px-4 py-2 text-[.7rem] sm:text-sm lg:text-lg rounded-full", tabClassName)}
+            className={cn("relative px-3 sm:px-4 py-2 text-[.7rem] sm:text-sm lg:text-lg rounded-full", tabClassName)}
             style={{
               transformStyle: "preserve-3d",
             }}

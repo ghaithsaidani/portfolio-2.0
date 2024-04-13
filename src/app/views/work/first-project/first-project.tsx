@@ -12,14 +12,9 @@ import {
 } from '@icons-pack/react-simple-icons';
 import { OldPortfolio } from '../../../../assets/images';
 import { useInView } from 'framer-motion';
-import { useBreakpoints } from '@/hooks/use-breakpoints';
 import { useMediaQuery } from '@/hooks/use-mediaQuery';
 
-/* eslint-disable-next-line */
-export interface FirstProjectProps {
-}
-
-export function FirstProject(props: FirstProjectProps) {
+export function FirstProject() {
   const usedTechs: IconType[] = [
     {
       id: 1,

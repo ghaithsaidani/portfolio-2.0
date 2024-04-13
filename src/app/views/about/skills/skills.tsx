@@ -1,4 +1,3 @@
-import styles from './skills.module.scss';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   SiAmazonaws,
@@ -98,7 +97,7 @@ export function Skills() {
         <CardContent className={'flex flex-col h-fit gap-20 md:gap-32'}>
           <div className={"flex flex-col items-center"}>
             <h3 className={'font-sfPro font-bold text-sm sm:text-base lg:text-lg 2xl:text-xl'}>Technologies that I’m using every Day</h3>
-            <ul className={'flex flex-wrap gap-x-2 lg:gap-x-3 2xl:gap-x-4 gap-y-10 w-fit md:px-16 justify-center mt-8'}>
+            <ul className={'flex flex-wrap gap-x-2 lg:gap-x-3 2xl:gap-x-4 gap-y-10 w-fit md:px-24 justify-center mt-8'}>
               {everyDayTechs.map((tech) =>
                 <a href={tech.link} target={'_blank'} rel={'noreferrer'} key={tech.name}>
                   <li className={'p-2.5 2xl:p-3 rounded [&>*]:h-4 [&>*]:w-4 lg:[&>*]:h-6 lg:[&>*]:w-6'} style={{ background: tech.color }}>{tech.icon}</li>
@@ -108,7 +107,7 @@ export function Skills() {
           </div>
           <div className={"flex flex-col items-center"}>
             <h3 className={'font-sfPro font-bold text-sm sm:text-base lg:text-lg 2xl:text-xl'}>Other Technologies which I have used in projects</h3>
-            <ul className={'flex flex-wrap gap-x-2 lg:gap-x-3 2xl:gap-x-8 gap-y-10 w-fit md:px-10 lg:px-20 justify-center mt-8'}>
+            <ul className={'flex flex-wrap gap-x-2 lg:gap-x-3 2xl:gap-x-8 gap-y-10 w-fit md:px-10 lg:px-24 justify-center mt-8'}>
               {usedTechs.map((tech) =>
                 <a href={tech.link} target={'_blank'} rel={'noreferrer'} key={tech.name}>
                   <li className={'p-2.5 2xl:p-3 rounded [&>*]:h-4 [&>*]:w-4 lg:[&>*]:h-6 lg:[&>*]:w-6'} style={{ background: tech.color }}>{tech.icon}</li>

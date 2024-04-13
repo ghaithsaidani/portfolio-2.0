@@ -1,4 +1,3 @@
-import styles from './footer.module.scss';
 import { IconInterface } from '@/ts/icon.type';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { TbBrandLeetcode } from 'react-icons/tb';

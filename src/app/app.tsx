@@ -1,6 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-
 import { About, Work } from '@/views';
 import { TracingBeam } from '@/components/ui/tracing-beam';
 import Home from '@/views/home/home';
@@ -11,7 +8,6 @@ import Contact from './views/contact/contact';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/providers/theme-provider';
 import { useMediaQuery } from './hooks/use-mediaQuery';
-import Footer from '@/views/footer/footer';
 
 
 export function App() {
@@ -29,7 +25,7 @@ export function App() {
             <About />
             <Work />
             <Contact />
-            <ParticlesBg type="cobweb" bg={true} color={'#0DB760'} />
+            <ParticlesBg type="cobweb" bg={true} color={'#0DB760'} num={200}/>
           </main>
           <Toaster />
         </TracingBeam>

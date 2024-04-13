@@ -30,7 +30,7 @@ export const Reveal = ({ children, width = 'fit-content',className }: RevealProp
         initial={'hidden'}
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.25 }}
-        className={cn('py-3 ',className)}
+        className={cn('py-3',className)}
       >
         {children}
       </motion.div>

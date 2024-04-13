@@ -1,7 +1,6 @@
 import * as React from "react";
 import { cn } from "@/utils/cn";
 import { useMotionTemplate, useMotionValue, motion } from "framer-motion";
-import { Textarea } from '@/components/ui/textarea';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   rows?: number;

@@ -1,4 +1,3 @@
-import styles from './experiences.module.scss';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ExperienceType } from '@/ts/experience.type';
 import { Badge } from '@/components/ui/badge';
@@ -54,11 +53,6 @@ export function Experiences(props: ExperiencesProps) {
 
   return (
     <div className={'flex h-full flex-col justify-between align-middle px-[5%] xl:pt-5 2xl:py-5 gap-5'}>
-      {/*<div className={'text-center flex flex-col gap-5'}>
-        <h2 className={'font-sfPro font-bold text-2xl'}>Experiences</h2>
-        <q className={'font-sfPro text-gray-400 xl:text-sm 2xl:text-md xl:px-11 2xl:px-24'}>experiences are the building
-          blocks of our professional journey, shaping our skills, character, and perspective on the world.</q>
-      </div>*/}
       <Card className={'text-center h-full py-[5%] px-7 sm:px-11'}>
         <CardHeader className={'mb-10 px-2'}>
           <CardTitle className={'font-sfProBold text-[2rem] lg:text-[2.5rem] mb-5'}>Experiences</CardTitle>

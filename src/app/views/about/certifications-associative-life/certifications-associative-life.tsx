@@ -1,4 +1,3 @@
-import styles from './certifications-associative-life.module.scss';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AIESEC, AOC, ITS, Meta, OperahWinfrey, TechClub } from '../../../../assets/images';
 import { Badge } from '@/components/ui/badge';
@@ -6,6 +5,8 @@ import { CertificationType } from '@/ts/certification.type';
 import { Separator } from '@/components/ui/separator';
 import { AssocationType } from '@/ts/association.type';
 import { Quote } from '@/components/ui/quote';
+import ParticlesBg from 'particles-bg';
+import React from 'react';
 
 /* eslint-disable-next-line */
 export interface CertificationsAssociativeLifeProps {

@@ -1,10 +1,6 @@
 import { PersonalPhoto } from '../../../assets/images';
-import { MovingBorderButton } from '@/components/ui/moving-border-button';
 import React from 'react';
-
-import { SiGithub, SiLeetcode } from '@icons-pack/react-simple-icons';
 import { IconInterface } from '@/ts/icon.type';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { Separator } from '@/components/ui/separator';
 import { Reveal } from '@/components/ui/reveal';
 import { Link } from 'react-scroll';
@@ -12,6 +8,8 @@ import { TypeAnimation } from 'react-type-animation';
 import { TbBrandLeetcode } from 'react-icons/tb';
 import { HoverBorderGradient } from '@/components/ui/hover.border-gradient';
 import { Button } from '@/components/ui/button';
+import { Linkedin,Github } from 'lucide-react';
+import ParticlesBg from 'particles-bg';
 
 /* eslint-disable-next-line */
 export interface HomeProps {
@@ -21,50 +19,52 @@ export function Home(props: HomeProps) {
   const socialMedias: IconInterface[] = [
     {
       name: 'LinkedIn',
-      icon: <FaLinkedinIn className={'w-3 h-3 sm:w-4 sm:h-4 lg:h-5 lg:w-5'}/>,
+      icon: <Linkedin className={'w-3 h-3 sm:w-4 sm:h-4 lg:h-5 lg:w-5'} />,
       color: 'linkedin',
       link: 'https://www.linkedin.com/in/ghaith-saidani-9230571b2/'
     },
     {
       name: 'Github',
-      icon: <FaGithub className={'w-3 h-3 sm:w-4 sm:h-4 lg:h-5 lg:w-5'}/>,
+      icon: <Github className={'w-3 h-3 sm:w-4 sm:h-4 lg:h-5 lg:w-5'} />,
       color: 'github',
       link: 'https://github.com/ghaithsaidani'
     },
     {
       name: 'LeetCode',
-      icon: <TbBrandLeetcode className={'w-3 h-3 sm:w-4 sm:h-4 lg:h-5 lg:w-5'}/>,
+      icon: <TbBrandLeetcode className={'w-3 h-3 sm:w-4 sm:h-4 lg:h-5 lg:w-5'} />,
       color: 'leetCode',
       link: 'https://leetcode.com/ghaith_saidani/'
     }
   ];
   return (
-    <section className={'home lg:h-screen'}>
+    <section className={'home h-[100dvh] lg:h-screen'}>
       <article
-        className={'flex flex-col-reverse justify-center gap-[5%] lg:flex-row lg:py-20 xl:px-14 2xl:px-0 h-screen items-center 2xl:gap-20 '}>
+        className={'flex flex-col-reverse justify-start lg:justify-center gap-[5%] lg:flex-row py-14 lg:py-20 xl:px-14 2xl:px-0 h-screen items-center 2xl:gap-20 '}>
         <div className={'description flex flex-col items-center lg:items-start w-3/4 xl:w-3/5 2xl:w-2/5'}>
-          <h1 className={'font-sfPro text-[1rem] lg:text-[1.5rem] 2xl:text-[2rem] flex flex-col items-center lg:items-start'}>
-            <Reveal><span className={'text-xl sm:text-3xl lg:text-4xl xl:text-6xl 2xl:text-[4rem] font-poetsenOne'}>Hey, I'm Ghaith<span
+          <h1
+            className={'font-sfPro text-[1rem] lg:text-[1.5rem] 2xl:text-[2rem] flex flex-col items-center lg:items-start'}>
+            <Reveal className={'py-2'}><span
+              className={'text-xl sm:text-3xl lg:text-4xl xl:text-6xl 2xl:text-[4rem] font-poetsenOne'}>Hey, I'm Ghaith<span
               className={'text-primary'}>.</span></span></Reveal>
             <Reveal>
               I'm&nbsp;
               <TypeAnimation
                 sequence={[
-                  // Same substring at the start will only be typed out once, initially
                   'Full-Stack Developer',
-                  1500, // wait 1s before replacing "Mice" with "Hamsters"
+                  1500,
                   'Cloud & Cyber Security Student',
                   1500
                 ]}
                 wrapper="span"
                 speed={5}
-                style={{ display: 'inline-block', color: 'hsl(var(--primary))',textAlign: 'center'}}
+                style={{ display: 'inline-block', color: 'hsl(var(--primary))', textAlign: 'center' }}
                 repeat={Infinity}
               />
-              {/*<span className={'text-primary'}>Front-end Developer</span>*/}</Reveal>
+            </Reveal>
           </h1>
 
-          <Reveal className={'py-1 sm:py-3'}><p className={'font-sfPro text-gray-400 text-[0.7rem] sm:text-[0.85rem] lg:pr-52 sm:mt-3 text-center lg:text-left'}>
+          <Reveal className={'py-1 sm:py-3'}><p
+            className={'font-sfPro text-gray-400 text-[0.7rem] sm:text-[0.85rem] leading-6 lg:pr-52 sm:mt-3 text-center lg:text-left'}>
             I am a student and a multi-talented individual who specializes in
             web development and UI/UX design. With a strong passion for creating
             user-centered and visually appealing digital experiences, I strive
@@ -75,38 +75,21 @@ export function Home(props: HomeProps) {
           <Reveal>
             <div className={'flex gap-5 sm:mt-12'}>
               <Link offset={-80} to={'contacts'} smooth={true} duration={500}>
-                {/*<HoverBorderGradient
-                  containerClassName="rounded-full w-36 h-14"
-                  as="button"
-                  className="bg-primary h-full w-full text-white flex items-center space-x-2"
-                >
-                  <AceternityLogo />
-                  <span>Say Hi &#x1F44B;</span>
-                </HoverBorderGradient>*/}
+
                 <Button
-                  /*borderRadius="1.75rem"
-                  borderClassName={'w-24 light:group-hover:bg-[radial-gradient(rgb(0,0,0)_60%,rgba(0,0,0,0.3)_40%)]'}*/
-                  className="font-sfPro w-24 h-11 sm:w-36 sm:h-12 2xl:w-40 2xl:h-14 rounded-[1.75rem] bg-primary sm:text-sm 2xl:text-base hover:text-background hover:bg-foreground border-[1px] border-transparent hover:border-border transition-colors duration-1000 text-white"
+                  className="font-sfPro w-24 h-11 sm:w-36 sm:h-12 2xl:w-40 2xl:h-14 rounded-[1.75rem] bg-primary text-xs sm:text-sm 2xl:text-base hover:text-background hover:bg-foreground border-[1px] border-transparent hover:border-border transition-colors duration-1000 text-white"
                 >
                   Say Hi &#x1F44B;
                 </Button></Link>
               <Link offset={-80} to={'work'} smooth={true} duration={500}>
                 <HoverBorderGradient
-                  containerClassName="rounded-full w-36 sm:w-44 2xl:w-52 h-11 sm:h-12 2xl:h-14"
+                  containerClassName="rounded-full w-[150px] sm:w-44 2xl:w-52 h-11 sm:h-12 2xl:h-14"
                   as="button"
-
-                  className="bg-background sm:text-sm 2xl:text-base w-full h-full text-foreground flex items-center hover:text-primary space-x-2 transition-colors duration-1000"
+                  className="bg-background text-xs sm:text-sm 2xl:text-base w-full h-full text-foreground flex items-center space-x-2 transition-colors duration-1000"
                 >
                   <span>Discover my works 🧑‍💻</span>
                 </HoverBorderGradient>
-                {/*<MovingBorderButton
-                  borderRadius="1.75rem"
-                  containerClassName={'w-36 sm:w-44 2xl:w-52'}
-                  className=" bg-background text-xs hover:text-primary border-[1px] border-border"
-                  borderClassName={'transition-colors duration-1000'}
-                >
-                  Discover my works 🧑‍💻
-                </MovingBorderButton>*/}</Link>
+              </Link>
             </div>
           </Reveal>
         </div>

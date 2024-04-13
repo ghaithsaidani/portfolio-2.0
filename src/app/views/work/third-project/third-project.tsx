@@ -7,20 +7,14 @@ import {
   SiMui, SiMysql, SiNodedotjs,
   SiTypescript
 } from '@icons-pack/react-simple-icons';
-import { ArrowTopRightIcon } from '@radix-ui/react-icons';
-import { MovingBorderButton } from '@/components/ui/moving-border-button';
-import React, { useRef } from 'react';
+import React from 'react';
 import { WavyBackground } from '@/components/ui/wavy-background';
 import { AnimatedTechTooltip, IconType } from '@/components/ui/animated-tech-tooltip';
-import ParticlesBg from 'particles-bg';
-import { useBreakpoints } from '@/hooks/use-breakpoints';
+
 import { useMediaQuery } from '@/hooks/use-mediaQuery';
 
-/* eslint-disable-next-line */
-export interface ThirdProjectProps {
-}
 
-export function ThirdProject(props: ThirdProjectProps) {
+export function ThirdProject() {
   const usedTechs: IconType[] = [
     {
       id: 1,
@@ -91,7 +85,7 @@ export function ThirdProject(props: ThirdProjectProps) {
   const isLg=useMediaQuery('(min-width: 1024px)')
 
   return (
-    <article className={'third-project flex flex-col items-center justify-center h-screen overflow-hidden relative z-0'}>
+    <article className={'third-project flex flex-col items-center justify-center h-screen lg:h-full overflow-hidden relative z-0'}>
       {/*<BackgroundGradientAnimation></BackgroundGradientAnimation>*/}
       <WavyBackground waveWidth={50}>
         <ContainerScroll
@@ -116,9 +110,7 @@ export function ThirdProject(props: ThirdProjectProps) {
             </div>
           }
         />
-        {/*<ParticlesBg type="cobweb" bg={true} color={'#0DB760'} />*/}
       </WavyBackground>
-      {/*<div className="absolute bottom-0 w-screen h-[650px] bg-gradient-to-t from-background to-100% z-10" />*/}
 
     </article>
   );

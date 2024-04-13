@@ -3,29 +3,23 @@ import { customLinkType } from '@/ts/custom-link.type';
 import { Link } from 'react-scroll';
 import { Resume } from '../../../assets/pdfs';
 import { useTheme } from '@/hooks/use-theme';
-import { Info, Contact, Briefcase, FileDown, PanelLeftClose, Home, PanelLeft, PanelLeftOpen, Menu } from 'lucide-react';
+import { Info, Contact, Briefcase, Home,  Menu } from 'lucide-react';
 import { useMediaQuery } from '@/hooks/use-mediaQuery';
 import {
-  Sheet, SheetClose,
+  Sheet,
   SheetContent,
   SheetFooter,
   SheetHeader,
   SheetTrigger
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { IconBriefcase } from '@tabler/icons-react';
 import * as React from 'react';
 import { Switch, SwitchList, SwitchTrigger } from '@/components/ui/theme-switch';
-
 import { BsPatchQuestion } from 'react-icons/bs';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
-import { Tooltip } from '@/components/ui/tooltip';
 
-/* eslint-disable-next-line */
-export interface NavbarProps {
-}
 
-export function Navbar(props: NavbarProps) {
+export function Navbar() {
   const { setTheme } = useTheme();
   const theme=localStorage.getItem('vite-ui-theme') || 'light'
   const isMd = useMediaQuery('(min-width: 768px)');
@@ -103,17 +97,8 @@ export function Navbar(props: NavbarProps) {
         </SheetTrigger>
 
         <SheetContent side={'left'} className={'flex flex-col justify-between'}>
-          {/*<SheetClose>
-            <Button size="icon" variant="default" className="sm:hidden rounded-full size-[41px] text-background bg-foreground">
-              <PanelLeftClose className="h-4 w-4" />
-              <span className="sr-only">Toggle Menu</span>
-            </Button>
-          </SheetClose>*/}
           <div>
             <SheetHeader>
-              {/*<div className={'navbar-avatar overflow-hidden relative w-12 h-12 bg-primary rounded-full'}>
-                <img src={NavbarAvatar} alt={'avatar'} className={'absolute -bottom-1 object-fill'} />
-              </div>*/}
               <div className={'flex items-center gap-3'}>
                 <div className={'navbar-avatar overflow-hidden relative w-12 h-12 bg-primary rounded-full'}>
                   <img src={NavbarAvatar} alt={'avatar'} className={'absolute -bottom-1 object-fill'} />
@@ -156,47 +141,9 @@ export function Navbar(props: NavbarProps) {
         </SheetContent>
 
       </Sheet>
-      {/*<Drawer open={open} onOpenChange={setOpen}>
-        <DrawerTrigger asChild>
-          <Button variant={'link'} className={'focus:outline-none'}>
-            <MenuIcon size={32} />
-          </Button>
-        </DrawerTrigger>
-        <DrawerContent>
-          <DrawerClose>
-            <Cross2Icon className="h-4 w-4" />
-            <span className="sr-only">Close</span>
-          </DrawerClose>
-          <ul className={'list-none flex items-center gap-20 lg:gap-10 text-gray-400 group mt-20'}>
-            {links.map((link) => (
-              <li key={link.id}>
-                <Link offset={-80}
-                      className={'font-sfPro relative flex py-2 pl-4 items-center gap-5 text-3xl md:text-base lg:text-xl cursor-pointer capitalize hover:text-foreground'}
-                      activeClass="active" smooth spy duration={0} to={link.id}>
-                  {link.icon}{link.text}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <DrawerHeader className="text-left">
-            <DrawerTitle>Edit profile</DrawerTitle>
-            <DrawerDescription>
-              Make changes to your profile here. Click save when you're done.
-            </DrawerDescription>
-          </DrawerHeader>
-          <DrawerFooter className="pt-2">
-            <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
-            </DrawerClose>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>*/}
     </nav>
   );
 }
-
-
-/**/
 
 
 export default Navbar;

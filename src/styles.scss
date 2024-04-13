@@ -120,6 +120,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    
   }
 
   ::-webkit-scrollbar {
@@ -146,9 +147,9 @@
       &:before {
         content: '';
         position: absolute;
-        height: 4px;
-        width: 25px;
-        bottom: -5px;
+        height: 0.3rem;
+        width: 0.7rem;
+        bottom: -10px;
         scale: 1;
         animation: link 0.5s ease-in-out;
         @apply bg-foreground rounded-full;
@@ -158,6 +159,7 @@
   }
 
   .social {
+    
     a {
       &[data-social='LeetCode'] {
         .filled {
@@ -175,6 +177,13 @@
         .filled {
           @apply bg-socialMedias-github;
         }
+      }
+    }
+
+    &:hover{
+      svg{
+        animation: rotate .5s;
+        
       }
     }
   }
@@ -232,5 +241,14 @@
   to {
     height: 100%;
     top: 0
+  }
+}
+
+@keyframes rotate{
+  from{
+    transform: rotateY(0deg);
+  }
+  to{
+    transform: rotateY(360deg);
   }
 }

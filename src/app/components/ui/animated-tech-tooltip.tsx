@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import {
   motion,
   useTransform,
@@ -19,12 +19,7 @@ export const AnimatedTechTooltip = ({
                                       items,
                                       size
                                     }: {
-  /*items: {
-    id: number;
-    name: string;
-    designation: string;
-    image: string;
-  }[];*/
+
   items: IconType[],
   size?: number
 }) => {
@@ -48,7 +43,7 @@ export const AnimatedTechTooltip = ({
 
   return (
     <>
-      {items.map((item, idx) => (
+      {items.map((item) => (
         <div
           className="-mr-4 relative group"
           key={item.name}
@@ -84,7 +79,6 @@ export const AnimatedTechTooltip = ({
                 <div className="font-sfPro text-white relative z-30 text-xs lg:text-sm">
                   {item.name}
                 </div>
-                {/*<div className="text-white text-xs">{item.name}</div>*/}
               </motion.div>
             )}
           </AnimatePresence>

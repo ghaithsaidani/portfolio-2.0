@@ -14,11 +14,7 @@ import { FSB, LJB, Sesame, VictorHugo } from '../../../../assets/images';
 import { Quote } from '@/components/ui/quote';
 
 
-/* eslint-disable-next-line */
-export interface StudiesProps {
-}
-
-export function Studies(props: StudiesProps) {
+export function Studies() {
   return (
     <div className={'flex h-full flex-col justify-between align-middle px-[5%] xl:pt-5 2xl:py-5 gap-5'}>
       <ThemeProvider theme={Theme}>
@@ -46,7 +42,7 @@ export function Studies(props: StudiesProps) {
                     Engineering's degree - Software Engineering
                   </h5>
                   <h6 className={'font-inter text-gray-400 text-[0.55rem] sm:text-[0.65rem] lg:text-sm mt-1'}>
-                    2022 - 2025
+                    2022 - Present
                   </h6>
                 </TimelineContent>
               </TimelineItem>

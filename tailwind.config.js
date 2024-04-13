@@ -1,5 +1,3 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors');
 const {
   default: flattenColorPalette
 } = require('tailwindcss/lib/util/flattenColorPalette');
@@ -36,49 +34,6 @@ module.exports = {
       dreamingOutLoud: ['Dreaming Out Loud', 'sans-serif'],
     },
     extend: {
-      /*colors: {
-        border: 'var(--border)',
-        input: 'var(--input)',
-        ring: 'var(--ring)',
-        background: 'var(--background)',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'var(--primary)',
-          hover: 'var(--primary-hover)',
-          foreground: 'var(--primary-foreground)',
-          background: 'var(--primary-background)'
-        },
-        secondary: {
-          DEFAULT: 'var(--secondary)',
-          foreground: 'var(--secondary-foreground)',
-          background: 'var(--secondary-background)'
-        },
-        destructive: {
-          DEFAULT: 'var(--destructive)',
-          foreground: 'var(--destructive-foreground)'
-        },
-        muted: {
-          DEFAULT: 'var(--muted)',
-          foreground: 'var(--muted-foreground)'
-        },
-        accent: {
-          DEFAULT: 'var(--accent)',
-          foreground: 'var(--accent-foreground)'
-        },
-        popover: {
-          DEFAULT: 'var(--popover)',
-          foreground: 'var(--popover-foreground)'
-        },
-        card: {
-          DEFAULT: 'var(--card)',
-          foreground: 'hsl(var(--card-foreground))'
-        },
-        socialMedias: {
-          linkedin: '#0A66C2',
-          github: '#181717',
-          leetCode: '#FFA116'
-        },
-      },*/
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

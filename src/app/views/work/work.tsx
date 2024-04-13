@@ -4,11 +4,8 @@ import ThirdProject from '@/views/work/third-project/third-project';
 import React from 'react';
 import Others from '@/views/work/others/others';
 
-/* eslint-disable-next-line */
-export interface WorkProps {
-}
 
-export function Work(props: WorkProps) {
+export function Work() {
   return (
     <section className={'work'}>
 

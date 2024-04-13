@@ -18,6 +18,7 @@ import emailjs from '@emailjs/browser';
 import { Loader2 } from "lucide-react"
 import { useToast } from '@/hooks/use-toast';
 import { useMediaQuery } from '@/hooks/use-mediaQuery';
+import ParticlesBg from 'particles-bg';
 
 /* eslint-disable-next-line */
 
@@ -84,15 +85,14 @@ export function Contact() {
             ease: 'easeInOut'
           }}
           className={'w-full'}
-          /* className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"*/
         >
           <article>
             <div
               className="w-[80%] sm:w-full flex flex-col lg:flex-row mx-auto rounded-2xl overflow-hidden shadow-input bg-white dark:bg-black">
               <div className={'px-[5%] py-10 flex flex-col gap-5 justify-center'}>
                 <h3 className={'font-sfProBold capitalize text-[1.6rem] sm:text-3xl'}>get in touch with me</h3>
-                <div className={'flex justify-center items-center gap-5'}>
-                  <div className={'overflow-hidden relative w-10 h-10 bg-primary rounded-full'}>
+                <div className={'flex justify-center items-center gap-2 lg:gap-5'}>
+                  <div className={'overflow-hidden relative w-10 h-9 lg:h-10 bg-primary rounded-full'}>
                     <img src={NavbarAvatar} alt={'avatar'} className={'absolute -bottom-1'} />
                   </div>
                   <div className={'px-4 py-2 border-2 rounded-xl w-96'}>
@@ -171,15 +171,6 @@ export function Contact() {
                         </FormItem>
                       )}
                     />
-                    {/*<Button
-                      disabled={loading}
-                      className="w-full h-10 text-white"
-                      type="submit"
-                    >
-                      {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                      Send Message&nbsp; &rarr;
-                      <BottomGradient />
-                    </Button>*/}
                     <Button
                       disabled={loading}
                       className="flex justify-center items-center h-10 bg-gradient-to-br relative group/btn from-primary dark:from-zinc-900 dark:to-zinc-900 to-primary dark:bg-zinc-800 w-full text-white rounded-md text-sm font-medium font-sfPro shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
@@ -204,9 +195,9 @@ export function Contact() {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   />
                   <Marker position={[37.262, 9.823]} icon={icon}>
-                    <Popup>
+                    {/*<Popup>
                       A pretty CSS3 popup. <br /> Easily customizable.
-                    </Popup>
+                    </Popup>*/}
                   </Marker>
                 </MapContainer>
               }
@@ -214,9 +205,8 @@ export function Contact() {
 
 
           </article>
-
-          {/*Build lamps <br /> the right way*/}
         </motion.article>
+
       </LampContainer>
 
     </section>
@@ -232,20 +222,6 @@ const BottomGradient = () => {
       <span
         className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-primary to-transparent" />
     </>
-  );
-};
-
-const LabelInputContainer = ({
-                               children,
-                               className
-                             }: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div className={cn('flex flex-col space-y-2 w-full', className)}>
-      {children}
-    </div>
   );
 };
 

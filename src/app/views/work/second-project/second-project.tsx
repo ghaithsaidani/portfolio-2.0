@@ -1,4 +1,4 @@
-import { MondeEnBouche, MondeEnBoucheMobile, OldPortfolio } from '../../../../assets/images';
+import { MondeEnBouche, MondeEnBoucheMobile } from '../../../../assets/images';
 import { AnimatedTechTooltip, IconType } from '@/components/ui/animated-tech-tooltip';
 import {
   SiDjango,
@@ -12,11 +12,9 @@ import { MovingBorderButton } from '@/components/ui/moving-border-button';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 import { useMediaQuery } from '@/hooks/use-mediaQuery';
 
-/* eslint-disable-next-line */
-export interface SecondProjectProps {
-}
 
-export function SecondProject(props: SecondProjectProps) {
+
+export function SecondProject() {
 
   const usedTechs: IconType[] = [
     {

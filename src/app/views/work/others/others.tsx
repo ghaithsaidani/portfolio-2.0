@@ -18,12 +18,7 @@ import {
 import { FaJava } from 'react-icons/fa';
 import React from 'react';
 import { Tabs } from '@/components/ui/tabs';
-import { useMediaQuery } from '@/hooks/use-mediaQuery';
-import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
 
-/* eslint-disable-next-line */
-export interface OthersProps {
-}
 
 const cards: ProjectCardProps[] = [
   {
@@ -177,9 +172,9 @@ const cards: ProjectCardProps[] = [
 
 ];
 
-const Others = (props: OthersProps) => {
+const Others = () => {
   return (
-    <article className={'relative h-screen grid place-items-center'}>
+    <article className={'relative h-screen lg:h-full grid place-items-center'}>
       <div className={'content p-2 w-full lg:p-28 flex flex-col gap-10 lg:gap-0'}>
         <h1 className={'font-sfPro font-bold ml-5 lg:ml-0 capitalize text-3xl lg:text-5xl'}>more works.</h1>
         <div
