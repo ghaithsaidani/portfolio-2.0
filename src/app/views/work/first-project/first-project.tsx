@@ -74,6 +74,8 @@ export function FirstProject() {
     <article
       className={'first-project relative flex flex-col lg:flex-row justify-center overflow-hidden h-full lg:h-screen gap-10 lg:gap-80 2xl:gap-96'}
       ref={ref}>
+
+
       <div style={{
         transform: isInView ? 'none' : 'translateY(-300px)',
         opacity: isInView ? 1 : 0,
@@ -93,7 +95,7 @@ export function FirstProject() {
           <AnimatedTechTooltip items={usedTechs} size={is2XL ? 12 : isSm ? 10 : 9} />
         </div>
         <a className={'mt-5 flex items-center gap-2'} href={'https://ghaith-saidani.netlify.app/'} target={'_blank'}
-           rel={'noreferrer'}>
+          rel={'noreferrer'}>
           <MovingBorderButton
             borderRadius="1.75rem"
             containerClassName={'w-32'}

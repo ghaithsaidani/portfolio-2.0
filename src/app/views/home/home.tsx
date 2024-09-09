@@ -1,5 +1,5 @@
-import { PersonalPhoto } from '../../../assets/images';
-import React from 'react';
+import { PersonalPhoto, PersonalPhoto1, PersonalPhotoBlurred } from '../../../assets/images';
+import React, { useState } from 'react';
 import { IconInterface } from '@/ts/icon.type';
 import { Separator } from '@/components/ui/separator';
 import { Reveal } from '@/components/ui/reveal';
@@ -16,6 +16,7 @@ export interface HomeProps {
 }
 
 export function Home(props: HomeProps) {
+  const [loaded,setLoaded] = useState(false);
   const socialMedias: IconInterface[] = [
     {
       name: 'LinkedIn',
@@ -98,9 +99,18 @@ export function Home(props: HomeProps) {
           <div className={'h-full relative'}>
             <img
               className={'h-full'}
-              src={PersonalPhoto}
+              src={PersonalPhoto1}
               alt={'home personal'}
+              loading={"lazy"}
+              style={{opacity: loaded ? 1 : 0}}
+              onLoad={() => setLoaded(true)}
             />
+            {!loaded && (
+              <div
+                className="absolute inset-0 w-full h-full bg-cover bg-center filter blur-lg"
+                style={{ backgroundImage: `url(${PersonalPhotoBlurred})` }}
+              ></div>
+            )}
             <div
               className={
                 'absolute w-full h-[90%] bg-primary -z-10 bottom-0 rounded-xl before:w-full before:h-full before:absolute before:border-[3px] before:border-black dark:before:border-white before:top-4 sm:before:top-8 lg:before:top-10  before:right-4 sm:before:right-5 lg:before:right-10 before:rounded-xl'

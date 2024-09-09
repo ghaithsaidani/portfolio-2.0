@@ -1,4 +1,6 @@
 export {default as PersonalPhoto} from './my-photo.png'
+export {default as PersonalPhotoBlurred} from './my-photo-blurred.png'
+export {default as PersonalPhoto1} from './my-photo1.png'
 export {default as Sesame} from './studies/sesame.png'
 export {default as LJB} from './studies/ljb.png'
 export {default as FSB} from './studies/fsb.png'
