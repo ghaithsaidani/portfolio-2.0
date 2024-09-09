@@ -47,7 +47,7 @@ export function MovingBorderButton({
         <MovingBorder duration={duration} rx="30%" ry="30%">
           <div
             className={cn(
-              "h-20 w-20 group-hover:bg-[radial-gradient(rgb(13,183,96)_60%,rgba(13,183,96,0.3)_40%)]",
+              "h-20 w-20 group-hover:bg-[radial-gradient(rgb(37,99,235)_60%,rgba(37,99,235,0.3)_40%)]",
               borderClassName
             )}
           />

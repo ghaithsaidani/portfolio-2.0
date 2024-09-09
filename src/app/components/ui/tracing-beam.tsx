@@ -72,7 +72,7 @@ export const TracingBeam = ({
             boxShadow:
               scrollYProgress.get() > 0
                 ? "none"
-                : "rgba(13, 183, 96, 0.24) 0px 3px 8px",
+                : "rgba(37,99,235, 0.24) 0px 3px 8px",
           }}
           className="ml-[27px] h-4 w-4 rounded-full border border-netural-200 shadow-sm flex items-center justify-center"
         >
@@ -83,9 +83,9 @@ export const TracingBeam = ({
             }}
             animate={{
               backgroundColor:
-                scrollYProgress.get() > 0 ? "white" : "var(--emerald-500)",
+                scrollYProgress.get() > 0 ? "white" : "var(--blue-500)",
               borderColor:
-                scrollYProgress.get() > 0 ? "white" : "var(--emerald-600)",
+                scrollYProgress.get() > 0 ? "white" : "var(--blue-600)",
             }}
             className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
           />
@@ -125,10 +125,10 @@ export const TracingBeam = ({
               y1={y1} // set y1 for gradient
               y2={y2} // set y2 for gradient
             >
-              <stop stopColor="rgba(13, 183, 96)" stopOpacity="0"></stop>
-              <stop stopColor="rgba(13, 183, 96,0.8)"></stop>
-              <stop offset="0.325" stopColor="rgba(13, 183, 96,0.6)"></stop>
-              <stop offset="1" stopColor="rgba(13, 183, 96,0.2)" stopOpacity="0"></stop>
+              <stop stopColor="rgba(37,99,235)" stopOpacity="0"></stop>
+              <stop stopColor="rgba(37,99,235,0.8)"></stop>
+              <stop offset="0.325" stopColor="rgba(37,99,235,0.6)"></stop>
+              <stop offset="1" stopColor="rgba(37,99,235,0.2)" stopOpacity="0"></stop>
             </motion.linearGradient>
           </defs>
         </svg>
@@ -140,7 +140,7 @@ export const TracingBeam = ({
           animate={{
             boxShadow:
               scrollYProgress.get() > 0.7
-                ? "rgba(13, 183, 96, 0.24) 0px 3px 8px"
+                ? "rgba(37,99,235, 0.24) 0px 3px 8px"
                 : "none",
           }}
           className="ml-[9px] h-4 w-4 rounded-full border border-netural-200 shadow-sm flex items-center justify-center"
@@ -152,9 +152,9 @@ export const TracingBeam = ({
             }}
             animate={{
               backgroundColor:
-                scrollYProgress.get() > 0.7 ? "var(--emerald-500)" : "white" ,
+                scrollYProgress.get() > 0.7 ? "var(--blue-500)" : "white" ,
               borderColor:
-                scrollYProgress.get() >0.7 ? "var(--emerald-600)" : "white" ,
+                scrollYProgress.get() >0.7 ? "var(--blue-600)" : "white" ,
             }}
             className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
           />

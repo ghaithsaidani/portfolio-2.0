@@ -98,7 +98,7 @@ export function Home(props: HomeProps) {
         <aside className={'h-[30%] md:h-[45%] lg:h-[60%] 2xl:h-[70%] flex items-center gap-5 lg:gap-14 2xl:gap-20'}>
           <div className={'h-full relative'}>
             <img
-              className={'h-full'}
+              className={'h-full transition-opacity duration-500 ease-in-out'}
               src={PersonalPhoto1}
               alt={'home personal'}
               loading={"lazy"}

@@ -31,8 +31,8 @@ export function Studies() {
                   <img src={Sesame} alt={'sesame logo'}/>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                  <TimelineDot color="primary" style={{ width: 20, height: 20 }} />
-                  <TimelineConnector sx={{ background: '#0DB760', height: '200px' }} />
+                  <TimelineDot style={{ width: 20, height: 20, backgroundColor:"#2563EB" }} />
+                  <TimelineConnector sx={{ background: '#2563EB', height: '200px' }} />
                 </TimelineSeparator>
                 <TimelineContent className={'!text-left !pl-0'}>
                   <h2 className={'text-[0.7rem] sm:text-sm xl:text-lg 2xl:text-2xl font-sfProBold'}>
@@ -51,8 +51,8 @@ export function Studies() {
                   <img src={FSB} alt={'FSB logo'} />
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                  <TimelineDot color={'primary'} style={{ width: 20, height: 20 }} />
-                  <TimelineConnector sx={{ background: '#0DB760', height: '200px' }} />
+                  <TimelineDot style={{ width: 20, height: 20, backgroundColor:"#2563EB" }} />
+                  <TimelineConnector sx={{ background: '#2563EB', height: '200px' }} />
                 </TimelineSeparator>
                 <TimelineContent className={'!pr-0'}>
                   <h2 className={'text-[0.7rem] sm:text-sm lg:text-lg 2xl:text-2xl font-sfProBold'}>
@@ -72,7 +72,7 @@ export function Studies() {
                   <img src={LJB} alt={'LJB logo'} />
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                  <TimelineDot color={'primary'} style={{ width: 20, height: 20 }} />
+                  <TimelineDot style={{ width: 20, height: 20, backgroundColor:"#2563EB" }} />
                 </TimelineSeparator>
                 <TimelineContent className={'!text-left !pl-0'}>
                   <h2 className={'text-[0.7rem] sm:text-sm lg:text-lg 2xl:text-2xl font-sfPro font-bold'}>

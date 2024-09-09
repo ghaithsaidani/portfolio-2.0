@@ -25,7 +25,7 @@ export function App() {
             <About />
             <Work />
             <Contact />
-            <ParticlesBg type="cobweb" bg={true} color={'#0DB760'} num={200}/>
+            <ParticlesBg type="cobweb" bg={true} color={'#2563EB'} num={200}/>
           </main>
           <Toaster />
         </TracingBeam>

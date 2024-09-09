@@ -62,11 +62,11 @@ export const WavyBackground = ({
   };
 
   const waveColors = colors ?? [
-    "rgba(13, 183, 96)",
-    "rgba(13, 183, 96,0.8)",
-    "rgba(13, 183, 96,0.6)",
-    "rgba(13, 183, 96,0.4)",
-    "rgba(13, 183, 96,0.2)",
+    "rgba(37,99,235)",
+    "rgba(37,99,235,0.8)",
+    "rgba(37,99,235,0.6)",
+    "rgba(37,99,235,0.4)",
+    "rgba(37,99,235,0.2)",
   ];
   const drawWave = (n: number) => {
     nt += getSpeed();
@@ -86,7 +86,7 @@ export const WavyBackground = ({
   let animationId: number;
   const render = () => {
     const theme=localStorage.getItem('vite-ui-theme')
-    ctx.fillStyle = theme ? theme==='light' ? 'hsl(0 0% 100%)' : 'hsl(20 14.3% 4.1%)' : 'hsl(0 0% 100%)';
+    ctx.fillStyle = theme ? theme==='light' ? 'hsl(0 0% 100%)' : 'hsl(222.2 84% 4.9%)' : 'hsl(0 0% 100%)';
     ctx.globalAlpha = waveOpacity || 0.5;
     ctx.fillRect(0, 0, w, h);
     drawWave(5);
