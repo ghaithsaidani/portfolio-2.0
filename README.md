@@ -78,7 +78,7 @@ To run this project, you will need to create an .env file and add the following 
   npm run build
 ```
 
-Then, import dist folder into you netlify account.
+Then, import dist folder into your netlify account.
 
 ## Support 🤝
 
