@@ -1,1 +1,1 @@
-export {default as Resume} from './resume.pdf'
+export {default as Resume} from './ghaith_saidani.pdf'
