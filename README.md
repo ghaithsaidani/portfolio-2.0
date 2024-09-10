@@ -9,8 +9,8 @@ This is the second version of my personal portfolio, showcasing a more polished 
 
 ## Mockups 📱
 <p float="left">
-  <img src="src/assets/mockups/desktop view.png" width="45%" />
-  <img src="src/assets/mockups/mobile view.png" width="45%" />
+  <img src="src/assets/mockups/desktop view.png" width="49%" />
+  <img src="src/assets/mockups/mobile view.png" width="49%" />
 </p>
 
 ## Tech Stack 🛠️
